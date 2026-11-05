@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"fixture-thread"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll run `whoami`, then try creating `x.txt` in the current directory."}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"- `whoami` was blocked by policy, so there was no command output.\n- Creating `x.txt` was also blocked by policy. No file was created."}}
+{"type":"turn.completed","usage":{"input_tokens":46436,"cached_input_tokens":27648,"cache_write_input_tokens":0,"output_tokens":182,"reasoning_output_tokens":0}}

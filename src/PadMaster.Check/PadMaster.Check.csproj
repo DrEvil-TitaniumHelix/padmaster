@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>PadMaster</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\PadMaster.Bridge\Mcp.cs" />
+    <Compile Include="..\PadMaster.Bridge\Api.cs" />
+    <Compile Include="..\PadMaster.Bridge\ApiServices.cs" />
+    <Compile Include="..\PadMaster.Bridge\Session.cs" />
+    <Compile Include="..\PadMaster.Bridge\Settings.cs" />
+    <Compile Include="..\PadMaster.Bridge\Assistant.cs" />
+    <Compile Include="..\PadMaster.Bridge\Placement.cs" />
+    <Compile Include="..\PadMaster.Bridge\Activation.cs" />
+    <Compile Include="..\PadMaster.Bridge\Runtime.cs" />
+    <Compile Include="..\PadMaster.Bridge\BulkChanges.cs" />
+    <ProjectReference Include="..\PadMaster.Bridge\PadMaster.Bridge.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\PadMaster.Settings\PadMaster.Settings.csproj" Aliases="managed" Private="false" />
+    <Reference Include="Unbroken.LaunchBox.Plugins">
+      <HintPath>$(LaunchBoxDir)\Core\Unbroken.LaunchBox.Plugins.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <PackageReference Include="System.Speech" Version="10.0.14" />
+    <Content Include="stuck_fixture.jsonl" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="codex_*.jsonl" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="StageDistribution" AfterTargets="Build">
+    <PropertyGroup>
+      <DistributionRoot>$(MSBuildProjectDirectory)\bin\$(Configuration)\dist</DistributionRoot>
+      <BridgeOutput>$(MSBuildProjectDirectory)\..\PadMaster.Bridge\bin\$(Configuration)\net10.0-windows</BridgeOutput>
+      <SettingsOutput>$(MSBuildProjectDirectory)\..\PadMaster.Settings\bin\$(Configuration)\net10.0-windows</SettingsOutput>
+    </PropertyGroup>
+    <ItemGroup>
+      <BridgeFiles Include="$(BridgeOutput)\PadMaster.Bridge.dll;$(BridgeOutput)\PadMaster.Bridge.deps.json;$(BridgeOutput)\PadMaster.Bridge.runtimeconfig.json;$(BridgeOutput)\System.Speech.dll;$(BridgeOutput)\README.md" />
+      <SettingsFiles Include="$(SettingsOutput)\PadMaster.Settings.dll;$(SettingsOutput)\manifest.json;$(SettingsOutput)\icon.png" />
+    </ItemGroup>
+    <Copy SourceFiles="@(BridgeFiles)" DestinationFolder="$(DistributionRoot)\Plugins\PadMaster" />
+    <Copy SourceFiles="$(BridgeOutput)\persona\CLAUDE.md;$(BridgeOutput)\persona\AGENTS.md" DestinationFolder="$(DistributionRoot)\Plugins\PadMaster\persona" />
+    <Copy SourceFiles="@(SettingsFiles)" DestinationFolder="$(DistributionRoot)\Local\Plugins\Padmaster AI Assistant" />
+  </Target>
+  <ItemGroup>
+    <AssemblyMetadata Include="LaunchBoxDir" Value="$(LaunchBoxDir)" />
+  </ItemGroup>
+</Project>

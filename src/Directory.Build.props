@@ -1,0 +1,9 @@
+<Project>
+  <Import Project="Directory.Build.local.props" Condition="Exists('Directory.Build.local.props')" />
+  <PropertyGroup>
+    <LaunchBoxDir Condition="'$(LaunchBoxDir)' == ''">C:\LaunchBox</LaunchBoxDir>
+  </PropertyGroup>
+  <Target Name="RequireLaunchBox" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(LaunchBoxDir)\Core\Unbroken.LaunchBox.Plugins.dll')" Text="LaunchBox not found at $(LaunchBoxDir). Set LaunchBoxDir (environment variable, or src\Directory.Build.local.props) to your LaunchBox folder." />
+  </Target>
+</Project>

@@ -1,0 +1,22 @@
+{
+  "SchemaVersion": 2,
+  "PluginId": "70cf6f66-65ce-43a6-a6cb-00673c71558e",
+  "Name": "Padmaster AI Assistant",
+  "InstalledVersion": "0.2.0-beta",
+  "Developer": "Padmaster",
+  "OperatingSystemFamily": "Windows",
+  "SourceKind": "Local",
+  "Brief": "Chat with your own AI assistant inside LaunchBox.",
+  "Description": "This is a beta, an early test release. Padmaster AI Assistant puts a small chat panel inside LaunchBox. Ask about your games, find a manual, check which emulator a game uses, or build playlists from your library, for example every Star Wars and Star Trek game you own. Type or use the microphone. Coming next: each game's controls drawn on the controller in your hands. It uses your own AI subscription (Claude Code or Codex); the plugin stores no keys and its own server listens only on this PC, while your assistant sends what you type and what it reads to your AI provider.",
+  "Requirements": "LaunchBox 14.1.x on Windows. Claude Code or Codex installed and signed in with your own subscription.",
+  "IconPath": "icon.png",
+  "Compatibility": { "ApplicationVersionRange": "[14.1.0,14.2.0)" },
+  "Components": [
+    {
+      "ComponentType": "game-discovery-source/1",
+      "Assembly": "PadMaster.Settings.dll",
+      "Class": "PadMaster.Configuration.SettingsComponent",
+      "Applications": [ "launchbox" ]
+    }
+  ]
+}

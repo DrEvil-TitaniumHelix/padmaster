@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PadMaster.Bridge</AssemblyName>
+    <RootNamespace>PadMaster</RootNamespace>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Speech" Version="10.0.14" GeneratePathProperty="true" />
+    <None Update="README.md;persona\CLAUDE.md" CopyToOutputDirectory="PreserveNewest" />
+    <Reference Include="Unbroken.LaunchBox.Plugins">
+      <HintPath>$(LaunchBoxDir)\Core\Unbroken.LaunchBox.Plugins.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="FlattenWindowsSpeech" AfterTargets="Build">
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\persona\CLAUDE.md" DestinationFiles="$(TargetDir)persona\AGENTS.md" />
+    <Copy SourceFiles="$(PkgSystem_Speech)\runtimes\win\lib\net10.0\System.Speech.dll" DestinationFiles="$(TargetDir)System.Speech.dll" />
+    <RemoveDir Directories="$(TargetDir)runtimes" />
+    <Delete Files="$(TargetDir)$(AssemblyName).pdb" Condition="'$(Configuration)' == 'Release'" />
+  </Target>
+</Project>
