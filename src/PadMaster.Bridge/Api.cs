@@ -20,6 +20,7 @@ public sealed class Api
 {
     public const int MaxBytes = 78000;
     public const string NoDelete = "Deleting is not possible through the assistant. Remove items yourself in LaunchBox.";
+    public const string NoToken = "The plugin's own connection token is not available to the assistant.";
     static readonly HashSet<string> PlaylistMembership = new(StringComparer.OrdinalIgnoreCase) { "TryRemovePlaylistGame", "ClearGames" };
     static readonly Type[] RootTypes = [typeof(IDataManager), typeof(IStateManager), typeof(ILaunchBoxMainViewModel), typeof(IBigBoxMainViewModel), .. ApiServices.Types];
     static readonly Lazy<Dictionary<Type, Shape>> Shapes = new(BuildShapes);
@@ -225,7 +226,9 @@ public sealed class Api
                 try { matches.Add((type, candidate, Arguments(candidate, args["args"] as JsonArray ?? []))); } catch (Exception e) { errors.Add(Unwrap(e).Message); }
             }
         if (matches.Count != 1) throw new ArgumentException(matches.Count > 1 ? "Ambiguous method; specify type and the full catalog signature." : "No matching method: " + method + ". " + string.Join("; ", errors.Take(3)));
-        var match = matches[0]; var item = Resolve(match.type, Text(args, "id"), args["parent"]);
+        var match = matches[0];
+        if (match.args.Any(a => a?.GetType().GetProperty("Key")?.GetValue(a) is string key && string.Equals(key.Trim(), BridgeToken.Key, StringComparison.OrdinalIgnoreCase))) return new JsonObject { ["refused"] = true, ["message"] = NoToken };
+        var item = Resolve(match.type, Text(args, "id"), args["parent"]);
         if (!approved && Mutates(match.method.Name) && !match.method.Name.StartsWith("AddNew", StringComparison.Ordinal))
         {
             var verb = match.method.Name.StartsWith("Clear", StringComparison.OrdinalIgnoreCase) ? "clear" : Removing(match.method.Name) ? "remove" : "change";

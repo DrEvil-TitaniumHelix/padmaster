@@ -95,7 +95,20 @@ public sealed class AssistantPanel : UserControl
     readonly ScrollViewer _setup = new() { VerticalScrollBarVisibility = ScrollBarVisibility.Auto, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
     readonly ComboBox _yourAi = new() { ItemsSource = new[] { "Claude Code", "Codex" }, SelectedIndex = -1 };
     readonly TextBox _where = new() { IsReadOnly = true, MinHeight = 34 };
-    readonly Button _browse = AssistantLook.Button("Browse"), _signIn = AssistantLook.Button("Sign in");
+    readonly Button _browse = AssistantLook.Button("Browse"), _signIn = AssistantLook.Button("Sign in"), _resetToken = AssistantLook.Button("Reset token", "Make a new private token for this PC and rewrite Plugins\\PadMaster\\mcp.json; running sessions restart");
+    public const string NotFound = "Not found on this PC - click Browse";
+    string _auto = "";
+    string Kind => _yourAi.SelectedIndex == 0 ? "claude-code" : _yourAi.SelectedIndex == 1 ? "codex" : "";
+    public string CliBox => _where.Text;
+    public void ChooseAssistant(int index) => _yourAi.SelectedIndex = index;
+    public void Save() => SaveConfiguration(false);
+    void ShowCli(Settings settings)
+    {
+        var kind = Kind; var was = _updatingSetup; _updatingSetup = true;
+        if (settings.Cli.Length > 0 && kind == (settings.Assistant.Length == 0 ? "claude-code" : settings.Assistant)) { _auto = ""; _where.Text = settings.Cli; }
+        else { _auto = kind.Length == 0 ? "" : (kind == _setupState.Assistant ? _setupState.Cli : Settings.DetectCli("", kind)) ?? NotFound; _where.Text = _auto; }
+        _updatingSetup = was;
+    }
     readonly TextBlock _setupMessage = AssistantLook.Text("", 12, AssistantLook.Dim);
     readonly TextBox _port = new() { MinHeight = 30, Padding = new Thickness(6, 4, 6, 4) };
     readonly ComboBox _placement = new() { ItemsSource = new[] { "Right panel", "Left sidebar", "Floating window" }, MinHeight = 30 };
@@ -129,6 +142,7 @@ public sealed class AssistantPanel : UserControl
     public Action? HelpRequested { get; set; }
     public Action? Reopened { get; set; }
     public Action<IReadOnlyDictionary<string, string?>, bool>? ConfigurationSaved { get; set; }
+    public Action? TokenResetRequested { get; set; }
     public Action<bool>? ExpandedChanged { get; set; }
     public Action<string>? Log
     {
@@ -226,7 +240,7 @@ public sealed class AssistantPanel : UserControl
         var card = new StackPanel { Margin = new Thickness(12, 2, 12, 6) };
         var choice = new DockPanel(); var heading = AssistantLook.Text("Your AI", 13); heading.Width = 65; heading.VerticalAlignment = VerticalAlignment.Center; DockPanel.SetDock(heading, Dock.Left); choice.Children.Add(heading); choice.Children.Add(_yourAi); card.Children.Add(choice);
         void Label(string text) { var label = AssistantLook.Text(text, 12, AssistantLook.Dim); label.Margin = new Thickness(0, 4, 0, 2); card.Children.Add(label); }
-        _yourAi.SelectionChanged += (_, _) => { Dirty("assistant"); if (!_updatingSetup) { _where.Text = ""; Dirty("cli"); } };
+        _yourAi.SelectionChanged += (_, _) => { if (_updatingSetup) return; Dirty("assistant"); _dirtyFields.Remove("cli"); ShowCli(_cardSettings); };
         Label("Where it is");
         var path = new DockPanel(); _browse.Margin = new Thickness(7, 0, 0, 0); DockPanel.SetDock(_browse, Dock.Right); path.Children.Add(_browse); path.Children.Add(_where); card.Children.Add(path);
         _browse.Click += (_, _) =>
@@ -238,12 +252,16 @@ public sealed class AssistantPanel : UserControl
             }
             catch (Exception e) { Log?.Invoke($"CLI browse: {SafeDiagnostics.Error(e)}"); SetSetupMessage("The file picker could not open. Enter the path here or in Configure."); }
         };
-        _where.IsReadOnly = false; _where.MinHeight = 30; _where.Padding = new Thickness(6, 4, 6, 4); _where.TextChanged += (_, _) => Dirty("cli");
+        _where.IsReadOnly = false; _where.MinHeight = 30; _where.Padding = new Thickness(6, 4, 6, 4);
+        _where.TextChanged += (_, _) => { Dirty("cli"); _where.Foreground = _auto.Length > 0 && _where.Text == _auto ? AssistantLook.Dim : AssistantLook.Foreground; };
+        _where.GotKeyboardFocus += (_, _) => { if (_where.Text == NotFound) _where.Text = ""; };
         _yourAi.MinHeight = 30; _yourAi.Height = 30;
         var options = new Grid { Margin = new Thickness(0, 5, 0, 0) };
-        options.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(80) }); options.ColumnDefinitions.Add(new ColumnDefinition());
+        options.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(80) }); options.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }); options.ColumnDefinitions.Add(new ColumnDefinition());
         var portColumn = new StackPanel { Margin = new Thickness(0, 0, 8, 0) }; portColumn.Children.Add(AssistantLook.Text("Port", 11, AssistantLook.Dim)); portColumn.Children.Add(_port); options.Children.Add(portColumn);
-        var placementColumn = new StackPanel(); placementColumn.Children.Add(AssistantLook.Text("Placement", 11, AssistantLook.Dim)); placementColumn.Children.Add(_placement); Grid.SetColumn(placementColumn, 1); options.Children.Add(placementColumn); card.Children.Add(options);
+        var tokenColumn = new StackPanel { Margin = new Thickness(0, 0, 8, 0) }; tokenColumn.Children.Add(AssistantLook.Text("Token", 11, AssistantLook.Dim)); tokenColumn.Children.Add(_resetToken); Grid.SetColumn(tokenColumn, 1); options.Children.Add(tokenColumn);
+        _resetToken.Click += (_, _) => { if (_waiting) return; SetSetupMessage("New token saved. Copy Plugins\\PadMaster\\mcp.json again into your own sessions; the panel restarts."); TokenResetRequested?.Invoke(); };
+        var placementColumn = new StackPanel(); placementColumn.Children.Add(AssistantLook.Text("Placement", 11, AssistantLook.Dim)); placementColumn.Children.Add(_placement); Grid.SetColumn(placementColumn, 2); options.Children.Add(placementColumn); card.Children.Add(options);
         _port.TextChanged += (_, _) => Dirty("port");
         _placement.SelectionChanged += (_, _) => Dirty("placement");
         _autoOpen.Click += (_, _) => Dirty("autoOpen");
@@ -268,7 +286,7 @@ public sealed class AssistantPanel : UserControl
         if (discardEdits) _dirtyFields.Clear();
         _cardSettings = settings; _updatingSetup = true;
         if (!_dirtyFields.Contains("assistant")) _yourAi.SelectedIndex = settings.Assistant == "claude-code" ? 0 : settings.Assistant == "codex" ? 1 : -1;
-        if (!_dirtyFields.Contains("cli")) _where.Text = settings.Cli.Length == 0 ? _setupState.Cli ?? "" : settings.Cli;
+        if (!_dirtyFields.Contains("cli")) ShowCli(settings);
         if (!_dirtyFields.Contains("port")) _port.Text = settings.Port.ToString();
         if (!_dirtyFields.Contains("placement")) _placement.SelectedIndex = settings.Placement == "left" ? 1 : settings.Placement == "floating" ? 2 : 0;
         if (!_dirtyFields.Contains("autoOpen")) _autoOpen.IsChecked = settings.AutoOpen;
@@ -280,7 +298,7 @@ public sealed class AssistantPanel : UserControl
     public void ConfigurationAccepted(Settings settings) { LoadConfiguration(settings, true); _editingSetup = false; SetSetup(_setupState); }
     void SaveConfiguration(bool signIn)
     {
-        var fields = new Dictionary<string, string?> { ["assistant"] = _yourAi.SelectedIndex == 0 ? "claude-code" : _yourAi.SelectedIndex == 1 ? "codex" : "", ["cli"] = _cardSettings.Cli.Length == 0 && _where.Text == _setupState.Cli ? "" : _where.Text,
+        var fields = new Dictionary<string, string?> { ["assistant"] = _yourAi.SelectedIndex == 0 ? "claude-code" : _yourAi.SelectedIndex == 1 ? "codex" : "", ["cli"] = _where.Text == _auto ? "" : _where.Text,
             ["port"] = _port.Text, ["placement"] = _placement.SelectedIndex == 1 ? "left" : _placement.SelectedIndex == 2 ? "floating" : "right", ["autoOpen"] = (_autoOpen.IsChecked == true).ToString(), ["confirmBulk"] = (_confirmBulk.IsChecked == true).ToString(), ["bulkThreshold"] = _bulkThreshold.Text };
         if (!Settings.TryApply(_cardSettings, fields, false, out _, out var error)) { SetSetupMessage(error); return; }
         ConfigurationSaved?.Invoke(fields, signIn);
@@ -291,7 +309,7 @@ public sealed class AssistantPanel : UserControl
         _setupState = state;
         _updatingSetup = true;
         if (!_dirtyFields.Contains("assistant")) _yourAi.SelectedIndex = state.Assistant == "claude-code" ? 0 : state.Assistant == "codex" ? 1 : -1;
-        if (!_dirtyFields.Contains("cli")) _where.Text = _cardSettings.Cli.Length == 0 ? state.Cli ?? "" : _cardSettings.Cli;
+        if (!_dirtyFields.Contains("cli")) ShowCli(_cardSettings);
         _where.ToolTip = state.Cli; _updatingSetup = false;
         var show = !state.Suppressed && !state.Checking && (state.NeedsSetup || _editingSetup || _dirty);
         _setup.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
@@ -312,7 +330,7 @@ public sealed class AssistantPanel : UserControl
     public void SetSetupWaiting(bool waiting)
     {
         _waiting = waiting; _signIn.IsEnabled = !waiting && !_setupState.Suppressed;
-        _yourAi.IsEnabled = _browse.IsEnabled = _where.IsEnabled = _port.IsEnabled = _placement.IsEnabled = _autoOpen.IsEnabled = _confirmBulk.IsEnabled = _bulkThreshold.IsEnabled = !waiting;
+        _yourAi.IsEnabled = _browse.IsEnabled = _where.IsEnabled = _port.IsEnabled = _resetToken.IsEnabled = _placement.IsEnabled = _autoOpen.IsEnabled = _confirmBulk.IsEnabled = _bulkThreshold.IsEnabled = !waiting;
     }
 
     async Task ProbeMicrophone()

@@ -24,7 +24,8 @@ The panel opens. Choose Claude Code or Codex under Your AI. If it is missing or 
 Using the panel:
 - Enter sends. Shift+Enter adds a line.
 - The microphone button turns Windows dictation on and off. Dictated text goes into the box and is never sent by itself.
-- The gear opens the settings: AI, CLI path, Port, Placement, Open at startup, Confirm bulk changes and Bulk threshold. Back to chat returns.
+- The gear opens the settings: AI, CLI path, Port, Reset token, Placement, Open at startup, Confirm bulk changes and Bulk threshold. Back to chat returns.
+- The CLI path box shows the file found for the chosen AI, greyed. Leave it as it is to keep auto-detect, or use Browse. "Not found on this PC - click Browse" means that AI is not installed where the plugin looks.
 - Placement: Right panel sits above the game details, Left sidebar sits below the sidebar, or use a Floating window.
 - Tools > Padmaster AI Assistant reopens the chat.
 - Configure has these same settings plus Enable.
@@ -34,6 +35,13 @@ Using the panel:
 **Claude Code.** [Install Claude Code](https://code.claude.com/docs/en/overview), then use Sign in or `claude auth login --claudeai` with your Claude subscription. The plugin runs a continuing `claude -p` session with JSON input/output and the local LaunchBox connection. Read, Grep and Glob can read files; shell and file-editing tools are unavailable.
 
 **Codex.** [Install Codex CLI](https://developers.openai.com/codex/cli/), then use Sign in or `codex login` with your ChatGPT subscription. The plugin runs `codex exec --json` for each message and `codex exec resume` for later messages, with a read-only sandbox, shell tools disabled, and the local LaunchBox connection approved. It uses Codex's default model and ignores your chosen model, extra MCP servers, hooks and rules. Codex can use the LaunchBox tools only: it cannot read emulator configurations or manual files. API-key sign-ins are not accepted.
+
+## Use your own Claude Code session
+The plugin's local LaunchBox connection also works from a Claude Code session you start yourself, in any folder, while LaunchBox is open:
+- Copy `Plugins\PadMaster\mcp.json` into your project as `.mcp.json`, or start with `claude --mcp-config <LaunchBox>\Plugins\PadMaster\mcp.json`.
+- The token inside is private to this PC and stays the same across LaunchBox starts, so one copy keeps working. Your own session has none of the panel's locks: it can delete, and nothing waits for a Yes.
+- If the token ever leaks, press Reset token in the panel's gear. mcp.json gets a new token, the panel restarts its session, and any copy you made stops working until you copy the file again.
+- Never share `mcp.json`.
 
 ## What it can do
 Read and change games, playlists, platforms, emulators, images and manuals; launch games; refresh the view. It cannot delete anything: every removing or clearing call is refused inside the plugin, not by instruction. The one exception is taking games out of a playlist. It is told to say what it will change before changing it.
@@ -49,7 +57,7 @@ It has no tool for editing files directly; library changes go through LaunchBox'
 ## Privacy
 - It uses your AI account and your subscription. The plugin never asks for a key and stores none. API-key and Console logins are refused by design.
 - What you type and what the assistant reads goes to your AI provider. Claude Code's Read, Grep and Glob tools reach any file your Windows account can read, except `~/.claude`, `~/.ssh`, `~/.aws`, `~/.azure` and `~/.gnupg`. Codex has no file-reading tool in this plugin.
-- The plugin's own server listens on 127.0.0.1 only and requires a token, made new at each start and kept in `Plugins\PadMaster\mcp.json`. Codex receives that local token through its environment, never its command line. Your assistant connects to your AI provider, and some LaunchBox services the assistant can reach may contact their own providers.
+- The plugin's own server listens on 127.0.0.1 only and requires a token, kept in `Plugins\PadMaster\mcp.json` and in `Local\Plugins\.data\PadMaster`. It stays the same across starts until you press Reset token in the gear. The assistant cannot read or change that token through the LaunchBox tools. Codex receives that local token through its environment, never its command line. Your assistant connects to your AI provider, and some LaunchBox services the assistant can reach may contact their own providers.
 
 ## Known limits
 - Claude Code and Codex are supported. Codex uses its default model and cannot read emulator configurations or manual files.
@@ -62,7 +70,7 @@ It has no tool for editing files directly; library changes go through LaunchBox'
 - Automatic controller mapping is not built yet.
 
 ## Uninstall
-With LaunchBox closed, delete `Plugins\PadMaster` and `Local\Plugins\Padmaster AI Assistant`. To remove saved settings too, delete `Local\Plugins\.data\70cf6f66-65ce-43a6-a6cb-00673c71558e`. You can also delete this README.md from the LaunchBox root.
+With LaunchBox closed, delete `Plugins\PadMaster` and `Local\Plugins\Padmaster AI Assistant`. To remove saved settings and the connection token too, delete `Local\Plugins\.data\70cf6f66-65ce-43a6-a6cb-00673c71558e` and `Local\Plugins\.data\PadMaster`. You can also delete this README.md from the LaunchBox root.
 
 The Uninstall button in Plugin Manager is not enough: `Plugins\PadMaster` is separate and would keep loading.
 

@@ -65,9 +65,10 @@ the platform's menu.
 - **M3 Batch NES.** Whole platform pre-rendered; badge on every mapped game; "no mapping found" count reported, never templated.
 - **M4 Viewer polish.** Controller dropdown re-renders live; a second controller added by the onboarding flow alone.
 
-## As built (0.2.0-beta)
+## As built (0.2.1-beta)
 - `src\PadMaster.Bridge`: the bridge plus the assistant chat panel (right panel, left sidebar or floating window).
-  MCP over streamable HTTP on 127.0.0.1 (HttpListener, stdlib, token per start), generic `lb_*` tools over the
+  MCP over streamable HTTP on 127.0.0.1 (HttpListener, stdlib, bearer token stable across starts,
+  new on Reset token in the panel gear; the same mcp.json also serves the user's own Claude Code session), generic `lb_*` tools over the
   LaunchBox plugin API, no deletion (refused in the plugin), bulk guard on large rewrites.
 - `src\PadMaster.Settings`: the managed Plugin Manager package (Configure form).
 - `src\PadMaster.Check`: the runnable self-check (`dotnet run --project src\PadMaster.Check -c Release`).

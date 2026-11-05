@@ -2,7 +2,7 @@
   "SchemaVersion": 2,
   "PluginId": "70cf6f66-65ce-43a6-a6cb-00673c71558e",
   "Name": "Padmaster AI Assistant",
-  "InstalledVersion": "0.2.0-beta",
+  "InstalledVersion": "0.2.1-beta",
   "Developer": "Padmaster",
   "OperatingSystemFamily": "Windows",
   "SourceKind": "Local",

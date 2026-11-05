@@ -61,6 +61,7 @@ public class PadMasterPlugin : ISystemEventsPlugin
         () => _poll?.Start(), startup => { _driver!.Open(_settings.Placement, startup); RecordPanelShown(); UpdateStatus(); }, () => ConfigureAssistant(), StopActive);
     static readonly ActivationGate Gate = new(Lifecycle.Start, ApplySettings, Lifecycle.Stop, text => MessageBox.Show(text, PackageIdentity.Name, MessageBoxButton.OK, MessageBoxImage.Information));
     static string StorePath => PackageIdentity.StorePath(_root ?? throw new InvalidOperationException("LaunchBox root is unavailable."));
+    static string TokenPath => BridgeToken.StorePath(_root ?? throw new InvalidOperationException("LaunchBox root is unavailable."), DirectoryPath);
     static DateTime _start;
     static Window? _win;
     static Image? _img;
@@ -126,7 +127,7 @@ public class PadMasterPlugin : ISystemEventsPlugin
     static void EnsurePanel()
     {
         if (!Allowed || _panel != null) return;
-        _panel = new AssistantPanel { Log = W, SettingsRequested = OpenConfiguration, ConfigurationSaved = SaveConfiguration, HelpRequested = OpenHelp, Reopened = () => RequestOpen(false) };
+        _panel = new AssistantPanel { Log = W, SettingsRequested = OpenConfiguration, ConfigurationSaved = SaveConfiguration, TokenResetRequested = ResetToken, HelpRequested = OpenHelp, Reopened = () => RequestOpen(false) };
         _panel.IsVisibleChanged += (_, _) => Dispatch(RecordPanelShown);
         _panel.SendRequested = text => { if (!Gate.Active || _session == null) throw new InvalidOperationException("Assistant is unavailable."); _session.Send(text); };
         _panel.ExpandedChanged = async expanded =>
@@ -212,7 +213,7 @@ public class PadMasterPlugin : ISystemEventsPlugin
         var mcp = new Mcp(_settings.Port, "/mcp", Tools());
         try
         {
-            mcp.Start(); Session.WriteMcpConfig(Path.Combine(DirectoryPath, "mcp.json"), _settings.Port, mcp.Token); _mcp = mcp;
+            mcp.Token = BridgeToken.Load(TokenPath, W); mcp.Start(); Session.WriteMcpConfig(Path.Combine(DirectoryPath, "mcp.json"), _settings.Port, mcp.Token); _mcp = mcp;
             if (_mcpMs < 0) _mcpMs = _startup?.ElapsedMilliseconds ?? -1;
             W($"mcp up http://127.0.0.1:{_settings.Port}/mcp");
         }
@@ -223,6 +224,19 @@ public class PadMasterPlugin : ISystemEventsPlugin
             if (!_mcpFailure.StartsWith("port ", StringComparison.Ordinal) || BusyPorts.Add(_settings.Port)) W("mcp start: " + _mcpFailure + "; " + SafeDiagnostics.Error(e));
             _status = "offline · " + _mcpFailure; UpdateStatus();
         }
+    }
+
+    static void ResetToken()
+    {
+        if (!Gate.Active || _stopping) return;
+        try
+        {
+            var token = BridgeToken.Reset(TokenPath, W);
+            if (_mcp is { } mcp) mcp.Token = token;
+            Session.WriteMcpConfig(Path.Combine(DirectoryPath, "mcp.json"), _settings.Port, token);
+            W("token reset; sessions holding the old token must restart"); ConfigureAssistant(true);
+        }
+        catch (Exception e) { W($"token reset: {SafeDiagnostics.Error(e)}"); _panel?.SetSetupMessage(FailureText.Configuration(e)); }
     }
 
     static void StopSession()

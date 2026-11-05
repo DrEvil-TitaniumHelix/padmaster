@@ -13,7 +13,8 @@ public class Mcp
     readonly HttpListener _l = new();
     readonly IReadOnlyList<Tool> _tools;
 
-    public string Token { get; } = Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
+    volatile string _token = BridgeToken.New();
+    public string Token { get => _token; set => _token = BridgeToken.Valid(value) ? value : throw new ArgumentException("Token must be 64 hex characters."); }
 
     public Mcp(int port, string path, IReadOnlyList<Tool> tools)
     {

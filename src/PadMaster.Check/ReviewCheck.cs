@@ -56,12 +56,50 @@ static class ReviewCheck
         catch (IOException e) { Require(FailureText.Configuration(e).Contains("Allow writing"), "write failure maps to actionable status"); }
         var config = Path.Combine(Path.GetTempPath(), "PadMaster-token-check-" + Guid.NewGuid().ToString("N") + ".json");
         var first = new Mcp(47801, "/mcp", []); var second = new Mcp(47801, "/mcp", []);
-        Require(first.Token.Length == 64 && first.Token != second.Token, "fresh random per-start tokens");
+        Require(first.Token.Length == 64 && first.Token != second.Token, "fresh random tokens without a store");
         Session.WriteMcpConfig(config, 47801, first.Token); Session.WriteMcpConfig(config, 47801, second.Token);
         var written = System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(config));
         Require(written?["mcpServers"]?["launchbox"]?["headers"]?["Authorization"]?.GetValue<string>() == "Bearer " + second.Token, "rewritten MCP config carries current bearer"); first.Stop(); second.Stop();
         Console.WriteLine("OK  F12: port/folder corrective messages and blocked-folder write");
         Console.WriteLine("OK  F1/F2/F4/F8: subscription states, credential-free commands, read tools, project settings, image path gate; auth orchestration checked separately");
+    }
+
+    public static async Task Token()
+    {
+        var root = Path.Combine(Path.GetTempPath(), "PadMaster-token-store-" + Guid.NewGuid().ToString("N")); var bridge = Path.Combine(root, "Plugins", "PadMaster"); Directory.CreateDirectory(bridge);
+        var store = BridgeToken.StorePath(root, bridge); var logged = new List<string>();
+        Require(store == Path.Combine(root, "Local", "Plugins", ".data", "PadMaster", "values", Convert.ToHexString(System.Security.Cryptography.SHA256.HashData("mcp-token"u8.ToArray())) + ".dat") && store != PackageIdentity.StorePath(root), "token lives in the Bridge's own .data folder, not the settings store");
+        var token = BridgeToken.Load(store, logged.Add);
+        Require(BridgeToken.Valid(token) && File.ReadAllText(store) == token && BridgeToken.Load(store, logged.Add) == token && logged.Count == 0, "first start writes the token; second start reads the same one");
+        var reset = BridgeToken.Reset(store, logged.Add);
+        Require(reset != token && BridgeToken.Load(store, logged.Add) == reset, "reset makes a different token and persists it");
+        File.WriteAllText(store, "not a token"); var repaired = BridgeToken.Load(store, logged.Add);
+        Require(repaired != reset && BridgeToken.Valid(repaired) && File.ReadAllText(store) == repaired && logged.Count == 1, "corrupt store is replaced with a logged new token");
+        var blocked = Path.Combine(root, "blocked"); File.WriteAllText(blocked, "file"); var fallback = BridgeToken.Load(Path.Combine(blocked, "x", "y.dat"), logged.Add);
+        Require(BridgeToken.Valid(fallback) && logged.Count == 2, "unwritable store still yields a working in-memory token and logs once");
+        var config = Path.Combine(bridge, "mcp.json");
+        var first = new Mcp(47801, "/mcp", []) { Token = BridgeToken.Load(store, logged.Add) }; var second = new Mcp(47801, "/mcp", []) { Token = BridgeToken.Load(store, logged.Add) };
+        Require(first.Token == second.Token && first.Token == repaired, "two Mcp starts on one store share the token");
+        try { first.Token = "short"; throw new InvalidOperationException("invalid token accepted"); } catch (ArgumentException) { }
+        first.Start(); Session.WriteMcpConfig(config, 47801, first.Token);
+        try
+        {
+            using var http = new System.Net.Http.HttpClient { BaseAddress = new Uri("http://127.0.0.1:47801/mcp"), Timeout = TimeSpan.FromSeconds(10) };
+            async Task<System.Net.HttpStatusCode> Ping(string? bearer)
+            {
+                using var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, "") { Content = new System.Net.Http.StringContent("""{"jsonrpc":"2.0","id":1,"method":"ping"}""", System.Text.Encoding.UTF8, "application/json") };
+                if (bearer != null) request.Headers.Authorization = new("Bearer", bearer);
+                return (await http.SendAsync(request)).StatusCode;
+            }
+            var stored = System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(config))?["mcpServers"]?["launchbox"]?["headers"]?["Authorization"]?.GetValue<string>();
+            Require(stored == "Bearer " + first.Token && await Ping(first.Token) == System.Net.HttpStatusCode.OK && await Ping(null) == System.Net.HttpStatusCode.Unauthorized && await Ping(token) == System.Net.HttpStatusCode.Unauthorized, "stored token answers, missing and old tokens get 401");
+            var old = first.Token; first.Token = BridgeToken.Reset(store, logged.Add); Session.WriteMcpConfig(config, 47801, first.Token);
+            var rewritten = System.Text.Json.Nodes.JsonNode.Parse(File.ReadAllText(config))?["mcpServers"]?["launchbox"]?["headers"]?["Authorization"]?.GetValue<string>();
+            Require(rewritten == "Bearer " + first.Token && await Ping(old) == System.Net.HttpStatusCode.Unauthorized && await Ping(first.Token) == System.Net.HttpStatusCode.OK, "reset on a running listener: old token 401, new token 200, mcp.json rewritten");
+            Require(!File.ReadAllText(config).Contains(old) && File.ReadAllText(store) == first.Token, "old token is gone from mcp.json; store holds the new one");
+        }
+        finally { first.Stop(); second.Stop(); try { Directory.Delete(root, true); } catch { } }
+        Console.WriteLine("OK  token store: Bridge .data folder, stable across starts, reset differs, corrupt/unwritable fallbacks, live 401/200 before and after reset");
     }
 
     public static void Activation()

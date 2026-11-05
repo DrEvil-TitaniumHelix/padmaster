@@ -62,10 +62,12 @@ await Sta(BetaCheck.Panel);
 await Sta(PlacementCheck);
 await Sta(StateCheck.Run);
 await Sta(SetupCheck);
+await Sta(CliBoxCheck);
 await LoginCheck();
 PackageCheck();
 ReviewCheck.AuthAndCommands();
 ReviewCheck.Activation();
+await ReviewCheck.Token();
 await Fix2Check.Reads();
 Fix2Check.Auth();
 await Sta(ReviewCheck.Panel);
@@ -265,7 +267,7 @@ static void PackageCheck()
     var manifest = JsonNode.Parse(File.ReadAllText(Path.Combine(managed, "manifest.json")))!;
     string Field(string key) => manifest[key]?.GetValue<string>() ?? "";
     Require(manifest["SchemaVersion"]!.GetValue<int>() == 2 && Guid.Parse(Field("PluginId")) == Guid.Parse(PackageIdentity.Id) && Guid.Parse(Field("PluginId")) != Guid.Empty, "schema 2 and fixed GUID");
-    Require(Field("Name") == PackageIdentity.Name && Field("Developer").Length > 0 && Field("InstalledVersion") == "0.2.0-beta", "manifest name, developer and version");
+    Require(Field("Name") == PackageIdentity.Name && Field("Developer").Length > 0 && Field("InstalledVersion") == "0.2.1-beta", "manifest name, developer and version");
     Require(Field("OperatingSystemFamily") == "Windows" && Field("SourceKind") == "Local" && Field("RequiredApplicationVersion").Length == 0, "manifest OS/source/version rules");
     Require(manifest["Compatibility"]?["ApplicationVersionRange"]?.GetValue<string>() == "[14.1.0,14.2.0)", "tested host version range");
     Require(Field("Brief") == "Chat with your own AI assistant inside LaunchBox." && Field("Requirements") == "LaunchBox 14.1.x on Windows. Claude Code or Codex installed and signed in with your own subscription.", "manifest Brief and Requirements verbatim");
@@ -317,6 +319,29 @@ static void SetupCheck()
     var login = Session.LoginCommand(cli, "unused");
     Require(login.ArgumentList.SequenceEqual(new[] { "auth", "login", "--claudeai" }) && login.UseShellExecute && !login.RedirectStandardOutput && !login.RedirectStandardError, "subscription-only visible login command, inspected without executing");
     Console.WriteLine("OK  setup: configured/unconfigured, CLI missing, auth true/false/invalid, one greeting, expand once, nolaunch; zero login requests");
+}
+
+static void CliBoxCheck()
+{
+    var panel = new AssistantPanel(false); IReadOnlyDictionary<string, string?>? saved = null; panel.ConfigurationSaved = (fields, _) => saved = fields;
+    var claudeDetected = Settings.DetectCli("", "claude-code"); var codexDetected = Settings.DetectCli("", "codex");
+    var claude = claudeDetected ?? AssistantPanel.NotFound; var codex = codexDetected ?? AssistantPanel.NotFound;
+    panel.LoadConfiguration(new Settings { Assistant = "claude-code" }); panel.SetSetup(new("claude-code", claudeDetected, true));
+    Require(panel.CliBox == claude, "auto box shows the detected Claude Code path");
+    panel.ChooseAssistant(1); Require(panel.CliBox == codex, "switching to Codex shows its detected path or the not-found hint");
+    panel.SetSetup(new("claude-code", claudeDetected, true)); Require(panel.CliBox == codex, "a later setup poll for the saved assistant does not overwrite the Codex path");
+    panel.ChooseAssistant(0); Require(panel.CliBox == claude, "switching back shows the Claude Code path again");
+    panel.ChooseAssistant(1); panel.Save();
+    Require(saved != null && saved["assistant"] == "codex" && saved["cli"] == "", "Save with an untouched box stores blank (auto-detect), as before");
+    const string configured = @"C:\Program Files\Claude Code\claude.exe";
+    panel.LoadConfiguration(new Settings { Assistant = "claude-code", Cli = configured }, true); panel.SetSetup(new("claude-code", configured, true));
+    Require(panel.CliBox == configured, "configured path shows for its own assistant");
+    panel.ChooseAssistant(1); Require(panel.CliBox == codex, "switching away from a configured path shows the other assistant's detected path");
+    panel.ChooseAssistant(0); Require(panel.CliBox == configured, "switching back restores the configured path");
+    panel.ChooseAssistant(1); saved = null; panel.Save(); Require(saved?["cli"] == "", "untouched detected path saves blank even after a configured path");
+    panel.LoadConfiguration(new Settings { Assistant = "codex" }, true); panel.SetSetup(new("codex", codexDetected, true)); panel.ChooseAssistant(0); panel.Save();
+    Require(saved?["assistant"] == "claude-code" && saved["cli"] == "", "Codex to Claude Code switch saves blank");
+    Console.WriteLine("OK  CLI box: detected path per assistant on switch, stale polls ignored, configured path kept for its owner, untouched Save stores blank");
 }
 
 static async Task LoginCheck()

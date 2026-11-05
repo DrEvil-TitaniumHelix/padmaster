@@ -303,8 +303,16 @@ static class ApiCheck
         var result = tools["lb_call"].Handler(JsonNode.Parse("""{"type":"IPluginDataStore","method":"GetValueAsync","args":[{"Key":"test"}]}"""));
         Require(result.AsArray().Count == 3 && result[2]!.GetValue<byte>() == 3 && library.Saves == 1, "async generic result returns primitive array without save");
         Require(tools["lb_call"].Handler(JsonNode.Parse("""{"type":"IPluginDataStore","method":"RemoveValueAsync","args":[{"Key":"test"}]}"""))["refused"]!.GetValue<bool>() && store.Removes == 0 && store.Value != null && library.Saves == 1, "service removal refused without save");
+        store.Reads = 0;
+        var tokenGet = tools["lb_call"].Handler(JsonNode.Parse("""{"type":"IPluginDataStore","method":"GetValueAsync","args":[{"Key":"mcp-token"}]}"""));
+        var tokenSet = tools["lb_call"].Handler(JsonNode.Parse("""{"type":"IPluginDataStore","method":"SetValueAsync","args":[{"Key":"mcp-token","Value":[9]}]}"""));
+        var tokenUntyped = tools["lb_call"].Handler(JsonNode.Parse("""{"method":"GetValueAsync","args":[{"Key":"\u006dcp-token"}]}"""));
+        foreach (var variant in new[] { "MCP-Token", " mcp-token", "mcp-token	", " Mcp-TOKEN " })
+            Require(tools["lb_call"].Handler(JsonNode.Parse($$$"""{"type":"IPluginDataStore","method":"GetValueAsync","args":[{"Key":{{{JsonValue.Create(variant).ToJsonString()}}}}]}"""))["refused"]?.GetValue<bool>() == true, "token key variant refused: " + variant);
+        Require(tokenGet["refused"]?.GetValue<bool>() == true && tokenSet["refused"]?.GetValue<bool>() == true && tokenUntyped["refused"]?.GetValue<bool>() == true && store.Reads == 0 && store.Writes == 1 && library.Saves == 1 && store.Value!.SequenceEqual(new byte[] { 1, 2, 3 }), "token key refused for get/set, typed or not, escaped or not, case/whitespace variants, without touching the store");
+        Require(tools["lb_call"].Handler(JsonNode.Parse("""{"type":"IPluginDataStore","method":"GetValueAsync","args":[{"Key":"test"}]}""")).AsArray().Count == 3 && store.Reads == 1, "other keys still readable after the token refusal");
         Require(typeof(ApiServices).GetConstructors().Single().GetParameters().Select(p => p.ParameterType).SequenceEqual(ApiServices.Types) && ApiServices.Types.Length == 10, "ten allowed injection parameters match exposed service registry");
-        Console.WriteLine("OK  API services: ten injection types, real request constructors, byte arrays, auto cancellation, async result/write with one save, remove refused");
+        Console.WriteLine("OK  API services: ten injection types, real request constructors, byte arrays, auto cancellation, async result/write with one save, remove refused, token key and its case/whitespace variants refused");
     }
     static void Limits()
     {
@@ -427,9 +435,9 @@ static class ApiCheck
     static Array ArrayOf(Type type, List<Bag> items) { var array = Array.CreateInstance(type, items.Count); for (var i = 0; i < items.Count; i++) array.SetValue(items[i].Value, i); return array; }
     sealed class MemoryStore : IPluginDataStore
     {
-        public int Writes, Removes;
+        public int Writes, Removes, Reads;
         public byte[]? Value;
-        public Task<byte[]?> GetValueAsync(PluginDataStoreGetRequest request, CancellationToken token) { Require(request.Key == "test" && !token.CanBeCanceled, "store read request"); return Task.FromResult(Value); }
+        public Task<byte[]?> GetValueAsync(PluginDataStoreGetRequest request, CancellationToken token) { Require(request.Key == "test" && !token.CanBeCanceled, "store read request"); Reads++; return Task.FromResult(Value); }
         public async Task SetValueAsync(PluginDataStoreSetRequest request, CancellationToken token) { await Task.Yield(); Require(request.Key == "test", "store write request"); Writes++; Value = request.Value; }
         public async Task RemoveValueAsync(PluginDataStoreRemoveRequest request, CancellationToken token) { await Task.Yield(); Require(request.Key == "test", "store remove request"); Removes++; Value = null; }
     }

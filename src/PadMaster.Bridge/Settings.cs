@@ -110,7 +110,8 @@ public static class PackageIdentity
     public const string Id = "70cf6f66-65ce-43a6-a6cb-00673c71558e";
     public const string Name = "Padmaster AI Assistant";
     public const string StoreKey = "settings";
-    public static string StorePath(string root) => Path.Combine(root, "Local", "Plugins", ".data", Id, "values", Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(StoreKey))) + ".dat");
+    public static string StorePath(string root) => StorePath(root, Id, StoreKey);
+    public static string StorePath(string root, string plugin, string key) => Path.Combine(root, "Local", "Plugins", ".data", plugin, "values", Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(key))) + ".dat");
     public static string RootFromBridge(string directory)
     {
         var folder = new DirectoryInfo(Path.GetFullPath(directory));
@@ -118,6 +119,29 @@ public static class PackageIdentity
         var root = folder.Parent!.Parent ?? throw new InvalidOperationException("LaunchBox root is missing.");
         if (root.Name.Equals("Core", StringComparison.OrdinalIgnoreCase)) root = root.Parent ?? root;
         return root.FullName;
+    }
+}
+
+public static class BridgeToken
+{
+    public const string Key = "mcp-token";
+    public static string StorePath(string root, string bridgeDirectory) => PackageIdentity.StorePath(root, new DirectoryInfo(bridgeDirectory).Name, Key);
+    public static string New() => Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
+    public static bool Valid(string? token) => token is { Length: 64 } && token.All(Uri.IsHexDigit);
+    public static string Load(string path, Action<string> log)
+    {
+        try { var stored = File.ReadAllText(path).Trim(); if (Valid(stored)) return stored; log("token store invalid; making a new token"); }
+        catch (FileNotFoundException) { }
+        catch (DirectoryNotFoundException) { }
+        catch (Exception e) { log($"token read: {e.GetType().Name} code=0x{e.HResult:X8}"); }
+        return Reset(path, log);
+    }
+    public static string Reset(string path, Action<string> log)
+    {
+        var token = New();
+        try { Directory.CreateDirectory(Path.GetDirectoryName(path)!); File.WriteAllText(path, token); }
+        catch (Exception e) { log($"token write: {e.GetType().Name} code=0x{e.HResult:X8}"); }
+        return token;
     }
 }
 
