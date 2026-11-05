@@ -1,6 +1,8 @@
 # Padmaster AI Assistant (beta)
 
 ## What it is
+Video: https://www.youtube.com/watch?v=qEOHQhiyElI
+
 A chat panel inside LaunchBox, powered by your own AI subscription. Ask about your games, find a manual, check which emulator a game uses, or have it build a playlist from your library. Type or use the microphone. This is version 0.2.0-beta, an early test release.
 
 ## Requirements
