@@ -1,0 +1,85 @@
+{
+  "game": "Double Dragon II: The Revenge",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Double Dragon II_ The Revenge.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Move/grab hair after punches",
+        "Up": "Move up/scale ladder/open door",
+        "Down": "Move down/go down ladder",
+        "A": "Punch/back kick right; grab weapon",
+        "B": "Punch/back kick left; grab weapon",
+        "A+B": "Jump",
+        "Start": "Pause; press again to restart"
+      }
+    },
+    {
+      "name": "In the air",
+      "controls": {
+        "A": "Jump kick/Spinning Cyclone, right",
+        "B": "Jump kick/Spinning Cyclone, left",
+        "Start": "Pause; press again to restart"
+      }
+    },
+    {
+      "name": "Landing or getting up",
+      "controls": {
+        "A/B": "Hyper Uppercut",
+        "Left+A+B": "High Jump Kick, enemy left",
+        "Right+A+B": "High Jump Kick, enemy right",
+        "Start": "Pause; press again to restart"
+      }
+    },
+    {
+      "name": "Enemy grabbed",
+      "controls": {
+        "A": "Facing right: noggin. Left: hurl",
+        "B": "Facing left: noggin. Right: hurl",
+        "Up+A": "Upper kick, facing right",
+        "Up+B": "Upper kick, facing left",
+        "Down+A": "Elbow drop, facing right",
+        "Down+B": "Elbow drop, facing left",
+        "Start": "Pause; press again to restart"
+      }
+    },
+    {
+      "name": "Knife, bomb or chain",
+      "controls": {
+        "A": "Facing right: throw/swing. Left: kick",
+        "B": "Facing left: throw/swing. Right: kick",
+        "Start": "Pause; press again to restart"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf5 (printed 9): \"TO MOVE - Press the CONTROL PAD ARROWS RIGHT, LEFT, UP or DOWN.\" pdf6 (printed 10): To Grab an Enemy's Hair or Collar - \"First deliver several PUNCHES in a row... Then immediately press the CONTROL PAD ARROW in the same direction of the enemy.\"",
+    "Default/Up": "pdf5 (printed 9): \"TO MOVE - Press the CONTROL PAD ARROWS RIGHT, LEFT, UP or DOWN.\" pdf6 (printed 11): \"TO SCALE A LADDER OR OPEN A DOOR - press the UP ARROW.\"",
+    "Default/Down": "pdf5 (printed 9): \"TO MOVE - Press the CONTROL PAD ARROWS RIGHT, LEFT, UP or DOWN.\" pdf6 (printed 11): \"TO GO DOWN A LADDER - Press the DOWN ARROW.\"",
+    "Default/A": "pdf5 (printed 8): \"To attack to the right, always press the A BUTTON.\" Diagram: leader line to the right round button, \"ATTACK RIGHT\". pdf5 (printed 9): \"If you're facing right, press the A Button to punch.\" pdf6 (printed 10): \"TO KICK (BACK KICK)... If you're facing left, press the A Button to kick.\" | pdf10 (printed 18): grab a dropped weapon by moving directly over it and pressing either the A BUTTON or B BUTTON.",
+    "Default/B": "pdf5 (printed 8): \"To attack to the left, always press the B BUTTON.\" Diagram: leader line to the left round button, \"ATTACK LEFT\". pdf5 (printed 9): \"If you're facing left, press the B Button to punch.\" pdf6 (printed 10): \"TO KICK (BACK KICK)... If you're facing right, press the B Button to kick.\" | pdf10 (printed 18): grab a dropped weapon by moving directly over it and pressing either the A BUTTON or B BUTTON.",
+    "Default/A+B": "pdf5 (printed 9): \"TO JUMP - Press the A BUTTON and B BUTTON simultaneously.\"",
+    "Default/Start": "pdf5 (printed 9): \"TO PAUSE - Press the START BUTTON. TO RESTART - Press the START BUTTON again.\"",
+    "In the air/A": "pdf6 (printed 10): To Deliver a Jump Kick - \"press the A and B BUTTONS simultaneously to jump. Then - while in the air - Press the ATTACK BUTTON to kick in the same direction you're facing.\" pdf7 (printed 12): Spinning Cyclone - \"jump by pushing both ATTACK BUTTONS simultaneously; then push either the A or B ATTACK BUTTON to spin in that direction.\" pdf5 (printed 8): \"To attack to the right, always press the A BUTTON.\"",
+    "In the air/B": "pdf6 (printed 10): To Deliver a Jump Kick - \"press the A and B BUTTONS simultaneously to jump. Then - while in the air - Press the ATTACK BUTTON to kick in the same direction you're facing.\" pdf7 (printed 12): Spinning Cyclone - \"jump by pushing both ATTACK BUTTONS simultaneously; then push either the A or B ATTACK BUTTON to spin in that direction.\" pdf5 (printed 8): \"To attack to the left, always press the B BUTTON.\"",
+    "In the air/Start": "pdf5 (printed 9): \"TO PAUSE - Press the START BUTTON. TO RESTART - Press the START BUTTON again.\"",
+    "Landing or getting up/A/B": "pdf7 (printed 12): Hyper Uppercut - \"can be delivered if you press either the A or B ATTACK BUTTON just as you're landing from a jump, or as you're getting up from a fall.\"",
+    "Landing or getting up/Left+A+B": "pdf7 (printed 12): High Jump Kick - \"wait until the precise moment you've landed from a jump or just as you're getting up from a fall. Then immediately push the CONTROL PAD ARROW in the same direction as the enemy, and press both ATTACK BUTTONS simultaneously.\"",
+    "Landing or getting up/Right+A+B": "pdf7 (printed 12): High Jump Kick - \"wait until the precise moment you've landed from a jump or just as you're getting up from a fall. Then immediately push the CONTROL PAD ARROW in the same direction as the enemy, and press both ATTACK BUTTONS simultaneously.\"",
+    "Landing or getting up/Start": "pdf5 (printed 9): \"TO PAUSE - Press the START BUTTON. TO RESTART - Press the START BUTTON again.\"",
+    "Enemy grabbed/A": "pdf6 (printed 11): Noggin Knockers - \"Once you've grabbed the enemy's hair or collar, repeatedly press the ATTACK BUTTON in the same direction you're facing.\" To Hurl the Enemy - \"press the ATTACK BUTTON in the opposite direction you're facing.\" pdf5 (printed 8): \"To attack to the right, always press the A BUTTON.\"",
+    "Enemy grabbed/B": "pdf6 (printed 11): Noggin Knockers - \"Once you've grabbed the enemy's hair or collar, repeatedly press the ATTACK BUTTON in the same direction you're facing.\" To Hurl the Enemy - \"press the ATTACK BUTTON in the opposite direction you're facing.\" pdf5 (printed 8): \"To attack to the left, always press the B BUTTON.\"",
+    "Enemy grabbed/Up+A": "pdf6 (printed 11): For an Upper Kick - \"When seizing the enemy's hair, press the UP ARROW and the ATTACK BUTTON in the same direction you're facing.\" pdf5 (printed 8): \"To attack to the right, always press the A BUTTON.\"",
+    "Enemy grabbed/Up+B": "pdf6 (printed 11): For an Upper Kick - \"When seizing the enemy's hair, press the UP ARROW and the ATTACK BUTTON in the same direction you're facing.\" pdf5 (printed 8): \"To attack to the left, always press the B BUTTON.\"",
+    "Enemy grabbed/Down+A": "pdf6 (printed 11): For an Elbow Drop - \"When seizing the enemy's hair, press the DOWN ARROW and the ATTACK BUTTON in the same direction you're facing.\" pdf5 (printed 8): \"To attack to the right, always press the A BUTTON.\"",
+    "Enemy grabbed/Down+B": "pdf6 (printed 11): For an Elbow Drop - \"When seizing the enemy's hair, press the DOWN ARROW and the ATTACK BUTTON in the same direction you're facing.\" pdf5 (printed 8): \"To attack to the left, always press the B BUTTON.\"",
+    "Enemy grabbed/Start": "pdf5 (printed 9): \"TO PAUSE - Press the START BUTTON. TO RESTART - Press the START BUTTON again.\"",
+    "Knife, bomb or chain/A": "pdf10 (printed 18): \"To throw a knife or bomb, press the ATTACK BUTTON in the same direction you're facing. You can still KICK while holding your weapon by pressing the ATTACK BUTTON in the opposite direction you're facing.\" \"To swing a chain, press the ATTACK BUTTON in the same direction you're facing. You can still KICK...\" pdf5 (printed 8): \"To attack to the right, always press the A BUTTON.\"",
+    "Knife, bomb or chain/B": "pdf10 (printed 18): \"To throw a knife or bomb, press the ATTACK BUTTON in the same direction you're facing. You can still KICK while holding your weapon by pressing the ATTACK BUTTON in the opposite direction you're facing.\" \"To swing a chain, press the ATTACK BUTTON in the same direction you're facing. You can still KICK...\" pdf5 (printed 8): \"To attack to the left, always press the B BUTTON.\"",
+    "Knife, bomb or chain/Start": "pdf5 (printed 9): \"TO PAUSE - Press the START BUTTON. TO RESTART - Press the START BUTTON again.\""
+  }
+}

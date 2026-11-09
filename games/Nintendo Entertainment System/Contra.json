@@ -1,0 +1,53 @@
+{
+  "game": "Contra",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Contra.pdf" },
+  "states": [
+    {
+      "name": "Commando",
+      "controls": {
+        "Select": "Select 1/2 player mode",
+        "Start": "Begin mission/pause",
+        "Left": "Move left",
+        "Right": "Move right",
+        "Down": "Laydown",
+        "B": "Shoot",
+        "A": "Jump",
+        "Up+B": "Shoot upward",
+        "Up+A": "Jump upward",
+        "Down+B": "Shoot left or right",
+        "Down+A": "Climb down"
+      }
+    },
+    {
+      "name": "Commando in 3-D",
+      "controls": {
+        "Select": "Select 1/2 player mode",
+        "Start": "Begin mission/pause",
+        "Left/Right": "Move left or right",
+        "Down": "Lay down",
+        "B": "Fire",
+        "A": "Jump"
+      }
+    }
+  ],
+  "evidence": {
+    "Commando/Select": "p4: Select button - Use to select either 1 player or 2 player mode. When the game finishes, use to select CONTINUE or END.",
+    "Commando/Start": "p4: Start button - Press to begin your mission. Press again after you've selected CONTINUE or END when the game finishes. Also press to PAUSE the action.",
+    "Commando/Left": "p4: [Control Pad left] Move left | Shoot left | Jump left",
+    "Commando/Right": "p4: [Control Pad right] Move right | Shoot right | Jump right",
+    "Commando/Down": "p4: [Control Pad down] Laydown | Shoot either left or right | Climb down",
+    "Commando/B": "p4: Using the Control Pad in sync with the A Button and B Button: column B Button - Shoot upward / Shoot right / Shoot left ...",
+    "Commando/A": "p4: Using the Control Pad in sync with the A Button and B Button: column A Button - Jump upward / Jump right / Jump left ...",
+    "Commando/Up+B": "p4: [Control Pad up] You won't move | Shoot upward | Jump upward",
+    "Commando/Up+A": "p4: [Control Pad up] You won't move | Shoot upward | Jump upward",
+    "Commando/Down+B": "p4: [Control Pad down] Laydown | Shoot either left or right | Climb down",
+    "Commando/Down+A": "p4: [Control Pad down] Laydown | Shoot either left or right | Climb down",
+    "Commando in 3-D/Select": "p4: Select button - Use to select either 1 player or 2 player mode. When the game finishes, use to select CONTINUE or END.",
+    "Commando in 3-D/Start": "p4: Start button - Press to begin your mission. ... Also press to PAUSE the action.",
+    "Commando in 3-D/Left/Right": "p4: Control Pad - Use to move forward, to the left or to the right. Press pad down to lay down.",
+    "Commando in 3-D/Down": "p4: Control Pad - Use to move forward, to the left or to the right. Press pad down to lay down.",
+    "Commando in 3-D/B": "p4: B Button - Press to fire.",
+    "Commando in 3-D/A": "p4: A Button - Press to jump."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "game": "Tetris",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Tetris.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left": "Moves blocks to the left",
+        "Right": "Moves blocks to the right",
+        "Down": "Makes blocks fall fast",
+        "A": "Rotate 90° clockwise",
+        "B": "Rotate 90° counter-clockwise",
+        "Select": "Delete/restore NEXT display",
+        "Start": "Start game/pause",
+        "A+B+Select": "Reset to license screen"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left": "pdf3 (printed 4): Basic Operations, pad left arrow - \"Moves blocks to the left.\"",
+    "Default/Right": "pdf3 (printed 4): Basic Operations, pad right arrow - \"Moves blocks to the right.\"",
+    "Default/Down": "pdf3 (printed 4): Basic Operations, pad down arrow - \"Makes the blocks fall down fast.\"",
+    "Default/A": "pdf4 (printed 5): \"A Button: Block rotates 90° clockwise each time button is pressed.\"",
+    "Default/B": "pdf4 (printed 5): \"B Button: Block rotates 90° counter-clockwise each time button is pressed.\"",
+    "Default/Select": "pdf4 (printed 5): \"SELECT button: Use to delete the NEXT display during play. (Press again to restore).\"",
+    "Default/Start": "pdf4 (printed 5): \"START button: Use to start the game. Press during play to pause. Press again to resume play.\"",
+    "Default/A+B+Select": "pdf4 (printed 5): \"The license screen will be returned to and the game will be reset if A button, B button and the SELECT button are pressed at the same time during game play.\""
+  }
+}

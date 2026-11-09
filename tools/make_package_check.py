@@ -5,7 +5,7 @@ import sys
 import tempfile
 import zipfile
 
-from make_package import ROOT, FILES, BRIDGE, MANAGED
+from make_package import ROOT, FILES, BRIDGE, MANAGED, ASSETS
 
 
 def require(condition, message):
@@ -16,7 +16,10 @@ def require(condition, message):
 def verify(path):
     with tempfile.TemporaryDirectory(prefix='PadMaster-fresh-') as scratch, zipfile.ZipFile(path) as package:
         names = package.namelist()
-        require(len(names) == len(set(names)) == 11 and set(names) == FILES | {'README.md'}, 'package must contain exactly the ten dist files and root README.md')
+        require(len(names) == len(set(names)) == len(FILES) + 1 and set(names) == FILES | {'README.md'}, 'package must contain exactly the distribution files, controller/game assets and root README.md')
+        require(BRIDGE + 'PadMaster.Controls.dll' in names and not any('/renders/' in name.lower() for name in names), 'Controls DLL required, renders must not ship')
+        for name, source in ASSETS.items():
+            require(package.read(BRIDGE + name) == source.read_bytes(), 'stale asset: ' + name)
         username = ''.join(map(chr, (102, 105, 115, 99, 104)))
         needles = [f'Users{separator}{username}'.lower().encode(encoding)
                    for separator in ('/', '\\') for encoding in ('utf-8', 'utf-16-le', 'utf-16-be')]
@@ -48,13 +51,13 @@ def main():
     path = Path(sys.argv[1]) if len(sys.argv) == 2 else ROOT / 'dist' / f'Padmaster-AI-Assistant-{version}.zip'
     require(len(sys.argv) <= 2, 'usage: make_package_check.py [package.zip]')
     names = verify(path)
-    check = ROOT / 'src/PadMaster.Check/bin/Release/net10.0-windows/PadMaster.Check.exe'
+    check = ROOT / 'src/PadMaster.Check/bin/Release/net10.0-windows10.0.19041.0/PadMaster.Check.exe'
     require(check.exists(), f'build first: {check} is missing')
     result = subprocess.run([str(check), '--fresh-default'], cwd=ROOT, capture_output=True, text=True, timeout=120)
     require(result.returncode == 0, 'default settings Check failed: ' + result.stdout + result.stderr)
     for name in names:
         print(name)
-    print('OK  fresh-user package: exact eleven files, safe paths, no personal paths/PDB, one Speech DLL, matching README and personas, missing store disabled with activation off')
+    print(f'OK  fresh-user package: exact {len(names)} files including Controls and controller/game assets, no renders, safe paths, no personal paths/PDB, one Speech DLL, matching README and personas, missing store disabled with activation off')
 
 
 if __name__ == '__main__':

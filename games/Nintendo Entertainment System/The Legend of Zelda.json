@@ -1,0 +1,27 @@
+{
+  "game": "The Legend of Zelda",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/The Legend of Zelda.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Up/Down/Left/Right": "Moves Link/selects \"B\" item",
+        "A": "Attack with the sword",
+        "B": "Use and attack with treasures",
+        "Select": "Pause/restart",
+        "Start": "Select main/sub screen"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Up/Down/Left/Right": "pdf9 (printed 16): diagram 'How to use the controller', leader from the Control Pad to \"Moves Link/Selects 'B' item\"; pdf10 (printed 17): on the sub screen \"you can choose any of these treasures in the blue framed area by moving the Control Pad Left or Right\"",
+    "Default/A": "pdf9 (printed 16): leader from the A button to \"For attacking with the sword\"; pdf11 (printed 19): \"Use button A for the sword.\"",
+    "Default/B": "pdf9 (printed 16): leader from the B button to \"For using and attacking with gadgets (treasures etc.)\"; pdf11 (printed 19): \"Use button B to get to these treasures.\"",
+    "Default/Select": "pdf9 (printed 16): leader from the left oval (SELECT) runs down to the lower label \"Pause/restart buttons\"",
+    "Default/Start": "pdf9 (printed 16): leader from the right oval (START) runs down to the upper label \"For selecting main/sub screen\""
+  }
+}

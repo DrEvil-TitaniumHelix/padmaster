@@ -1,0 +1,79 @@
+{
+  "game": "007: Nightfire",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/007_ Nightfire.pdf"
+  },
+  "states": [
+    {
+      "name": "On foot",
+      "controls": {
+        "Left stick": "Move / turn",
+        "Right stick": "Strafe / look",
+        "L2": "Crouch",
+        "Cross": "Reload / action",
+        "Triangle": "Jump / grab cord",
+        "L1": "Manual aim (hold)",
+        "R1": "Fire weapon / use gadget",
+        "Left/Right": "Cycle gadgets",
+        "Up/Down": "Cycle weapons",
+        "Square": "Alternate fire",
+        "Select": "Vision mode",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "Driving",
+      "controls": {
+        "Left stick": "Steer",
+        "Cross": "Gas",
+        "Square": "Brake / reverse",
+        "L2": "Look back",
+        "R1": "Fire weapon",
+        "Circle": "Handbrake",
+        "L1": "Use gadget",
+        "R2": "Next weapon",
+        "Triangle": "Camera view"
+      }
+    },
+    {
+      "name": "Rail shooter",
+      "controls": {
+        "Right stick": "Rotate",
+        "Left stick": "Tilt",
+        "R1": "Fire weapon",
+        "R2/Up/Down": "Change to alternate fire",
+        "Triangle": "180° pivot (snowmobile only)"
+      }
+    }
+  ],
+  "evidence": {
+    "On foot/Left stick": "pdf6 (printed 4) Default Bond Controls: Move - left analog stick up/down; Turn - left analog stick left/right",
+    "On foot/Right stick": "pdf6 (printed 4): Strafe - right analog stick left/right; Look - right analog stick up/down",
+    "On foot/L2": "pdf6 (printed 4): Crouch - L2 button",
+    "On foot/Cross": "pdf6 (printed 4): Reload/Action - Cross button",
+    "On foot/Triangle": "pdf6 (printed 4): Jump - Triangle button; pdf12 (printed 10): When the icon appears, press the Triangle button. After grabbing the cord ... To perform a zipline move, press the Triangle button",
+    "On foot/L1": "pdf6 (printed 4): Manual Aim - L1 button (hold)",
+    "On foot/R1": "pdf6 (printed 4): Fire Weapon/Use Gadget - R1 button",
+    "On foot/Left/Right": "pdf6 (printed 4): Cycle Gadgets - D-button left/right",
+    "On foot/Up/Down": "pdf6 (printed 4): Cycle Weapons - D-button up/down",
+    "On foot/Square": "pdf6 (printed 4): Alternate Fire - Square button",
+    "On foot/Select": "pdf6 (printed 4): Vision Mode - SELECT button",
+    "On foot/Start": "pdf6 (printed 4): Pause - START button",
+    "Driving/Left stick": "pdf6 (printed 4) Driving Controls: Steer Left/Right - left analog stick left/right; pdf23 (printed 21): Press the left analog stick left/right to steer.",
+    "Driving/Cross": "pdf6 (printed 4) Driving Controls: Gas - Cross button; pdf23 (printed 21): Press the Cross button to accelerate.",
+    "Driving/Square": "pdf6 (printed 4) Driving Controls: Brake/Reverse - Square button",
+    "Driving/L2": "pdf6 (printed 4) Driving Controls: Look Back - L2 button",
+    "Driving/R1": "pdf6 (printed 4) Driving Controls: Fire Weapon - R1 button",
+    "Driving/Circle": "pdf6 (printed 4) Driving Controls: Handbrake - Circle button",
+    "Driving/L1": "pdf6 (printed 4) Driving Controls: Use Gadget - L1 button",
+    "Driving/R2": "pdf6 (printed 4) Driving Controls: Next Weapon - R2 button",
+    "Driving/Triangle": "pdf6 (printed 4) Driving Controls: Camera View - Triangle button; pdf23 (printed 21): Press the Triangle button to change camera angles.",
+    "Rail shooter/Right stick": "pdf6 (printed 4) Rail Shooter Controls: Rotate/Tilt - right analog stick/left analog stick",
+    "Rail shooter/Left stick": "pdf6 (printed 4) Rail Shooter Controls: Rotate/Tilt - right analog stick/left analog stick",
+    "Rail shooter/R1": "pdf6 (printed 4) Rail Shooter Controls: Fire Weapon - R1 button",
+    "Rail shooter/R2/Up/Down": "pdf6 (printed 4) Rail Shooter Controls: Change to Alternate Fire - R2 button/D-button up/down",
+    "Rail shooter/Triangle": "pdf6 (printed 4) Rail Shooter Controls: 180° Pivot (Snowmobile Only) - Triangle button"
+  }
+}

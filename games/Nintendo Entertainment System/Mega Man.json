@@ -1,0 +1,31 @@
+{
+  "game": "Mega Man",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Mega Man.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left": "Moves left",
+        "Right": "Moves right",
+        "Up": "Leaps upward",
+        "Down": "Crouches down",
+        "A": "Jump",
+        "B": "Fire",
+        "Start": "Begin encounter with enemy"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left": "pdf5 (printed 8): 'Four Separate Action Tips', left arrow: \"MEGA MAN moves left.\"",
+    "Default/Right": "pdf5 (printed 8): 'Four Separate Action Tips', right arrow: \"MEGA MAN moves right.\"",
+    "Default/Up": "pdf5 (printed 8): 'Four Separate Action Tips', up arrow: \"MEGA MAN leaps upward.\"",
+    "Default/Down": "pdf5 (printed 8): 'Four Separate Action Tips', down arrow: \"MEGA MAN crouches down.\"",
+    "Default/A": "pdf5 (printed 8): \"Button A: Press to make MEGA MAN jump.\"",
+    "Default/B": "pdf5 (printed 8): \"Button B: Press to fire.\"",
+    "Default/Start": "pdf5 (printed 9): \"Re-press START Button: To begin encounter with the enemy character selected by the player.\" (the only use of START the manual documents)"
+  }
+}

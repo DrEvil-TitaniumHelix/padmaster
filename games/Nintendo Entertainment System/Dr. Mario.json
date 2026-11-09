@@ -1,0 +1,29 @@
+{
+  "game": "Dr. Mario",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Dr. Mario.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Move capsules left and right",
+        "Down": "Drops capsule down quickly",
+        "A": "Rotate right (clockwise)",
+        "B": "Rotate left (counterclockwise)",
+        "Select": "Moves cursor on title screen",
+        "Start": "Starts game/pauses and unpauses"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf3 (printed 4): Control Pad diagram, \"Moves vitamin capsules left and right.\"",
+    "Default/Down": "pdf3 (printed 4): Control Pad diagram, \"Pressing down drops a vitamin capsule down quickly.\"",
+    "Default/A": "pdf3 (printed 4): \"A Button: Rotates vitamin capsules to the right (clockwise).\"",
+    "Default/B": "pdf3 (printed 4): \"B Button: Rotates vitamin capsules to the left (counterclockwise).\"",
+    "Default/Select": "pdf3 (printed 4): \"SELECT Button: Moves cursor on the title screen.\" (the only use of SELECT the manual documents)",
+    "Default/Start": "pdf3 (printed 4): \"START Button: Starts the game. Pauses and unpauses during game play.\""
+  }
+}

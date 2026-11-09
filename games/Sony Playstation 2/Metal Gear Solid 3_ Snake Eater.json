@@ -1,0 +1,130 @@
+{
+  "game": "Metal Gear Solid 3: Snake Eater",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Metal Gear Solid 3_ Snake Eater.pdf"
+  },
+  "states": [
+    {
+      "name": "On foot",
+      "controls": {
+        "Left stick": "Move",
+        "Up/Down/Left/Right": "Move in Stalking mode",
+        "Right stick": "Change camera angle",
+        "R3": "Lock camera angle",
+        "L3": "Interrogate enemy (when grabbing)",
+        "L1": "Aim / lock weapon direction",
+        "R1": "First person view (hold)",
+        "L2": "Item window",
+        "R2": "Weapon window / tactical reload",
+        "L2+R2": "Stand on tiptoes",
+        "Square": "Use equipped weapon",
+        "Circle": "Punch / CQC / knock on walls",
+        "Triangle": "Action: climb, open, hang",
+        "Cross": "Crawl / switch stance / roll",
+        "Select": "Radio mode",
+        "Start": "Survival Viewer"
+      }
+    },
+    {
+      "name": "First person",
+      "controls": {
+        "Left stick": "Look around",
+        "Up/Down/Left/Right": "Look around",
+        "L1": "Shoulder aim",
+        "R1": "First person view (hold)",
+        "L2": "Shift one step left",
+        "R2": "Shift one step right",
+        "L2+R2": "Stand on tiptoes",
+        "Square": "Use equipped weapon"
+      }
+    },
+    {
+      "name": "Corner view",
+      "controls": {
+        "Left stick": "Press against surface (hold)",
+        "Right stick": "Point camera",
+        "L2/R2": "Peek / move along surface",
+        "Circle": "Knock on surface",
+        "Square": "Jump out and shoot"
+      }
+    },
+    {
+      "name": "Hanging",
+      "controls": {
+        "Left stick": "Move left/right",
+        "L2/R2": "Move left/right",
+        "Triangle": "Return to top",
+        "Square": "Aim/fire equipped weapon",
+        "Cross": "Let go and drop",
+        "L2+R2": "Do a pull-up"
+      }
+    },
+    {
+      "name": "Swimming",
+      "controls": {
+        "Cross": "Submerge",
+        "Left stick+Cross": "Dive in",
+        "Triangle": "Climb onto dry land",
+        "Circle": "Swing torch (when equipped)"
+      }
+    },
+    {
+      "name": "Underwater",
+      "controls": {
+        "Left stick": "Change direction",
+        "Triangle": "Quick surface",
+        "Cross/Circle": "Move forward",
+        "Right stick": "Change camera angle",
+        "R3": "Fix camera angle"
+      }
+    }
+  ],
+  "evidence": {
+    "On foot/Left stick": "pdf3 (printed 3) diagram, leader to left stick: left analog stick - Normal View: Move around",
+    "On foot/Up/Down/Left/Right": "pdf3 (printed 3) diagram, leader to D-pad: Directional button - Normal View: Move in Stalking mode",
+    "On foot/Right stick": "pdf3 (printed 3) diagram, leader to right stick: right analog stick - Change camera angle.",
+    "On foot/R3": "pdf3 (printed 3) diagram: R3 button when pushed - Lock the camera in the direction the right analog stick is pressed. Press again to unlock.",
+    "On foot/L3": "pdf3 (printed 3) diagram: L3 button when pushed - When grabbing enemy: Interrogate enemy",
+    "On foot/L1": "pdf3 (printed 3) diagram: L1 button - Aim button. When holding a weapon: Lock in the direction the weapon is pointed",
+    "On foot/R1": "pdf3 (printed 3) diagram: R1 button - First Person View button. Change Snake's view; pdf12 (printed 20): press and hold the R1 button to switch the camera view to Snake's perspective",
+    "On foot/L2": "pdf3 (printed 3) diagram: L2 button - Item Window button. Normal View: Select, equip, and unequip items",
+    "On foot/R2": "pdf3 (printed 3) diagram: R2 button - Weapon Window button. Normal View: Select, equip and unequip weapons; pdf23 (printed 42): Tactical Reload - quickly pressing the R2 button twice",
+    "On foot/L2+R2": "pdf3 (printed 3) diagram: L2 button and R2 button simultaneously - Normal View: Stand on tiptoes",
+    "On foot/Square": "pdf3 (printed 3) diagram, leader to Square: Weapon button. Use the currently equipped weapon.",
+    "On foot/Circle": "pdf3 (printed 3) diagram, leader to Circle: Punch button, CQC button, Enter button. Punch, use CQC, knock on walls (when pressed against one).",
+    "On foot/Triangle": "pdf3 (printed 3) diagram, leader to Triangle: Action button. Climb trees, Open lockers, go up/down ladders, climb onto platforms, hang, etc.",
+    "On foot/Cross": "pdf3 (printed 3) diagram, leader to Cross: Crawl button, Cancel button. Switch stance between standing, crouching, and crawling.; pdf12 (printed 21): While running, press the Cross button to execute a rolling maneuver.",
+    "On foot/Select": "pdf3 (printed 3) diagram: SELECT button - Enter Radio Mode.",
+    "On foot/Start": "pdf3 (printed 3) diagram: START button - Enter the Survival Viewer.",
+    "First person/Left stick": "pdf3 (printed 3) diagram: left analog stick - First Person View: Look around; pdf12 (printed 20): Use the left analog stick (or directional button) to change the direction Snake is looking.",
+    "First person/Up/Down/Left/Right": "pdf3 (printed 3) diagram: Directional button - First Person View: Look around",
+    "First person/L1": "pdf3 (printed 3) diagram: L1 button - First Person View: Shoulder aim; pdf13 (printed 23): pressing the Aim button (L1 button) allows Snake to aim more precisely with some weapons.",
+    "First person/R1": "pdf12 (printed 20): press and hold the R1 button to switch the camera view to Snake's perspective",
+    "First person/L2": "pdf13 (printed 22) figure: L2: Shift one step left; pdf12 (printed 20): Press the L2 or R2 button to shift one step to the left or right.",
+    "First person/R2": "pdf13 (printed 22) figure: R2: Shift one step right; pdf12 (printed 20): Press the L2 or R2 button to shift one step to the left or right.",
+    "First person/L2+R2": "pdf12 (printed 20): Press the L2 and R2 buttons at the same time to stand on tiptoes.; pdf13 (printed 22) figure: L2 + R2 simultaneously: Stand on tiptoes",
+    "First person/Square": "pdf12 (printed 20): you can make him use the currently equipped weapon by pressing the Square button.; pdf13 (printed 23): press the Square button to aim the weapon, and release the button to fire.",
+    "Corner view/Left stick": "pdf12 (printed 20): Pressing and holding the left analog stick (or directional button) towards a tree or wall causes Snake to press himself against that surface.",
+    "Corner view/Right stick": "pdf12 (printed 20): The camera can be pointed in different directions using the right analog stick.",
+    "Corner view/L2/R2": "pdf13 (printed 22): When Snake is pressed against trees and walls and Corner View is active, press the L2/R2 button to peek around the corner to the left or right.; While pressed, use the L2/R2 button to move along the surface.; pdf3 (printed 3) diagram: L2 and R2 - Corner/First Person View: Peek",
+    "Corner view/Circle": "pdf13 (printed 22): While pressed against a tree or wall, press the Circle button to knock on the surface and make a noise.",
+    "Corner view/Square": "pdf23 (printed 42) Jumpout Shots: in Corner View, equip a gun and press the Square button to jump out from around the corner and point the gun.",
+    "Hanging/Left stick": "pdf12 (printed 21) Controls while Hanging: Left analog stick or L2/R2 button: Move left/right",
+    "Hanging/L2/R2": "pdf12 (printed 21) Controls while Hanging: Left analog stick or L2/R2 button: Move left/right",
+    "Hanging/Triangle": "pdf12 (printed 21) Controls while Hanging: Triangle button: Return to the top of the branch/inside of the railing",
+    "Hanging/Square": "pdf12 (printed 21) Controls while Hanging: Square button: Aim/fire the currently equipped weapon",
+    "Hanging/Cross": "pdf12 (printed 21) Controls while Hanging: Cross button: Let go and drop down",
+    "Hanging/L2+R2": "pdf12 (printed 21) Controls while Hanging: L2 button + R2 button: Do a pull-up",
+    "Swimming/Cross": "pdf14 (printed 25) In shallow water: Cross button - Submerge; In deep water: Cross button - Submerge underwater",
+    "Swimming/Left stick+Cross": "pdf14 (printed 25) In shallow water: left analog stick + Cross button - Dive in",
+    "Swimming/Triangle": "pdf14 (printed 25) In deep water: Triangle button - Climb onto dry land (only if land is no more than about 2 feet above the water)",
+    "Swimming/Circle": "pdf14 (printed 25) In deep water: Circle button - Swing torch (when torch is equipped)",
+    "Underwater/Left stick": "pdf14 (printed 25) Underwater: left analog stick - Change direction",
+    "Underwater/Triangle": "pdf14 (printed 25) Underwater: Triangle button - Quick surface button (pressing it repeatedly will make Snake swim toward the surface)",
+    "Underwater/Cross/Circle": "pdf14 (printed 25) Underwater: Cross button - Move forward; press repeatedly to accelerate; Circle button - Move forward; press repeatedly to accelerate",
+    "Underwater/Right stick": "pdf14 (printed 25) Underwater: right analog stick - Change the camera angle",
+    "Underwater/R3": "pdf14 (printed 25) Underwater: Press the R3 button to fix the camera angle"
+  }
+}

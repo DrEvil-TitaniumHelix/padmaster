@@ -1,0 +1,63 @@
+{
+  "game": "Katamari Damacy",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Katamari Damacy.pdf"
+  },
+  "states": [
+    {
+      "name": "1P Mode",
+      "controls": {
+        "Left stick": "Roll, brake, turn (both sticks)",
+        "Right stick": "Roll, brake, turn (both sticks)",
+        "L3+R3": "Quick Turn",
+        "L1": "Look",
+        "R1": "Jump",
+        "Select": "Vibration On/Off",
+        "Start": "Pause",
+        "Cross": "During Look: Camera Prince Mode"
+      }
+    },
+    {
+      "name": "2P Mode",
+      "controls": {
+        "Left stick": "Roll, brake, turn (both sticks)",
+        "Right stick": "Roll, brake, turn (both sticks)",
+        "L3+R3": "Quick Turn",
+        "L1/R1": "Lock On",
+        "Select": "Vibration On/Off",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "Camera Prince Mode",
+      "controls": {
+        "Left stick": "Choose a subject",
+        "L1/R1": "Select Picture",
+        "Circle": "Picture Zoom In/Out",
+        "Cross": "Take Picture"
+      }
+    }
+  ],
+  "evidence": {
+    "1P Mode/Left stick": "pdf4 (printed 5): Moving with the Left and Right Analog Sticks table, Left Analog Stick column: Roll forward, Roll backward, Curve left (right), Roll left (right), Brake, Face left, Face right, Sharp turn left (right), Charge 'n' Roll",
+    "1P Mode/Right stick": "pdf4 (printed 5): Moving with the Left and Right Analog Sticks table, Right Analog Stick column: Roll forward, Roll backward, Curve left (right), Roll left (right), Brake, Face left, Face right, Sharp turn left (right), Charge 'n' Roll",
+    "1P Mode/L3+R3": "pdf4 (printed 5): Quick Turn - Press down on the L3 and R3 buttons simultaneously; pdf11 (printed 18): Simultaneously press down the L3 and R3 buttons to make the Prince jump over the katamari and change course 180 degrees",
+    "1P Mode/L1": "pdf4 (printed 4): 1P Mode/2P Mode: Look (1P Mode) - L1 button",
+    "1P Mode/R1": "pdf4 (printed 4): 1P Mode/2P Mode: Jump (1P Mode) - R1 button; pdf11 (printed 19): Jump - R1 button",
+    "1P Mode/Select": "pdf4 (printed 4): 1P Mode/2P Mode: Vibration On/Off - SELECT button",
+    "1P Mode/Start": "pdf4 (printed 4): 1P Mode/2P Mode: Pause - START button",
+    "2P Mode/Left stick": "pdf4 (printed 5): Moving with the Left and Right Analog Sticks table, Left Analog Stick column, not limited to one mode; Charge 'n' Roll (1P/2P Mode)",
+    "2P Mode/Right stick": "pdf4 (printed 5): Moving with the Left and Right Analog Sticks table, Right Analog Stick column, not limited to one mode; Charge 'n' Roll (1P/2P Mode)",
+    "2P Mode/L3+R3": "pdf4 (printed 5): Quick Turn - Press down on the L3 and R3 buttons simultaneously (table not limited to one mode)",
+    "2P Mode/L1/R1": "pdf4 (printed 4): 1P Mode/2P Mode: Lock On (2P Mode) - L1 button, R1 button",
+    "2P Mode/Select": "pdf4 (printed 4): 1P Mode/2P Mode: Vibration On/Off - SELECT button",
+    "2P Mode/Start": "pdf4 (printed 4): 1P Mode/2P Mode: Pause - START button",
+    "Camera Prince Mode/Left stick": "pdf12 (printed 21), Taking Pictures: Use the Left analog stick to choose a subject",
+    "Camera Prince Mode/L1/R1": "pdf4 (printed 4): Select Picture (Camera Prince Mode) - L1 button, R1 button; pdf12 (printed 21): Pictures are stored in the numbers 1, 2 and 3 ... and can be selected with the L1 and R1 buttons",
+    "Camera Prince Mode/Circle": "pdf4 (printed 4): Picture Zoom In/Out (Camera Prince Mode) - Circle button",
+    "Camera Prince Mode/Cross": "pdf4 (printed 4): Take Picture (Camera Prince Mode) - Cross button",
+    "1P Mode/Cross": "pdf12 (printed 21): Press the Cross button while performing a Look to enter Camera Prince Mode."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "game": "Devil May Cry 3: Dante's Awakening",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Devil May Cry 3_ Dante_s Awakening.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left stick": "Walk/Run",
+        "Right stick": "Move camera",
+        "R3": "Reset camera behind character",
+        "Up": "Item screen",
+        "Right": "Map screen",
+        "Left": "File screen",
+        "Down": "Equip screen",
+        "Triangle": "Close-range attack",
+        "Circle": "Style move / check",
+        "Square": "Long-range attack",
+        "Cross": "Jump / dodge / Air Hike",
+        "L1": "Devil Trigger",
+        "L2": "Switch long-range weapon",
+        "R1": "Lock-on target",
+        "R2": "Switch close-range weapon",
+        "R1+L3": "Change lock-on target",
+        "Left stick+R1+Triangle": "High Time / Stinger",
+        "Left stick+Circle": "Twosome Time (Gunslinger)",
+        "Start": "Subscreen",
+        "Select": "Taunt"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left stick": "pdf3 (printed 3) Default Game Controls: Left analog stick - Move Cursor, Walk/Run; pdf5 (printed 6): move the left analog stick slightly to walk, more strongly to run",
+    "Default/Right stick": "pdf3 (printed 3): Right analog stick - Move camera; pdf5 (printed 7): use the right analog stick to move the camera around",
+    "Default/R3": "pdf3 (printed 3): R3 Button - Reset camera behind character; pdf5 (printed 7): press in the right analog stick (R3 button) to reset the camera behind Dante",
+    "Default/Up": "pdf3 (printed 3): Directional button - Move Cursor; Subscreen shortcuts: Up arrow Item Screen",
+    "Default/Right": "pdf3 (printed 3): Subscreen shortcuts: Right arrow Map Screen",
+    "Default/Left": "pdf3 (printed 3): Subscreen shortcuts: Left arrow File Screen",
+    "Default/Down": "pdf3 (printed 3): Subscreen shortcuts: Down arrow Equip Screen",
+    "Default/Triangle": "pdf3 (printed 3): Triangle Button - Close-range attack; Cancel; pdf5 (printed 7): press the Triangle button to use your sword or other close-range weapon",
+    "Default/Circle": "pdf3 (printed 3): Circle Button - Style Move; Check; pdf5 (printed 6): press the Circle button to check it out; use the Circle button to perform unique moves particular to the chosen Style",
+    "Default/Square": "pdf3 (printed 3): Square Button - Long-range attack; pdf5 (printed 7): press the Square button to use your gun or other long-range weapon",
+    "Default/Cross": "pdf3 (printed 3): Cross Button - Jump/Dodge; Confirm; pdf5 (printed 6): press the Cross button to jump; pdf7 (printed 11) Air Hike: press the Cross button twice rapidly",
+    "Default/L1": "pdf3 (printed 3): L1 Button - Devil Trigger; pdf5 (printed 7): press the L1 button to transform into a demon; press again to cancel",
+    "Default/L2": "pdf3 (printed 3): L2 Button - Switch long-range weapon; pdf5 (printed 7): press the L2 button to cycle through them",
+    "Default/R1": "pdf3 (printed 3): R1 Button - Lock-on target; pdf5 (printed 6): press and hold the R1 button to walk in a ready stance with Dante's guns out",
+    "Default/R2": "pdf3 (printed 3): R2 Button - Switch close-range weapon; pdf5 (printed 7): press the R2 button to cycle through them",
+    "Default/R1+L3": "pdf3 (printed 3): L3 Button - Change lock-on target (hold the R1 button, press in the L3 button); pdf5 (printed 6): press in the L3 button while holding the R1 button",
+    "Default/Left stick+R1+Triangle": "pdf7 (printed 11) Rebellion Moves: High Time - hold the R1 button, press the Triangle button, and move the left analog stick opposite to the direction you're facing; Stinger - hold R1, press Triangle, and move the left analog stick in the direction you're facing",
+    "Default/Left stick+Circle": "pdf7 (printed 11) Ebony & Ivory/Gunslinger Style: Twosome Time - press the left analog stick + the Circle button",
+    "Default/Start": "pdf3 (printed 3): START button - Subscreen",
+    "Default/Select": "pdf3 (printed 3): SELECT button - Taunt"
+  }
+}

@@ -56,7 +56,7 @@ static class Fix2Check
         (enabled with { Enabled = false }).Write(store); gate.Update(reader.Read());
         Require(!gate.Active && counts[7] == 1, "successful off read stops once");
         enabled.Write(store); gate.Update(reader.Read()); gate.Update(reader.Read());
-        Require(counts[0] == 2 && counts[1] == 1 && counts[2] == 1 && counts[3] == 1 && counts[4] == 1 && counts[5] == 1 && counts[6] == 1, "real lifecycle enables panel/setup/poll/place/configure once");
+        Require(counts[0] == 2 && counts[1] == 0 && counts[2] == 0 && counts[3] == 0 && counts[4] == 0 && counts[5] == 0 && counts[6] == 0, "real lifecycle enable = listener only; no panel/setup/poll/place/configure until the user opens it (AutoOpen off)");
         var bytes = File.ReadAllBytes(store); var edits = 0;
         using (var locked = new FileStream(store, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
         {

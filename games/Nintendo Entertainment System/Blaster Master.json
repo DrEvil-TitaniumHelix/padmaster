@@ -1,0 +1,43 @@
+{
+  "game": "Blaster Master",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Blaster Master.pdf" },
+  "states": [
+    {
+      "name": "Inside vehicle",
+      "controls": {
+        "Left/Right": "Maneuver Vehicle",
+        "Up/Down": "Shoot up or down",
+        "Select": "Jump out of Vehicle",
+        "Start": "Menu screen/pause",
+        "A": "Jump",
+        "B": "Guns",
+        "Down+B": "Use special weapon"
+      }
+    },
+    {
+      "name": "Out of vehicle",
+      "controls": {
+        "Left/Right": "Maneuver Jason",
+        "Up/Down": "Maneuver Jason",
+        "Start": "Menu screen/pause",
+        "A": "Hand grenades",
+        "B": "Guns"
+      }
+    }
+  ],
+  "evidence": {
+    "Inside vehicle/Left/Right": "p4: Joystick - Maneuver Jason and Vehicle (Vehicle can shoot up or down, left or right)",
+    "Inside vehicle/Up/Down": "p4: Joystick - Maneuver Jason and Vehicle (Vehicle can shoot up or down, left or right)",
+    "Inside vehicle/Select": "p4: Select Button - To jump out of/into Vehicle *not used | *indicates when Jason is out of vehicle.",
+    "Inside vehicle/Start": "p4: Start Button - To begin new game / To enter menu screen/pause",
+    "Inside vehicle/A": "p4: A Button - Jump *hand grenades | *indicates when Jason is out of vehicle.",
+    "Inside vehicle/B": "p4: B Button - Guns",
+    "Inside vehicle/Down+B": "p6: To use a special weapon, press down on the joystick and \"B\" simultaneously. (page headed Weapons/Vehicle Functions Chart)",
+    "Out of vehicle/Left/Right": "p4: Joystick - Maneuver Jason and Vehicle",
+    "Out of vehicle/Up/Down": "p4: Joystick - Maneuver Jason and Vehicle",
+    "Out of vehicle/Start": "p4: Start Button - To begin new game / To enter menu screen/pause",
+    "Out of vehicle/A": "p4: A Button - Jump *hand grenades | *indicates when Jason is out of vehicle.",
+    "Out of vehicle/B": "p4: B Button - Guns"
+  }
+}

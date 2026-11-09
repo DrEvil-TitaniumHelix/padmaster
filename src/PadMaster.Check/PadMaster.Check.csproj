@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <OutputType>Exe</OutputType>
     <Nullable>enable</Nullable>
@@ -9,9 +9,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\PadMaster.Bridge\Mcp.cs" />
+    <Compile Include="..\PadMaster.Bridge\Controller.cs" />
     <Compile Include="..\PadMaster.Bridge\Api.cs" />
     <Compile Include="..\PadMaster.Bridge\ApiServices.cs" />
     <Compile Include="..\PadMaster.Bridge\Session.cs" />
+    <Compile Include="..\PadMaster.Bridge\Cli.cs" />
     <Compile Include="..\PadMaster.Bridge\Settings.cs" />
     <Compile Include="..\PadMaster.Bridge\Assistant.cs" />
     <Compile Include="..\PadMaster.Bridge\Placement.cs" />
@@ -19,6 +21,8 @@
     <Compile Include="..\PadMaster.Bridge\Runtime.cs" />
     <Compile Include="..\PadMaster.Bridge\BulkChanges.cs" />
     <ProjectReference Include="..\PadMaster.Bridge\PadMaster.Bridge.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\PadMaster.Core\PadMaster.Core.csproj" />
+    <ProjectReference Include="..\PadMaster.Controls\PadMaster.Controls.csproj" />
     <ProjectReference Include="..\PadMaster.Settings\PadMaster.Settings.csproj" Aliases="managed" Private="false" />
     <Reference Include="Unbroken.LaunchBox.Plugins">
       <HintPath>$(LaunchBoxDir)\Core\Unbroken.LaunchBox.Plugins.dll</HintPath>
@@ -33,14 +37,22 @@
       <DistributionRoot>$(MSBuildProjectDirectory)\bin\$(Configuration)\dist</DistributionRoot>
       <BridgeOutput>$(MSBuildProjectDirectory)\..\PadMaster.Bridge\bin\$(Configuration)\net10.0-windows</BridgeOutput>
       <SettingsOutput>$(MSBuildProjectDirectory)\..\PadMaster.Settings\bin\$(Configuration)\net10.0-windows</SettingsOutput>
+      <CoreOutput>$(MSBuildProjectDirectory)\..\PadMaster.Core\bin\$(Configuration)\net10.0-windows</CoreOutput>
+      <ControlsOutput>$(MSBuildProjectDirectory)\..\PadMaster.Controls\bin\$(Configuration)\net10.0-windows10.0.19041.0</ControlsOutput>
     </PropertyGroup>
     <ItemGroup>
-      <BridgeFiles Include="$(BridgeOutput)\PadMaster.Bridge.dll;$(BridgeOutput)\PadMaster.Bridge.deps.json;$(BridgeOutput)\PadMaster.Bridge.runtimeconfig.json;$(BridgeOutput)\System.Speech.dll;$(BridgeOutput)\README.md" />
+      <BridgeFiles Include="$(BridgeOutput)\PadMaster.Bridge.dll;$(BridgeOutput)\PadMaster.Bridge.deps.json;$(BridgeOutput)\PadMaster.Bridge.runtimeconfig.json;$(BridgeOutput)\System.Speech.dll;$(BridgeOutput)\README.md;$(CoreOutput)\PadMaster.Core.dll;$(CoreOutput)\SkiaSharp.dll;$(CoreOutput)\runtimes\win-x64\native\libSkiaSharp.dll" />
       <SettingsFiles Include="$(SettingsOutput)\PadMaster.Settings.dll;$(SettingsOutput)\manifest.json;$(SettingsOutput)\icon.png" />
+      <ControlsFiles Include="$(ControlsOutput)\PadMaster.Controls.dll" />
+      <ControllerAssets Include="$(MSBuildProjectDirectory)\..\..\controllers\**\*" />
+      <GameAssets Include="$(MSBuildProjectDirectory)\..\..\games\**\*" />
     </ItemGroup>
     <Copy SourceFiles="@(BridgeFiles)" DestinationFolder="$(DistributionRoot)\Plugins\PadMaster" />
     <Copy SourceFiles="$(BridgeOutput)\persona\CLAUDE.md;$(BridgeOutput)\persona\AGENTS.md" DestinationFolder="$(DistributionRoot)\Plugins\PadMaster\persona" />
     <Copy SourceFiles="@(SettingsFiles)" DestinationFolder="$(DistributionRoot)\Local\Plugins\Padmaster AI Assistant" />
+    <Copy SourceFiles="@(ControlsFiles)" DestinationFolder="$(DistributionRoot)\Plugins\PadMaster" />
+    <Copy SourceFiles="@(ControllerAssets)" DestinationFiles="@(ControllerAssets->'$(DistributionRoot)\Plugins\PadMaster\controllers\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(GameAssets)" DestinationFiles="@(GameAssets->'$(DistributionRoot)\Plugins\PadMaster\games\%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
   <ItemGroup>
     <AssemblyMetadata Include="LaunchBoxDir" Value="$(LaunchBoxDir)" />

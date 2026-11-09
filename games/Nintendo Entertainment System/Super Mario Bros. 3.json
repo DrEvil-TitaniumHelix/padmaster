@@ -1,0 +1,115 @@
+{
+  "game": "Super Mario Bros. 3",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Super Mario Bros. 3.pdf" },
+  "states": [
+    {
+      "name": "Mario",
+      "controls": {
+        "Up": "Enter a door",
+        "Up+A": "Enter upside-down pipes",
+        "Down": "Squat, enter pipes, slide down slopes",
+        "Left/Right": "Walk (hold B: run)",
+        "A": "Jump (longer: higher)",
+        "B": "Accelerate; hold: pick up shell",
+        "Start": "Start game/pause",
+        "Select": "Move cursor (title, game over)"
+      }
+    },
+    {
+      "name": "Fire Mario",
+      "controls": {
+        "Up": "Enter a door",
+        "Up+A": "Enter upside-down pipes",
+        "Down": "Squat, enter pipes, slide down slopes",
+        "Left/Right": "Walk (hold B: run)",
+        "A": "Jump (longer: higher)",
+        "B": "Throw fireballs",
+        "Start": "Start game/pause",
+        "Select": "Move cursor (title, game over)"
+      }
+    },
+    {
+      "name": "Racoon or Tanooki Mario",
+      "controls": {
+        "Up": "Enter a door",
+        "Up+A": "Enter upside-down pipes",
+        "Down": "Squat, enter pipes, slide down slopes",
+        "Left/Right": "Walk (hold B: run)",
+        "A": "Jump; repeatedly: fly or float",
+        "B": "Tail attack",
+        "Down+B": "Turn into a statue (Tanooki)",
+        "Start": "Start game/pause",
+        "Select": "Move cursor (title, game over)"
+      }
+    },
+    {
+      "name": "In the water",
+      "controls": {
+        "A": "Swim (press repeatedly)",
+        "Up+A": "Jump up out of water",
+        "Start": "Start game/pause",
+        "Select": "Move cursor (title, game over)"
+      }
+    },
+    {
+      "name": "Frog Suit in water",
+      "controls": {
+        "Left/Right": "Swim",
+        "Up/Down": "Swim",
+        "A": "Swim even faster",
+        "Start": "Start game/pause",
+        "Select": "Move cursor (title, game over)"
+      }
+    },
+    {
+      "name": "Map Screen",
+      "controls": {
+        "Left/Right": "Choose item",
+        "Up/Down": "Flip item screens",
+        "A": "Enter action scene, activate item",
+        "B": "Display items"
+      }
+    }
+  ],
+  "evidence": {
+    "Mario/Up": "pdf4 (printed 6): Up - Mario can enter a door.",
+    "Mario/Up+A": "pdf4 (printed 6): Up - If you press the A Button at the same time, Mario can enter some upside-down pipes.; pdf8 (printed 13): How to get into up-side-down pipes (pad and A highlighted)",
+    "Mario/Down": "pdf4 (printed 6): Down - Mario can squat (except for Frog Mario.) Mario can enter some pipes. When the ground slopes, Mario can slide down it (except for Frog Mario.)",
+    "Mario/Left/Right": "pdf4 (printed 6): Left and Right - Mario can walk to the left and right. If you hold the B Button as you go left or right, Mario will run.",
+    "Mario/A": "pdf5 (printed 7): A Button - Jump. The longer you press the A Button, the higher Mario will jump.",
+    "Mario/B": "pdf5 (printed 8): B Button - Accelerate. Pressing the B Button while walking will make Mario accelerate.; Pick up a shell: you can pick up the shell by hitting it from the side while you have the B Button pressed. To kick the shell, let go of the B Button.",
+    "Mario/Start": "pdf6 (printed 10): The START Button will start your game.; Pause Function: If you wish to pause your game, press the START Button. To resume play, press the START Button again.",
+    "Mario/Select": "pdf6 (printed 10): The SELECT Button is used to move the cursor on the title screen and on the \"game over\" screen. (only documented use)",
+    "Fire Mario/Up": "pdf4 (printed 6): Up - Mario can enter a door.",
+    "Fire Mario/Up+A": "pdf4 (printed 6): Up - If you press the A Button at the same time, Mario can enter some upside-down pipes.",
+    "Fire Mario/Down": "pdf4 (printed 6): Down - Mario can squat (except for Frog Mario.) Mario can enter some pipes. When the ground slopes, Mario can slide down it (except for Frog Mario.)",
+    "Fire Mario/Left/Right": "pdf4 (printed 6): Left and Right - Mario can walk to the left and right. If you hold the B Button as you go left or right, Mario will run.",
+    "Fire Mario/A": "pdf5 (printed 7): A Button - Jump. The longer you press the A Button, the higher Mario will jump.",
+    "Fire Mario/B": "pdf6 (printed 9): Throw Fireballs - If Mario picks up a Fire Flower, he can throw fireballs by pressing the B Button.",
+    "Fire Mario/Start": "pdf6 (printed 10): The START Button will start your game.; Pause Function: If you wish to pause your game, press the START Button.",
+    "Fire Mario/Select": "pdf6 (printed 10): The SELECT Button is used to move the cursor on the title screen and on the \"game over\" screen. (only documented use)",
+    "Racoon or Tanooki Mario/Up": "pdf4 (printed 6): Up - Mario can enter a door.",
+    "Racoon or Tanooki Mario/Up+A": "pdf4 (printed 6): Up - If you press the A Button at the same time, Mario can enter some upside-down pipes.",
+    "Racoon or Tanooki Mario/Down": "pdf4 (printed 6): Down - Mario can squat (except for Frog Mario.) Mario can enter some pipes. When the ground slopes, Mario can slide down it (except for Frog Mario.)",
+    "Racoon or Tanooki Mario/Left/Right": "pdf4 (printed 6): Left and Right - Mario can walk to the left and right. If you hold the B Button as you go left or right, Mario will run.",
+    "Racoon or Tanooki Mario/A": "pdf5 (printed 7): Fly/Float - After using the A Button to jump, Tanooki Mario and Racoon Mario can fly or float for a limited time by pressing the A Button repeatedly.",
+    "Racoon or Tanooki Mario/B": "pdf5 (printed 8): Wag your tail - Tanooki Mario or Racoon Mario can make a \"tail attack\" when you press the B Button.",
+    "Racoon or Tanooki Mario/Down+B": "pdf6 (printed 9): Turn into a Statue - Tanooki Mario can turn into a statue for a short period of time by pressing the B Button and down on the Control Pad at the same time.",
+    "Racoon or Tanooki Mario/Start": "pdf6 (printed 10): The START Button will start your game.; Pause Function: If you wish to pause your game, press the START Button.",
+    "Racoon or Tanooki Mario/Select": "pdf6 (printed 10): The SELECT Button is used to move the cursor on the title screen and on the \"game over\" screen. (only documented use)",
+    "In the water/A": "pdf5 (printed 7): Swim - In the water, Mario can swim by repeatedly pressing the A Button.",
+    "In the water/Up+A": "pdf4 (printed 6): Up - If you press the A Button at the same time, Mario can jump up out of water.; pdf8 (printed 14): Jumping out of the water (pad and A highlighted)",
+    "In the water/Start": "pdf6 (printed 10): The START Button will start your game.; Pause Function: If you wish to pause your game, press the START Button.",
+    "In the water/Select": "pdf6 (printed 10): The SELECT Button is used to move the cursor on the title screen and on the \"game over\" screen. (only documented use)",
+    "Frog Suit in water/Left/Right": "pdf5 (printed 7): If Mario has the Frog Suit, he can swim by using just the Control Pad.",
+    "Frog Suit in water/Up/Down": "pdf5 (printed 7): If Mario has the Frog Suit, he can swim by using just the Control Pad.",
+    "Frog Suit in water/A": "pdf5 (printed 7): If you use the A Button, Mario can swim even faster.; pdf8 (printed 13): Use the A Button to make Frog Mario swim fast!",
+    "Frog Suit in water/Start": "pdf6 (printed 10): The START Button will start your game.; Pause Function: If you wish to pause your game, press the START Button.",
+    "Frog Suit in water/Select": "pdf6 (printed 10): The SELECT Button is used to move the cursor on the title screen and on the \"game over\" screen. (only documented use)",
+    "Map Screen/Left/Right": "pdf13 (printed 23): Choose the item you wish to use by using left and right on the Control Pad",
+    "Map Screen/Up/Down": "pdf13 (printed 23): If you have more than one screen full of items, you can use up and down on the Control Pad to flip to the different screens.",
+    "Map Screen/A": "pdf9 (printed 16): Move Mario to the square with the \"1\" in it and press the A Button. This will make the action scene for World 1-1 appear.; pdf13 (printed 23): and activate it with the A Button.",
+    "Map Screen/B": "pdf13 (printed 23): While on the Map Screen, press the B Button to display the items that you possess"
+  }
+}

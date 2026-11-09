@@ -1,0 +1,45 @@
+{
+  "game": "Kid Icarus",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Kid Icarus.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Up": "Aim arrows upwards, climb ladders",
+        "Left/Right": "Move Pit left and right",
+        "Down": "Squat, jump down from floors",
+        "A": "Jump",
+        "B": "Attack the enemy",
+        "Select": "Select weapons",
+        "Start": "Menu display (pause)"
+      }
+    },
+    {
+      "name": "Stage 4",
+      "controls": {
+        "Up": "Fly upwards",
+        "Down": "Fly down",
+        "Left/Right": "Move Pit left and right",
+        "B": "Attack; release: raise shield",
+        "Select": "Select weapons",
+        "Start": "Menu display (pause)"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Up": "pdf7 (printed 12): chart item 1, leader from the top of the control pad: Aims arrows upwards. (climbs ladders)",
+    "Default/Left/Right": "pdf7 (printed 12): chart item 2, leader to the side of the control pad: Moves Pit left and right.",
+    "Default/Down": "pdf7 (printed 12): chart item 3, leader from the bottom of the control pad: Makes Pit squat and jump down from floors.",
+    "Default/A": "pdf7 (printed 12): chart item 7, leader to the A button: Makes Pit jump.",
+    "Default/B": "pdf7 (printed 12): chart item 6, leader to the B button: Attacks the enemy.",
+    "Default/Select": "pdf7 (printed 12): chart item 4, box printed under SELECT with no leader line drawn: Select weapons.",
+    "Default/Start": "pdf7 (printed 12): chart item 5, box printed under START with no leader line drawn: Switches to menu display (pause).; pdf8 (printed 13): If you press the START button during the game, the menu display appears.",
+    "Stage 4/Up": "pdf7 (printed 12): In stage 4, you can make Pit fly upwards by pressing the top of the control pad.",
+    "Stage 4/Down": "pdf7 (printed 12): He flies down again when you press the bottom of the control pad.",
+    "Stage 4/Left/Right": "pdf7 (printed 12): chart item 2, leader to the side of the control pad: Moves Pit left and right.",
+    "Stage 4/B": "pdf7 (printed 12): Pit can attack when you press B button and he raises his shield to defend himself when you release the button.",
+    "Stage 4/Select": "pdf7 (printed 12): chart item 4, box printed under SELECT with no leader line drawn: Select weapons.",
+    "Stage 4/Start": "pdf7 (printed 12): chart item 5, box printed under START with no leader line drawn: Switches to menu display (pause).; pdf8 (printed 13): If you press the START button during the game, the menu display appears."
+  }
+}

@@ -28,6 +28,7 @@ static void Fatal(object error)
 
 static async Task Run(string[] args)
 {
+if (args.Length > 0 && args[0] == "--draw") { Environment.ExitCode = DrawCheck.Draw(args[1..], Console.Out); return; }
 var api = Path.Combine(LaunchBoxDir.Value, "Core", "Unbroken.LaunchBox.Plugins.dll");
 Require(File.Exists(api), "real LaunchBox API is required for managed Configure check");
 AssemblyLoadContext.Default.Resolving += (context, name) => name.Name switch
@@ -44,16 +45,33 @@ if (args.Length > 0)
     if (args[0] == "--fresh-default") { BetaCheck.FreshDefault(); return; }
     if (args[0] == "--icon" && args.Length == 2) { await Sta(() => IconCheck.Draw(args[1])); return; }
     if (args[0] == "--api" && args.Length == 1) { ApiCheck.Run(); return; }
+    if (args[0] == "--controller" && args.Length == 1) { ApiCheck.Controller(); return; }
+    if (args[0] == "--render" && args.Length == 1) { RenderCheck(); return; }
+    if (args[0] == "--retroarch" && args.Length == 1) { RetroArchCheck.Run(); return; }
+    if (args[0] == "--pcsx2" && args.Length == 1) { Pcsx2Check.Run(); return; }
+    if (args[0] == "--readers" && args.Length == 1) { ReadersCheck.Run(); return; }
+    if (args[0] == "--generate-check" && args.Length == 1) { await GenerateCheck.Run(); return; }
+    if (args[0] == "--onboard-check" && args.Length == 1) { OnboardCheck.Run(); return; }
+    if (args[0] == "--onboard" && (args.Length == 2 || args.Length == 3 && args[2] == "codex")) { await OnboardCheck.Live(args[1], args.Length == 3 ? "codex" : "claude-code"); return; }
+    if (args[0] == "--generate" && (args.Length == 3 || args.Length == 4 && args[3] == "codex")) { await GenerateCheck.Live(args[1], args[2], args.Length == 4 ? args[3] : "claude-code"); return; }
+    if (args[0] == "--draw-check" && args.Length == 1) { DrawCheck.Run(); return; }
+    if (args[0] == "--games" && args.Length == 1) { GamesCheck(); return; }
+    if (args[0] == "--render-game" && args.Length == 1) { MappingCheck.RenderGame(); return; }
+    if (args[0] == "--mapping-window" && args.Length <= 2) { await Sta(() => MappingCheck.Window(args.Length == 2 ? args[1] : null)); return; }
+    if (args[0] == "--lb-images" && args.Length == 1) { MappingCheck.Images(); return; }
+    if (args[0] == "--play-panel" && args.Length == 1) { await Sta(PlayPanelCheck.Run); return; }
+    if (args[0] == "--package" && args.Length == 1) { PackageCheck(); return; }
     if (args[0] == "--crash") throw new InvalidOperationException("deliberate main-thread crash probe");
     if (args[0] == "--crash-thread") { await Sta(() => throw new InvalidOperationException("deliberate STA-thread crash probe")); return; }
     if (args[0] == "--shot" && args.Length == 2) { await Sta(() => Shot(args[1])); return; }
     if (args[0] == "--smoke" && args.Length <= 2 && (args.Length == 1 || args[1] is "claude-code" or "codex")) { Environment.ExitCode = await Smoke(args.Length == 2 ? args[1] : null); return; }
     if (args[0] == "--typing" && args.Length == 1) { await Sta(TypingCheck.Run); return; }
     if (args[0] == "--stuck" && args.Length == 1) { await Sta(StuckLegacy.Run); await Sta(StuckCheck.Run); return; }
-    Console.WriteLine("FAIL: use no args, --shot <png>, --smoke, --stuck, or --typing"); Environment.ExitCode = 1; return;
+    Console.WriteLine("FAIL: use no args, --render, --retroarch, --pcsx2, --draw <Platform> <Game> [--root <dir>] [--open], --draw-check, --games, --render-game, --mapping-window [root], --play-panel, --lb-images, --package, --controller, --shot <png>, --smoke, --stuck, or --typing"); Environment.ExitCode = 1; return;
 }
 
 const int port = 47801;
+ApiCheck.Controller(requirePad: false);
 ParserCheck();
 await CodexCheck.Run();
 await Sta(CodexCheck.Panel);
@@ -65,6 +83,16 @@ await Sta(SetupCheck);
 await Sta(CliBoxCheck);
 await LoginCheck();
 PackageCheck();
+RenderCheck();
+RetroArchCheck.Run();
+Pcsx2Check.Run();
+GamesCheck();
+MappingCheck.RenderGame();
+DrawCheck.Run();
+await Sta(() => MappingCheck.Window());
+await Sta(PlayPanelCheck.Run);
+MappingCheck.Images();
+OnboardCheck.Run();
 ReviewCheck.AuthAndCommands();
 ReviewCheck.Activation();
 await ReviewCheck.Token();
@@ -247,6 +275,86 @@ static void PlacementCheck()
     Console.WriteLine("OK  synthetic-tree: right, repeat, replace, left, floating, null/hidden/missing host, one parent, transcript retained");
 }
 
+static void RenderCheck()
+{
+    var repo = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", ".."));
+    var dir = Path.Combine(repo, "controllers", "gulikit-kk3-max");
+    var json = JsonNode.Parse(File.ReadAllText(Path.Combine(dir, "anchors.json")))!["anchors"]!.AsObject();
+    var actions = json.ToDictionary(a => a.Key, a => a.Key);
+    Directory.CreateDirectory(Path.Combine(repo, "renders"));
+    var counts = new List<int>();
+    foreach (var view in new[] { "front", "back" })
+    {
+        var expected = json.Count(a => a.Value!["view"]!.GetValue<string>() == view);
+        Require(expected > 0 && Renderer.Keys(dir, view).Count == expected, $"{view} anchor keys");
+        var segs = json.Where(a => a.Value!["view"]!.GetValue<string>() == view).Select(a => (key: a.Key, ax: a.Value!["x"]!.GetValue<double>(), ay: a.Value!["y"]!.GetValue<double>(), lx: a.Value!["label"]!["x"]!.GetValue<double>(), ly: a.Value!["label"]!["y"]!.GetValue<double>())).ToList();
+        static double Cross(double ax, double ay, double bx, double by, double cx, double cy) => (bx - ax) * (cy - ay) - (by - ay) * (cx - ax);
+        foreach (var s in segs) foreach (var t in segs)
+        {
+            if (s.key == t.key) continue;
+            Require(!(Cross(t.ax, t.ay, t.lx, t.ly, s.ax, s.ay) * Cross(t.ax, t.ay, t.lx, t.ly, s.lx, s.ly) < 0 && Cross(s.ax, s.ay, s.lx, s.ly, t.ax, t.ay) * Cross(s.ax, s.ay, s.lx, s.ly, t.lx, t.ly) < 0), $"{view} callouts {s.key} and {t.key} cross");
+            double dx = s.lx - s.ax, dy = s.ly - s.ay, u = Math.Clamp(((t.ax - s.ax) * dx + (t.ay - s.ay) * dy) / (dx * dx + dy * dy), 0, 1);
+            Require(Math.Sqrt(Math.Pow(t.ax - s.ax - u * dx, 2) + Math.Pow(t.ay - s.ay - u * dy, 2)) >= 16, $"{view} callout {s.key} passes within 16 px of {t.key}");
+        }
+        var png = Renderer.Render(dir, actions, view);
+        Require(png.Length > 1000 && png.Take(8).SequenceEqual(new byte[] { 137, 80, 78, 71, 13, 10, 26, 10 }), $"{view} PNG");
+        Require(png.SequenceEqual(Renderer.Render(dir, actions, view)), $"{view} render deterministic");
+        var dots = Dots(png);
+        Require(dots == expected, $"{view} anchors drawn {dots} == {expected} in json");
+        File.WriteAllBytes(Path.Combine(repo, "renders", $"preview_gulikit-kk3-max_{view}.png"), png);
+        counts.Add(expected);
+    }
+    MappingCheck.Layouts();
+    Console.WriteLine($"OK  render: kk3max front {counts[0]} anchors, back {counts[1]} anchors -> renders\\preview_*.png");
+}
+
+static void GamesCheck()
+{
+    var repo = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", ".."));
+    var allowed = new Dictionary<string, string[]>
+    {
+        ["Nintendo Entertainment System"] = ["A", "B", "Start", "Select", "Up", "Down", "Left", "Right"],
+        ["Sony Playstation 2"] = ["Cross", "Circle", "Square", "Triangle", "L1", "L2", "R1", "R2", "L3", "R3", "Start", "Select", "Up", "Down", "Left", "Right", "Left stick", "Right stick"],
+    };
+    var files = Directory.GetFiles(Path.Combine(repo, "games"), "*.json", SearchOption.AllDirectories);
+    Require(files.Length > 0, "games json present");
+    var platforms = new SortedDictionary<string, int>(); var states = 0;
+    foreach (var f in files)
+    {
+        var g = JsonNode.Parse(File.ReadAllText(f))!.AsObject();
+        var name = Path.GetFileNameWithoutExtension(f);
+        Require(Mapping.FileName(g["game"]!.GetValue<string>()) == name && Mapping.FileName(g["platform"]!.GetValue<string>()) == Path.GetFileName(Path.GetDirectoryName(f)), $"{name}: game/platform match path");
+        Require(g["source"]?["type"]?.GetValue<string>() == "manual", $"{name}: source.type manual");
+        Require(File.Exists(Path.Combine(LaunchBoxDir.Value, "Manuals", g["source"]!["path"]!.GetValue<string>())), $"{name}: source.path exists under Manuals");
+        var platform = g["platform"]!.GetValue<string>(); var keys = allowed.GetValueOrDefault(platform) ?? throw new InvalidOperationException($"{name}: no allowed key set for platform {platform}");
+        if (Mapping.Problem(g, keys) is { } problem) throw new InvalidOperationException($"{name}: {problem}");
+        states += g["states"]!.AsArray().Count;
+        platforms[platform] = platforms.GetValueOrDefault(platform) + 1;
+    }
+    Console.WriteLine($"OK  game json: {string.Join(", ", platforms.Select(p => $"{p.Value} {p.Key}"))}, {states} states, every control sourced");
+}
+
+static int Dots(byte[] png)
+{
+    using var bmp = SkiaSharp.SKBitmap.Decode(png);
+    var seen = new bool[bmp.Width * bmp.Height];
+    var n = 0;
+    var stack = new Stack<(int x, int y)>();
+    for (var y = 0; y < bmp.Height; y++) for (var x = 0; x < bmp.Width; x++)
+    {
+        if (seen[y * bmp.Width + x] || bmp.GetPixel(x, y) != Renderer.Accent) continue;
+        n++;
+        stack.Push((x, y));
+        while (stack.TryPop(out var p))
+        {
+            if (p.x < 0 || p.y < 0 || p.x >= bmp.Width || p.y >= bmp.Height || seen[p.y * bmp.Width + p.x] || bmp.GetPixel(p.x, p.y) != Renderer.Accent) continue;
+            seen[p.y * bmp.Width + p.x] = true;
+            stack.Push((p.x + 1, p.y)); stack.Push((p.x - 1, p.y)); stack.Push((p.x, p.y + 1)); stack.Push((p.x, p.y - 1));
+        }
+    }
+    return n;
+}
+
 static void PackageCheck()
 {
     var output = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "dist"));
@@ -267,12 +375,16 @@ static void PackageCheck()
     var manifest = JsonNode.Parse(File.ReadAllText(Path.Combine(managed, "manifest.json")))!;
     string Field(string key) => manifest[key]?.GetValue<string>() ?? "";
     Require(manifest["SchemaVersion"]!.GetValue<int>() == 2 && Guid.Parse(Field("PluginId")) == Guid.Parse(PackageIdentity.Id) && Guid.Parse(Field("PluginId")) != Guid.Empty, "schema 2 and fixed GUID");
-    Require(Field("Name") == PackageIdentity.Name && Field("Developer").Length > 0 && Field("InstalledVersion") == "0.2.1-beta", "manifest name, developer and version");
+    Require(Field("Name") == PackageIdentity.Name && Field("Developer").Length > 0 && Field("InstalledVersion") == "0.3.0-beta", "manifest name, developer and version");
     Require(Field("OperatingSystemFamily") == "Windows" && Field("SourceKind") == "Local" && Field("RequiredApplicationVersion").Length == 0, "manifest OS/source/version rules");
     Require(manifest["Compatibility"]?["ApplicationVersionRange"]?.GetValue<string>() == "[14.1.0,14.2.0)", "tested host version range");
-    Require(Field("Brief") == "Chat with your own AI assistant inside LaunchBox." && Field("Requirements") == "LaunchBox 14.1.x on Windows. Claude Code or Codex installed and signed in with your own subscription.", "manifest Brief and Requirements verbatim");
-    Require(Field("Description") == "This is a beta, an early test release. Padmaster AI Assistant puts a small chat panel inside LaunchBox. Ask about your games, find a manual, check which emulator a game uses, or build playlists from your library, for example every Star Wars and Star Trek game you own. Type or use the microphone. Coming next: each game's controls drawn on the controller in your hands. It uses your own AI subscription (Claude Code or Codex); the plugin stores no keys and its own server listens only on this PC, while your assistant sends what you type and what it reads to your AI provider.", "manifest Description verbatim");
-    Require(!manifest.AsObject().ContainsKey("Tags") && Field("IconPath") == "icon.png" && packageFiles.Length == 10, "Tags absent and ten-file distribution with relative icon");
+    var repo = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", ".."));
+    var source = JsonNode.Parse(File.ReadAllText(Path.Combine(repo, "src", "PadMaster.Settings", "manifest.json")))!;
+    Require(new[] { "Brief", "Requirements", "Description" }.All(k => Field(k).Length > 0 && Field(k) == source[k]?.GetValue<string>()) && Field("Brief").StartsWith("Each game's controls drawn on the controller", StringComparison.Ordinal) && Field("Description").Contains("never guessed") && !Field("Description").Contains("theme") && Field("Requirements").Contains("Claude Code or Codex") && Field("Description").Contains("Add your own controller"), "manifest Brief/Requirements/Description = source, Pad Master first, no theme claim, both assistants, own controller");
+    Require(!manifest.AsObject().ContainsKey("Tags") && Field("IconPath") == "icon.png", "Tags absent and relative icon");
+    var assets = new[] { "controllers", "games" }.SelectMany(folder => Directory.GetFiles(Path.Combine(repo, folder), "*", SearchOption.AllDirectories)).ToArray();
+    foreach (var asset in assets) Require(File.ReadAllBytes(asset).SequenceEqual(File.ReadAllBytes(Path.Combine(bridge, Path.GetRelativePath(repo, asset)))), "packaged controller/game asset: " + Path.GetFileName(asset));
+    Require(packageFiles.Length == 14 + assets.Length && File.Exists(Path.Combine(bridge, "PadMaster.Controls.dll")) && !Directory.Exists(Path.Combine(bridge, "renders")), "Controls DLL and all assets shipped, no render cache");
     Require(File.ReadAllBytes(Path.Combine(bridge, "persona", "CLAUDE.md")).SequenceEqual(File.ReadAllBytes(Path.Combine(bridge, "persona", "AGENTS.md"))), "generated Codex persona is identical to the Claude source");
     using (var icon = File.OpenRead(Path.Combine(managed, Field("IconPath"))))
     {

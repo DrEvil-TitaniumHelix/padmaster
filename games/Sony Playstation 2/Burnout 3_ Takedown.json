@@ -1,0 +1,37 @@
+{
+  "game": "Burnout 3: Takedown",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Burnout 3_ Takedown.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Cross": "Accelerate",
+        "Square": "Brake",
+        "Right stick": "Accelerate / brake",
+        "Left stick": "Steering / Aftertouch",
+        "L1": "Look back",
+        "Triangle": "Change view",
+        "R1": "Boost / Impact Time (hold)",
+        "L2": "Next music track",
+        "R2": "Detonate car (Crash events)",
+        "Start": "Pause"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Cross": "pdf3 (printed 3) Gameplay Controls: Accelerate - Cross button/right analog stick up",
+    "Default/Square": "pdf3 (printed 3) Gameplay Controls: Brake - Square button/right analog stick down",
+    "Default/Right stick": "pdf3 (printed 3) Gameplay Controls: Accelerate - Cross button/right analog stick up; Brake - Square button/right analog stick down",
+    "Default/Left stick": "pdf3 (printed 3) Gameplay Controls: Steering - left analog stick; pdf5 (printed 6) Aftertouch: press and hold the R1 button to switch to slo-mo impact time, then use the left analog stick to add Aftertouch and guide your wreck.",
+    "Default/L1": "pdf3 (printed 3) Gameplay Controls: Look Back - L1 button",
+    "Default/Triangle": "pdf3 (printed 3) Gameplay Controls: Change View - Triangle button",
+    "Default/R1": "pdf3 (printed 3) Gameplay Controls: Boost - R1 button; Impact Time (While Crashing) - Press and hold R1 button",
+    "Default/L2": "pdf3 (printed 3) Gameplay Controls: Next Music Track (Offline Game Modes Only) - L2 button",
+    "Default/R2": "pdf5 (printed 7) Crash Events: Cause enough vehicles to crash and you can press the R2 button to detonate your car",
+    "Default/Start": "pdf6 (printed 8) Pause Menu: Press the START button to take a break and access the Pause menu."
+  }
+}

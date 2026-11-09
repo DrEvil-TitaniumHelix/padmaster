@@ -1,0 +1,51 @@
+{
+  "game": "Devil May Cry",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Devil May Cry.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Start": "Display Sub Screen",
+        "Select": "Skip movie / pause menu",
+        "Up/Down/Left/Right": "Menu cursor",
+        "Left stick": "Move Dante",
+        "Right stick": "Toggle Thunder/Fire Devil",
+        "Triangle": "Jump / action / double jump / air hike",
+        "Circle": "Sword or punch/kick attack / Round Trip",
+        "Cross": "Check",
+        "Square": "Check",
+        "R1+Cross/R1+Square": "Gun attack",
+        "Triangle+R1+Cross/Triangle+R1+Square": "Air Raid (as Alastor)",
+        "Left stick+R1+Triangle": "Rolling dodge / somersault",
+        "Left stick+R1+Circle": "High Time / Stinger",
+        "L1": "Devil Trigger",
+        "R1": "Lock on nearest enemy (hold)",
+        "L2": "Display map",
+        "R2": "Taunt enemy"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Start": "pdf4 (printed 5) Default Settings Type A: START button - Start game, Display Sub Screen; pdf9 (printed 14): press the START button during gameplay to display the Sub Screen",
+    "Default/Select": "pdf4 (printed 5): SELECT button - Skip movie/cut-scenes, Pause and display Pause menu",
+    "Default/Up/Down/Left/Right": "pdf4 (printed 5): directional buttons - Menu cursor",
+    "Default/Left stick": "pdf4 (printed 5): left analog stick - Move Dante/menu cursor; pdf13 (printed 22): move the left analog stick slightly in a direction to walk, all the way to run",
+    "Default/Right stick": "pdf4 (printed 5): right analog stick - Toggle Thunder Devil/Fire Devil (after acquiring items)",
+    "Default/Triangle": "pdf4 (printed 5): Triangle button - Cancel selection, Jump/Action, Triangle + Triangle buttons = Double jump (off an object), Triangle + Triangle buttons = Air Hike (after acquiring Red Orbs); pdf15 (printed 26): press the Triangle button during a jump to double jump in the air",
+    "Default/Circle": "pdf4 (printed 5): Circle button - Sword or punch/kick attack; Circle button (hold) = Round Trip (after acquiring Red Orbs)",
+    "Default/Cross": "pdf4 (printed 5): X button - Confirm selection, Check; pdf13 (printed 22): move Dante in front of an item and press the X or Square button",
+    "Default/Square": "pdf4 (printed 5): Square button - Same as X button; pdf13 (printed 22): press the X or Square button",
+    "Default/R1+Cross/R1+Square": "pdf4 (printed 5): R1 (hold) + X buttons = Gun attack; Square button - Same as X button; pdf13 (printed 23): hold down the R1 button and press the X or Square button to fire your gun",
+    "Default/Triangle+R1+Cross/Triangle+R1+Square": "pdf4 (printed 5): Triangle + R1 (hold) + X buttons = Air Raid (as Alastor); pdf15 (printed 26): Jump, then press the R1 button + the X or Square button",
+    "Default/Left stick+R1+Triangle": "pdf4 (printed 5): Left/Right arrows + R1 (hold) + Triangle buttons = Rolling dodge; pdf13 (printed 22): with R1 held down, move the left analog stick toward Dante's side and press Triangle (Rolling Dodge); toward Dante's front or back and press Triangle (Somersault)",
+    "Default/Left stick+R1+Circle": "pdf13 (printed 23): hold down R1, move the left analog stick away from the direction Dante is facing and press Circle (High Time); pdf15 (printed 26): left analog stick in the direction Dante is facing, hold R1 and press Circle (Stinger)",
+    "Default/L1": "pdf4 (printed 5): L1 button - Devil Trigger (see page 24), Turn pages in Sub Screen; pdf14 (printed 24): press the L1 button to perform the Devil Trigger; cancel by pressing the L1 button",
+    "Default/R1": "pdf4 (printed 5): R1 button - Turn pages in Sub Screen, (hold) Lock on nearest enemy; pdf13 (printed 23): press and hold the R1 button, Dante will target the nearest enemy",
+    "Default/L2": "pdf4 (printed 5): L2 button - Display Map",
+    "Default/R2": "pdf4 (printed 5): R2 button - Taunt enemy"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "game": "Kirby's Adventure",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Kirby_s Adventure.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Walk/run (press twice)",
+        "Up": "Fly/enter doors/go up",
+        "Down": "Squat/go down",
+        "A": "Jump",
+        "B": "Inhale",
+        "Down+A": "Slide",
+        "Down+B": "Slide",
+        "Start": "Pause",
+        "A+B+Start+Select": "Reset the game"
+      }
+    },
+    {
+      "name": "Puffed up",
+      "controls": {
+        "Up": "Gulp of air, fly again",
+        "A": "Flap arms and fly",
+        "B": "Shoot air pellet",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "Enemy in mouth",
+      "controls": {
+        "B": "Puff out as a star",
+        "Down": "Swallow",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "Special ability",
+      "controls": {
+        "B": "Use special ability",
+        "Select": "Drop enemy's ability",
+        "Start": "Pause/explain special ability"
+      }
+    },
+    {
+      "name": "In the water",
+      "controls": {
+        "A": "Swim",
+        "B": "Water Gun",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "Bonus games",
+      "controls": {
+        "A/B": "Quick draw/open mouth/move crane"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf6 (printed 9): leader line to the pad sides, \"Walk / Run (press twice)\". pdf8 (printed 13): \"Quickly press the Left or Right arrow on the Control Pad twice, and hold the arrow button, and Kirby will run\"",
+    "Default/Up": "pdf6 (printed 9): leader line to pad up, \"Fly / Enter Doors\". pdf9 (printed 15): \"Press the Up arrow on the Control Pad when Kirby is in Normal form and he will puff up and float into the sky.\" pdf8 (printed 14): Go Up/Go Down/Enter Doors - \"If you press the Up or Down arrows of the Control Pad at stairs or places with ladders, Kirby can go up or down them.\"",
+    "Default/Down": "pdf6 (printed 9): leader line to pad down, \"Squat\". pdf8 (printed 13): \"Press the Down arrow on the Control Pad to make Kirby squat.\" pdf8 (printed 14): Go Up/Go Down/Enter Doors - \"If you press the Up or Down arrows of the Control Pad at stairs or places with ladders, Kirby can go up or down them.\"",
+    "Default/A": "pdf6 (printed 9): leader line to the right round button, \"Jump / Swim\". pdf8 (printed 14): \"Press the A Button to make Kirby jump.\"",
+    "Default/B": "pdf6 (printed 9): leader line to the left round button, \"Inhale / Puff Out\". pdf9 (printed 16): \"Press the B Button when Kirby is near an enemy or a block and he will inhale the object in one gulp!\"",
+    "Default/Down+A": "pdf6 (printed 9): leader line to pad down, \"Slide (+A Button or +B Button)\". pdf8 (printed 14): \"Press the A or B Button while Kirby is squatting to make him slide and knock out the enemy.\"",
+    "Default/Down+B": "pdf6 (printed 9): leader line to pad down, \"Slide (+A Button or +B Button)\". pdf8 (printed 14): \"Press the A or B Button while Kirby is squatting to make him slide and knock out the enemy.\"",
+    "Default/Start": "pdf6 (printed 9): leader line to the right oval, \"Pause - Interrupts Game\"",
+    "Default/A+B+Start+Select": "pdf6 (printed 9): \"Press the A, B, Start and Select buttons simultaneously during play to reset the game and restart from the beginning.\"",
+    "Puffed up/Up": "pdf9 (printed 15): Air Pellets - \"if you press Up on the Control Pad, Kirby will take another gulp of air and start flying again.\"",
+    "Puffed up/A": "pdf9 (printed 15): \"Pressing the A Button while Kirby is puffed up will cause him to flap his arms and fly to the top of the screen.\"",
+    "Puffed up/B": "pdf9 (printed 15): \"If you press the B Button while Kirby is puffed up, he will shoot an air pellet.\"",
+    "Puffed up/Start": "pdf6 (printed 9): leader line to the right oval, \"Pause - Interrupts Game\"",
+    "Enemy in mouth/B": "pdf10 (printed 17): Puff Out - \"If you press the B Button again when Kirby has an enemy or block in his mouth, Kirby will puff out the object in the form of a star.\"",
+    "Enemy in mouth/Down": "pdf10 (printed 17): Swallow - \"If you press the Down arrow of the Control Pad when Kirby has inhaled an enemy or block, he will swallow whatever is in his mouth.\" pdf6 (printed 9): leader line to pad down, \"Swallow\"",
+    "Enemy in mouth/Start": "pdf6 (printed 9): leader line to the right oval, \"Pause - Interrupts Game\"",
+    "Special ability/B": "pdf11 (printed 19): \"By pressing the B Button, Kirby can use the special ability of the enemy he swallowed.\"",
+    "Special ability/Select": "pdf6 (printed 9): leader line to the left oval, \"Drop Enemy's Ability\". pdf11 (printed 20): \"Kirby will lose his special ability when an enemy hits him or if you press the SELECT Button.\"",
+    "Special ability/Start": "pdf7 (printed 12): \"If you press the START Button while you are on a game play screen, the game will pause and you will see an explanation of the special ability currently owned by Kirby.\"",
+    "In the water/A": "pdf10 (printed 18): Swim - \"you can make him swim by pressing the A Button.\" pdf6 (printed 9): leader line to the right round button, \"Jump / Swim\"",
+    "In the water/B": "pdf10 (printed 18): Water Gun - \"you can make him puff a waterspout to attack enemies by pressing the B Button.\"",
+    "In the water/Start": "pdf6 (printed 9): leader line to the right oval, \"Pause - Interrupts Game\"",
+    "Bonus games/A/B": "pdf13 (printed 23): Quick Draw Kirby - \"When the enemy draws his weapon, press the A Button as fast as you can!\" Note - \"All Bonus Games can also be operated with the B Button rather than the A Button, if you prefer.\" (printed 24): Egg Catcher - \"To open Kirby's mouth, press the A Button. To close Kirby's mouth, release the A Button.\" Crane Fever - \"The crane will move sideways as you press the A Button and will stop automatically when you release the A Button.\""
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "game": "Grand Theft Auto III",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Grand Theft Auto III.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Triangle": "Exit / enter cars",
+        "Circle": "Shoot",
+        "Cross": "Accelerate / sprint",
+        "Square": "Brake / jump",
+        "L2": "Weapon select / target switch",
+        "R2": "Weapon select / target switch",
+        "L1": "Centers camera / change radio stations",
+        "R1": "Target lock-on / handbrake / aim",
+        "Up/Down/Left/Right": "Move around",
+        "L3": "Horn",
+        "R3": "Look behind / toggle vehicle missions",
+        "Select": "Toggle camera view",
+        "Start": "Pause menu"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Triangle": "pdf3 (printed 4): Triangle button - EXIT / ENTER CARS; pdf5 (printed 7): to carjack any particular car, approach the car and press Triangle button",
+    "Default/Circle": "pdf3 (printed 4): Circle button - SHOOT; pdf7 (printed 11): to fire your weapon press Circle button; tapping or holding Circle sets grenade and molotov throw distance",
+    "Default/Cross": "pdf3 (printed 4): X button - ACCELERATE / SPRINT; pdf5 (printed 8): hold the X button down harder to run faster",
+    "Default/Square": "pdf3 (printed 4): Square button - BRAKE / JUMP",
+    "Default/L2": "pdf3 (printed 4): L2 button - WEAPON SELECT; pdf7 (printed 11): TARGET SWITCH L2 button AND R2 button",
+    "Default/R2": "pdf3 (printed 4): R2 button - WEAPON SELECT; pdf7 (printed 11): to scroll through your available weapons press R2 button; TARGET SWITCH L2 button AND R2 button",
+    "Default/L1": "pdf3 (printed 4): L1 button - CENTERS CAMERA (on foot) / CHANGE RADIO STATIONS (in car)",
+    "Default/R1": "pdf3 (printed 4): R1 button - TARGET LOCK-ON / HANDBRAKE; pdf5 (printed 7): your hand brake is R1 button; pdf7 (printed 11): first person view (sniper rifle and rocket launcher) press R1 button to aim before firing",
+    "Default/Up/Down/Left/Right": "pdf3 (printed 4): directional buttons - MOVE AROUND",
+    "Default/L3": "pdf3 (printed 4): L3 button - HORN",
+    "Default/R3": "pdf3 (printed 4): R3 button - LOOK BEHIND (on foot) / TOGGLE VEHICLE MISSIONS ON or OFF (in car); pdf6 (printed 10): when entering one of these vehicles press R3 button to toggle the missions on or off",
+    "Default/Select": "pdf3 (printed 4): SELECT button - TOGGLE CAMERA VIEW",
+    "Default/Start": "pdf3 (printed 4): START button - PAUSE MENU"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "game": "Excitebike",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Excitebike.pdf"
+  },
+  "states": [
+    {
+      "name": "Race",
+      "controls": {
+        "Up": "Turn handlebar to the left",
+        "Down": "Turn handlebar to the right",
+        "Right": "Lower the front during jump",
+        "Left": "Raise the front, run or jump",
+        "A": "Accelerator and brake",
+        "B": "Turbo",
+        "Select": "Move flag to choose game",
+        "Start": "Begin/pause"
+      }
+    },
+    {
+      "name": "Design Mode",
+      "controls": {
+        "A": "Move rider, decide laps",
+        "B": "Set hurdle, erase, set laps",
+        "Up/Down": "Decide number of laps"
+      }
+    }
+  ],
+  "evidence": {
+    "Race/Up": "pdf3 (printed 3): d-pad diagram, leader from the up arrow to \"Turn handlebar to the left.\"",
+    "Race/Down": "pdf3 (printed 3): d-pad diagram, leader from the down arrow to \"Turn handlebar to the right.\"",
+    "Race/Right": "pdf3 (printed 3): d-pad diagram, leader from the right arrow to \"Lower the front during a jump.\"; pdf5 (printed 7): 'Low jump' panel marks the right arrow",
+    "Race/Left": "pdf3 (printed 3): d-pad diagram, long leader from the left arm to \"Raise the front during a run or a jump.\"; pdf5 (printed 7): 'High jump' and 'Wheelie' panels mark the left arrow",
+    "Race/A": "pdf3 (printed 3): \"A Button: This is the accelerator and brake button. Press it and the bike accelerates, let go and the brakes operate.\"",
+    "Race/B": "pdf3 (printed 3): \"B Button: This is the turbo button. The engine accelerates quickly and the speed is fast, but if used too much the engine overheats.\"",
+    "Race/Select": "pdf3 (printed 4): \"SELECT button: Move the checkered flag to line up with the game you wish to play.\" (game menu; the only use of SELECT the manual documents outside Design Mode's menu)",
+    "Race/Start": "pdf3 (printed 4): \"START button: Press this button to begin.\" \"Pause: If you wish to interrupt play in the middle of a game, press the START button.\"",
+    "Design Mode/A": "pdf6 (printed 10): \"Press the A button to move the motocross rider to where you want to locate a hurdle on the track.\"; pdf7 (printed 11): \"Press the A button or the top/bottom of the control pad to decide the number of laps\"",
+    "Design Mode/B": "pdf6 (printed 10): \"Press the B button and that hurdle will be set in that location.\" \"move the mark to CL (clear). Then, press the B button and the mistake will be erased.\"; pdf7 (printed 11): \"then press the B button to set your choice.\"",
+    "Design Mode/Up/Down": "pdf7 (printed 11): \"Press the A button or the top/bottom of the control pad to decide the number of laps\""
+  }
+}

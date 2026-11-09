@@ -115,7 +115,7 @@ public sealed class AssistantPanel : UserControl
     readonly Border _bulkBar = new() { Visibility = Visibility.Collapsed, Background = AssistantLook.Brush("#4D411C"), BorderBrush = AssistantLook.Brush("#E6BC54"), BorderThickness = new Thickness(1), CornerRadius = new CornerRadius(6), Padding = new Thickness(8), Margin = new Thickness(10, 0, 10, 6) };
     readonly CheckBox _confirmBulk = new() { Content = "Confirm bulk changes" };
     readonly TextBox _bulkThreshold = new() { MinHeight = 30, Padding = new Thickness(6, 4, 6, 4), Width = 60 };
-    readonly CheckBox _autoOpen = new() { Content = "Open at startup" };
+    readonly CheckBox _autoOpen = new() { Content = "Open the chat panel on its own" };
     readonly Button _back = AssistantLook.Button("Back to chat");
     readonly Button _stop = AssistantLook.Button("Stop", "Stop this turn"), _retry = AssistantLook.Button("Retry", "Send that message again");
     readonly TextBlock _retryNote = AssistantLook.Text("this may repeat a change it already made", 11, AssistantLook.Dim);

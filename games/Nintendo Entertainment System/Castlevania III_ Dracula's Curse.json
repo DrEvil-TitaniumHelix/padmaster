@@ -1,0 +1,63 @@
+{
+  "game": "Castlevania III: Dracula's Curse",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Castlevania III_ Dracula_s Curse.pdf"
+  },
+  "states": [
+    {
+      "name": "Trevor and Sypha",
+      "controls": {
+        "Left/Right": "Move left or right",
+        "Up/Down": "Climb up or down stairs",
+        "A": "Jump",
+        "B": "Attack with Main Weapon",
+        "Up+B": "Attack with Warakiya War Item",
+        "Select": "Transform into partner spirit",
+        "Start": "Begin game/pause"
+      }
+    },
+    {
+      "name": "Grant",
+      "controls": {
+        "Up/Down/Left/Right": "Move; hold toward wall to cling",
+        "A": "Jump; press harder, leap higher",
+        "B": "Attack with Main Weapon",
+        "Up+B": "Attack with Warakiya War Item",
+        "Start": "Begin game/pause"
+      }
+    },
+    {
+      "name": "Alucard",
+      "controls": {
+        "Left/Right": "Move left or right",
+        "Up/Down": "Climb up or down stairs",
+        "A": "Jump",
+        "B": "Attack with Main Weapon",
+        "Down+A": "Transform into bat/back to human",
+        "Start": "Begin game/pause"
+      }
+    }
+  ],
+  "evidence": {
+    "Trevor and Sypha/Left/Right": "pdf6 (printed 11): leader line to the pad, CONTROL PAD - \"Press Left or Right to move characters to the left or the right.\"",
+    "Trevor and Sypha/Up/Down": "pdf6 (printed 11): CONTROL PAD - \"Press Up or Down to climb up or down stairs.\"",
+    "Trevor and Sypha/A": "pdf6 (printed 11): leader line to the right round button, A BUTTON - \"Press to jump.\"",
+    "Trevor and Sypha/B": "pdf6 (printed 11): leader line to the left round button, B BUTTON - \"Press to attack with your Main Weapon.\"",
+    "Trevor and Sypha/Up+B": "pdf6 (printed 11): B BUTTON - \"Also press the Control Pad Up and the B Button simultaneously to attack with a Warakiya War Item currently displayed in the Warakiya War Item Window.\"",
+    "Trevor and Sypha/Select": "pdf6 (printed 11): leader line to the left oval, SELECT BUTTON - \"Also press to transform into a partner spirit.\" pdf7 (printed 13): \"To transform into a partner spirit, press the Select Button.\"",
+    "Trevor and Sypha/Start": "pdf6 (printed 11): leader line to the right oval, START BUTTON - \"Press to begin the game and to pause the action during the game.\"",
+    "Grant/Up/Down/Left/Right": "pdf6 (printed 11): Guiding Grant - \"Press and hold the Control Pad toward the wall you want Grant to cling to. Then press the Control Pad in the direction you want him to move and he will climb like crazy.\" Also CONTROL PAD - \"Press Left or Right to move characters... Press Up or Down to climb up or down stairs.\"",
+    "Grant/A": "pdf6 (printed 11): A BUTTON - \"Press to jump.\" Guiding Grant - \"NOTE: Depending on how hard you press the A Button, you can vary the height of Grant's leaps and bounds.\"",
+    "Grant/B": "pdf6 (printed 11): leader line to the left round button, B BUTTON - \"Press to attack with your Main Weapon.\"",
+    "Grant/Up+B": "pdf6 (printed 11): B BUTTON - \"Also press the Control Pad Up and the B Button simultaneously to attack with a Warakiya War Item currently displayed in the Warakiya War Item Window.\"",
+    "Grant/Start": "pdf6 (printed 11): leader line to the right oval, START BUTTON - \"Press to begin the game and to pause the action during the game.\"",
+    "Alucard/Left/Right": "pdf6 (printed 11): leader line to the pad, CONTROL PAD - \"Press Left or Right to move characters to the left or the right.\"",
+    "Alucard/Up/Down": "pdf6 (printed 11): CONTROL PAD - \"Press Up or Down to climb up or down stairs.\"",
+    "Alucard/A": "pdf6 (printed 11): leader line to the right round button, A BUTTON - \"Press to jump.\"",
+    "Alucard/B": "pdf6 (printed 11): leader line to the left round button, B BUTTON - \"Press to attack with your Main Weapon.\"",
+    "Alucard/Down+A": "pdf6 (printed 11): Assisting Alucard - \"Press the Control Pad Down and the A Button simultaneously to transform Alucard into a winged rodent... that means a Bat. (Repeat this procedure to humanize him.)\"",
+    "Alucard/Start": "pdf6 (printed 11): leader line to the right oval, START BUTTON - \"Press to begin the game and to pause the action during the game.\""
+  }
+}

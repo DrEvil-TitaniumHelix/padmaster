@@ -13,8 +13,11 @@ MANAGED = 'Local/Plugins/Padmaster AI Assistant/'
 FILES = {
     BRIDGE + name for name in ('PadMaster.Bridge.dll', 'PadMaster.Bridge.deps.json',
                               'PadMaster.Bridge.runtimeconfig.json', 'System.Speech.dll',
-                              'README.md', 'persona/CLAUDE.md', 'persona/AGENTS.md')
+                              'README.md', 'persona/CLAUDE.md', 'persona/AGENTS.md',
+                              'PadMaster.Core.dll', 'PadMaster.Controls.dll', 'SkiaSharp.dll', 'libSkiaSharp.dll')
 } | {MANAGED + name for name in ('PadMaster.Settings.dll', 'manifest.json', 'icon.png')}
+ASSETS = {p.relative_to(ROOT).as_posix(): p for folder in ('controllers', 'games') for p in (ROOT / folder).rglob('*') if p.is_file()}
+FILES |= {BRIDGE + name for name in ASSETS}
 
 
 def staged_files():
@@ -31,6 +34,9 @@ def main():
     env['DOTNET_CLI_TELEMETRY_OPTOUT'] = '1'
     subprocess.run(['dotnet', 'build', 'src/PadMaster.sln', '-c', 'Release'], cwd=ROOT, env=env, check=True)
     staged_files()
+    for name, source in ASSETS.items():
+        if (STAGE / BRIDGE / name).read_bytes() != source.read_bytes():
+            raise ValueError('stale asset: ' + name)
     source_manifest = (ROOT / 'src/PadMaster.Settings/manifest.json').read_bytes()
     if (STAGE / MANAGED / 'manifest.json').read_bytes() != source_manifest:
         raise ValueError('dist manifest is stale')

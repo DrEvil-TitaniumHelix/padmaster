@@ -1,0 +1,35 @@
+{
+  "game": "Super Mario Bros. 2",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Super Mario Bros. 2.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Up": "Climb vines and ladders/enter doors",
+        "Down": "Duck/climb down vines and ladders",
+        "Left": "Move left",
+        "Right": "Move right",
+        "A": "Jump; Princess: hold to float",
+        "B": "Pick up/throw; go faster",
+        "Down+A": "Power squat jump",
+        "Left+A/Right+A": "Running jump",
+        "Left+B/Right+B": "Run faster"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Up": "pdf7 (printed 11): leader from the top of the pad to \"Climb up vines and ladders.\"; pdf10 (printed 17): \"To go through a door, stand in front of it and press the top of the control pad.\"",
+    "Default/Down": "pdf7 (printed 11): leaders from the bottom of the pad to \"Duck.\" and \"Climb down vines and ladders.\"; pdf9 (printed 16): \"You can duck if you press the bottom of the control pad.\"",
+    "Default/Left": "pdf7 (printed 11): leader from the left of the pad to \"Move left.\"",
+    "Default/Right": "pdf7 (printed 11): leader from the right of the pad to \"Move right.\"",
+    "Default/A": "pdf7 (printed 11): leader from the A button to \"Jump.\"; pdf5 (printed 8): Princess Toadstool: \"When you hold down the A button, she can float in the air for about 1.5sec.\"",
+    "Default/B": "pdf7 (printed 11): leader from the B button to the bracket \"Pick up items or lift enemies. / Throw items or enemies. / Go faster.\"",
+    "Default/Down+A": "pdf7 (printed 12): \"Power squat jump: The player will flash when the bottom of the control pad is pressed and held. When you jump, you will be able to jump 1.5 times higher than regular jumps.\"",
+    "Default/Left+A/Right+A": "pdf7 (printed 12): \"Running jump: Jump by pressing either the right or left side of the control pad and using the A button while running.\"",
+    "Default/Left+B/Right+B": "pdf9 (printed 15): \"You can run faster and faster by pressing either the left or right of the control pad and the B button at the same time.\""
+  }
+}

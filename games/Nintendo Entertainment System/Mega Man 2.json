@@ -1,0 +1,29 @@
+{
+  "game": "Mega Man 2",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Mega Man 2.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Move right and left",
+        "Up/Down": "Climb up and down ladders",
+        "A": "Jump (hold to jump higher)",
+        "B": "Shoot",
+        "Start": "Change weapons/pause",
+        "Select": "Choose Normal or Difficult mode"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf3 (printed 4): \"Pushing RIGHT and LEFT on the controller moves Mega Man right and left. This works even when he is jumping or falling.\"",
+    "Default/Up/Down": "pdf3 (printed 4): \"UP and DOWN are used for climbing up and down ladders.\"",
+    "Default/A": "pdf3 (printed 4): \"The A button is used for jumping. The longer you hold the button down, the higher Mega Man will jump.\"",
+    "Default/B": "pdf3 (printed 4): \"The B button is used for shooting.\"",
+    "Default/Start": "pdf3 (printed 4-5): \"The START button is used for changing weapons, using energy crystals, and finding out how many lives you have left. It is also a convenient way to pause the game.\"",
+    "Default/Select": "pdf2 (printed 3): \"Use SELECT to choose NORMAL or DIFFICULT mode.\" (title screen; the only use of SELECT the manual documents)"
+  }
+}

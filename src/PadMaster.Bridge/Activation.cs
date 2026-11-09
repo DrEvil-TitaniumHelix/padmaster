@@ -86,7 +86,7 @@ public sealed class ActivationGate(Action<Settings, bool> start, Action<Settings
     ActivationState _state = new(new(), false, false);
     bool _observed;
     public bool Active => _state.Active;
-    public static bool OpenAtActivation(Settings settings, bool becomingActive) => becomingActive || settings.AutoOpen;
+    public static bool OpenAtActivation(Settings settings, bool becomingActive) => settings.AutoOpen;   // not even the first Enable opens it (the owner 11/09)
     public void Update(ActivationState next)
     {
         if (!next.Readable) { if (!_observed) _state = next; return; }
@@ -114,7 +114,9 @@ public sealed class AssistantLifecycle(Action<Settings> listener, Action panel, 
     }
     public void Saved(Settings previous, Settings next, bool shown, Action<string> log)
     {
-        if (!shown && next.Revision != previous.Revision) { log($"settings saved; showing the assistant ({next.Placement})"); Open(next, false); }
+        // Pad Master works with the assistant in the background; after the first Enable the panel shows itself only when the user asked for that.
+        if (!shown && next.Revision != previous.Revision && next.AutoOpen) { log($"settings saved; showing the assistant ({next.Placement})"); Open(next, false); }
+        else if (!shown && next.Revision != previous.Revision) log("settings saved; panel stays hidden (open it from Tools)");
         else if (shown && previous.Placement != next.Placement) place(false);
     }
     public void Stop() => stop();

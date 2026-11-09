@@ -1,0 +1,35 @@
+{
+  "game": "Castlevania II: Simon's Quest",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Castlevania II_ Simon_s Quest.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Up": "Up stairs/enter door",
+        "Down": "Down stairs/squat",
+        "Left/Right": "Go left or right",
+        "A": "Jump",
+        "B": "Lash whip/talk to villagers",
+        "A+B": "Jump and lash whip",
+        "Up+B": "Use Holy Water, Dagger, etc.",
+        "Select": "Pause",
+        "Start": "Begin game/Multi Screen"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Up": "pdf4 (printed 6): Control Pad - \"Press Up or Down to go up and down stairs... When in front of a door, press Up to go inside.\"",
+    "Default/Down": "pdf4 (printed 6): Control Pad - \"Press Up or Down to go up and down stairs... To squat and avoid enemy projectiles, simply press Down.\"",
+    "Default/Left/Right": "pdf4 (printed 6): Control Pad - \"Press Left or Right to go to the left or right.\"",
+    "Default/A": "pdf4 (printed 6): leader line to the right round button, A Button - \"Press A Button to jump.\"",
+    "Default/B": "pdf4 (printed 6): leader line to the left round button, B Button - \"Press B Button to lash with a whip... Also press B Button to talk with the friendly Transylvanian villagers and merchants.\"",
+    "Default/A+B": "pdf4 (printed 6): B Button - \"If you press B Button and A Button simultaneously, you can jump and lash with a whip at the same time.\"",
+    "Default/Up+B": "pdf4 (printed 6): How to Use Certain Weapons - \"Press Up on the Control Pad while pressing B Button to throw the Holy Water or Dagger, drive in the Oak Stake, use the Flame, place the Garlic in strategic locations, etc.\"",
+    "Default/Select": "pdf4 (printed 6): leader line to the left oval, Select Button - \"Press the Select Button during the game to pause.\"",
+    "Default/Start": "pdf4 (printed 6): leader line to the right oval, Start Button - \"Press the Start Button to begin the game. Press during the middle of the game to display a Multi Screen, which gives you the option to choose from weapons and magical items.\""
+  }
+}

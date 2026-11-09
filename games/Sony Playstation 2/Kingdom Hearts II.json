@@ -1,0 +1,79 @@
+{
+  "game": "Kingdom Hearts II",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/Kingdom Hearts II.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left stick": "Moves active character",
+        "Right stick": "Rotates the camera",
+        "L2+Right stick": "Changes command selections",
+        "R2+Right stick": "Switch targets while locked on",
+        "Up/Down/Left/Right": "Move cursor / change command",
+        "L1": "Opens and closes shortcut command",
+        "L1+Cross": "Shortcut command",
+        "L1+Triangle": "Shortcut command",
+        "L1+Square": "Shortcut command",
+        "L1+Circle": "Shortcut command",
+        "L2": "Right stick to command control",
+        "R1": "Engage / disengage target lock",
+        "R2": "Freeze camera / set Auto",
+        "R3": "View behind character / center target",
+        "L2+R3": "Confirm a command",
+        "Cross": "Confirms a selection / link Combos",
+        "Triangle": "Reaction Command",
+        "Square": "Uses an equipped ability",
+        "Circle": "Cancel / Jump / Let go / ability",
+        "Start": "Main menu / Pause / objectives",
+        "Select": "Toggles first-person perspective"
+      }
+    },
+    {
+      "name": "Gummi Ship",
+      "controls": {
+        "Left stick": "Steer the Gummi Ship",
+        "L1/R1": "Rotate camera",
+        "L1+R1": "180-degree rotation",
+        "L2/R2": "Change Teeny Ship formation",
+        "Cross": "Shoot / hold lock-on, release fire",
+        "Triangle": "Slash (Slash Gummi equipped)",
+        "Square": "Teeny Ship EX-Formation",
+        "Circle": "Roll",
+        "Start": "Pause menu"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left stick": "pdf3 (printed 3): left analog stick: Moves the currently active character. The further you tilt it, the faster the character will move",
+    "Default/Right stick": "pdf3 (printed 3): right analog stick: Rotates the camera. Can be reassigned under Config",
+    "Default/L2+Right stick": "pdf3 (printed 3): right analog stick: While the L2 button is pressed, the right analog stick changes command selections",
+    "Default/R2+Right stick": "pdf3 (printed 3): R1 button: To switch targets, hold down the R2 button and use the right analog stick while locked on",
+    "Default/Up/Down/Left/Right": "pdf3 (printed 3): directional buttons: Moves the cursor on the screen and changes command selections",
+    "Default/L1": "pdf3 (printed 3): L1 button: Opens and closes the shortcut command",
+    "Default/L1+Cross": "pdf3 (printed 3): Cross button: Can also be used for a shortcut command (in combination with the L1 button)",
+    "Default/L1+Triangle": "pdf3 (printed 3): Triangle button: Can also be used for a shortcut command (in combination with the L1 button)",
+    "Default/L1+Square": "pdf3 (printed 3): Square button: Can also be used for a shortcut command (in combination with the L1 button)",
+    "Default/L1+Circle": "pdf3 (printed 3): Circle button: Can also be used for a shortcut command (in combination with the L1 button)",
+    "Default/L2": "pdf3 (printed 3): L2 button: While pressed, the right analog stick switches from camera control to command control. Can be reassigned under Config",
+    "Default/R1": "pdf3 (printed 3): R1 button: Engages / disengages target lock",
+    "Default/R2": "pdf3 (printed 3): R2 button: If the Field Camera is set to Auto under Settings, pressing this will freeze the camera. (If the Field Camera is set to Manual, pressing this will set the mode to Auto.)",
+    "Default/R3": "pdf3 (printed 3): R3 button: Moves view behind the currently active character. While locked on, centers the camera on the target",
+    "Default/L2+R3": "pdf3 (printed 3): R3 button: While the L2 button is pressed, the R3 button confirms a command; L2 button: Press the R3 button to confirm",
+    "Default/Cross": "pdf3 (printed 3): Cross button: Confirms a selection; pdf7 (printed 11): With the Attack command selected, press the Cross button at the proper timing to link attacks together into Combos",
+    "Default/Triangle": "pdf3 (printed 3): Triangle button: Activates a Reaction Command when it's displayed at the top of the command window",
+    "Default/Square": "pdf3 (printed 3): Square button: Uses an equipped ability",
+    "Default/Circle": "pdf3 (printed 3): Circle button: Cancel / Jump / Let go (when hanging from a ledge) / Use an equipped ability",
+    "Default/Start": "pdf3 (printed 3): START button: On the field: Opens and closes the main menu. During battle: Pauses the game. During mission battles: Allows you to check your mission objectives",
+    "Default/Select": "pdf3 (printed 3): SELECT button: Toggles first-person perspective",
+    "Gummi Ship/Left stick": "pdf11 (printed 18), Gummi Ship Controls: left analog stick: Steer the Gummi Ship",
+    "Gummi Ship/L1/R1": "pdf11 (printed 18): L1/R1 buttons: Rotate camera. Only available in Mission Level 3",
+    "Gummi Ship/L1+R1": "pdf11 (printed 18): L1/R1 buttons: Rotate camera (executes a 180-degree rotation when pressed simultaneously). Only available in Mission Level 3",
+    "Gummi Ship/L2/R2": "pdf11 (printed 18): L2/R2 buttons: Change Teeny Ship formation. Only available with Formation Change equipped",
+    "Gummi Ship/Cross": "pdf11 (printed 18): Cross button: Shoot / Hold to lock on (with Lock-On Gummi installed), and release to fire a Lock-on Gummi (in Semi-Auto mode)",
+    "Gummi Ship/Triangle": "pdf11 (printed 18): Triangle button: Slash (with a Slash Gummi equipped)",
+    "Gummi Ship/Square": "pdf11 (printed 18): Square button: Change Teeny Ship EX-Formation. Only available when Active Formation is equipped",
+    "Gummi Ship/Circle": "pdf11 (printed 18): Circle button: Roll (rotate the Gummi Ship)",
+    "Gummi Ship/Start": "pdf11 (printed 18): START button: Access the Pause menu (view settings and mission advice)"
+  }
+}

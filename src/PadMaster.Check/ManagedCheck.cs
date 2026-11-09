@@ -16,14 +16,17 @@ static class ManagedCheck
         var forms = await component.GetConfigurationFormsAsync(default);
         Require(forms.Count == 1 && component.Name == PackageIdentity.Name, "one real Configure form");
         var form = forms.Single();
-        Require(form.Description?.FallbackFormat == "Tick Enable and press Save. The assistant panel opens inside LaunchBox; sign in there the first time. Change these settings here or from the panel's gear. Help: Plugins\\PadMaster\\README.md in your LaunchBox folder.", "Configure header gives exact enable, sign-in and help instructions");
-        Require(form.Form.Fields.Select(x => x.Id).SequenceEqual(new[] { "enabled", "assistant", "cli", "port", "placement", "autoOpen", "confirmBulk", "bulkThreshold" }), "Configure fields in order");
+        Require(form.Description?.FallbackFormat == "Enable turns Pad Master on: controller pictures, the PM badge, map generation and the chat. Until you tick it nothing runs. The chat panel opens from Tools > Padmaster AI Assistant when you want it, and has these same settings in its gear. The last two are Pad Master's own: the right-click item and the controller it draws. Help: Plugins\\PadMaster\\README.md in your LaunchBox folder.", "Configure header gives exact enable, sign-in and help instructions");
+        Require(form.Form.Fields.Select(x => x.Id).SequenceEqual(new[] { "enabled", "assistant", "cli", "port", "autoOpen", "placement", "confirmBulk", "bulkThreshold", "menuCaption", "controller" }), "Configure fields in order");
         Require(bool.TryParse(form.Form.Fields[0].DefaultValue, out var enabledDefault) && !enabledDefault, "default disabled");
         Require(form.Form.Fields.Single(x => x.Id == "confirmBulk").DefaultValue == "True" && form.Form.Fields.Single(x => x.Id == "bulkThreshold").DefaultValue == "20", "bulk defaults on and 20");
-        var values = new Dictionary<string, string?> { ["enabled"] = "true", ["assistant"] = "claude-code", ["cli"] = @"C:\Tools\claude.exe", ["port"] = "47822", ["placement"] = "left", ["autoOpen"] = "false", ["confirmBulk"] = "false", ["bulkThreshold"] = "23" };
+        var values = new Dictionary<string, string?> { ["enabled"] = "true", ["assistant"] = "claude-code", ["cli"] = @"C:\Tools\claude.exe", ["port"] = "47822", ["placement"] = "left", ["autoOpen"] = "false", ["confirmBulk"] = "false", ["bulkThreshold"] = "23", ["menuCaption"] = "Controls, please", ["controller"] = "xbox-series" };
         Require((await form.SubmitAsync(values, default)).Succeeded, "form submit");
         var card = Settings.Read(path, _ => { });
-        Require(card.Enabled && card.Cli == values["cli"] && card.Port == 47822 && card.Placement == "left" && !card.AutoOpen && !card.ConfirmBulk && card.BulkThreshold == 23, "form to card through physical store");
+        Require(card.Enabled && card.Cli == values["cli"] && card.Port == 47822 && card.Placement == "left" && !card.AutoOpen && !card.ConfirmBulk && card.BulkThreshold == 23 && card.MenuCaption == "Controls, please" && card.Controller == "xbox-series", "form to card through physical store");
+        Require(!Settings.TryApply(card, new Dictionary<string, string?> { ["controller"] = "../x" }, false, out _, out var badPad) && badPad == "Choose a controller from the list.", "controller path refused");
+        var pads = managed::PadMaster.Configuration.SettingsComponent.Controllers(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..")));
+        Require(pads.Select(o => o.Value).SequenceEqual(new[] { "", "dualsense", "gulikit-kk3-max", "xbox-series" }) && pads.Single(o => o.Value == "gulikit-kk3-max").Label.FallbackFormat == "GuliKit KK3 Max" && pads[0].Label.FallbackFormat == "Default (GuliKit KK3 Max)", "controller list from repo controllers, default named for the user");
         values["port"] = "47823"; values["placement"] = "floating"; values["enabled"] = "false";
         Require(Settings.TryApply(card, values, false, out var changed, out _) && changed.Enabled, "card cannot change Enable");
         (changed with { Expanded = false }).Write(path);
@@ -57,7 +60,7 @@ static class ManagedCheck
             Require(repaired.Enabled == enable && repaired.Expanded && repaired.Port == int.Parse(values["port"]!) && repaired.Cli == values["cli"] && repaired.Placement == values["placement"], "H1 repair honors Enable and form values, defaults omitted state");
         }
         Require(Directory.GetFiles(root, "*", SearchOption.AllDirectories).Length == 1, "exactly one physical store file");
-        Console.WriteLine("OK  managed: real API/component, eight fields, form/card atomic store round-trips, fresh values, bad port, locked read abort, corrupt store repair");
+        Console.WriteLine("OK  managed: real API/component, ten fields, menu text + controller round-trip, controller list, bad controller refused, form/card atomic store round-trips, fresh values, bad port, locked read abort, corrupt store repair");
     }
 
     static void Require(bool ok, string message) { if (!ok) throw new InvalidOperationException(message); }

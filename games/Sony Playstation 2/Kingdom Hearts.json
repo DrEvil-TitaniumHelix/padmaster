@@ -1,0 +1,57 @@
+{
+  "game": "Kingdom Hearts",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/Kingdom Hearts.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left stick": "Move character",
+        "Right stick": "Move cursor in command menu",
+        "Up/Down/Left/Right": "Move cursor",
+        "L1": "Hold: magic shortcut menu",
+        "L1+Triangle": "Cast assigned spell",
+        "L1+Square": "Cast assigned spell",
+        "L1+Cross": "Cast assigned spell",
+        "L2": "Rotate camera counterclockwise / cycle targets",
+        "R2": "Rotate camera clockwise / cycle targets",
+        "L2+R2": "Default frontal view",
+        "R1": "Engage or disengage target lock",
+        "R3": "Confirm",
+        "Cross": "Confirm / combo attack",
+        "Circle": "Jump / Let go / Swim fast / Ascend",
+        "Triangle": "Party attacks locked target",
+        "Square": "Use special abilities / Descend",
+        "Start": "Main menu / Pause",
+        "Select": "Toggle first-person view"
+      }
+    },
+    {
+      "name": "Gummi Ship Flight",
+      "controls": {
+        "R1": "Hold: lock target point"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left stick": "pdf3 (printed 3): left analog stick: Move character (walks or runs depending on how far the stick is tilted) / Move cursor in menu screen",
+    "Default/Right stick": "pdf3 (printed 3): right analog stick: Move cursor in command menu",
+    "Default/Up/Down/Left/Right": "pdf3 (printed 3): directional buttons: Move cursor",
+    "Default/L1": "pdf3 (printed 3): L1 button: Hold down to display magic shortcut menu",
+    "Default/L1+Triangle": "pdf3 (printed 3): Triangle button: Press while holding the L1 button to cast assigned spell",
+    "Default/L1+Square": "pdf3 (printed 3): Square button: Press while holding the L1 button to cast assigned spell",
+    "Default/L1+Cross": "pdf3 (printed 3): Cross button: Press while holding the L1 button to cast assigned spell",
+    "Default/L2": "pdf3 (printed 3): L2 button: Rotate camera counterclockwise (disabled when target lock is engaged) / Cycle through available targets while locked on",
+    "Default/R2": "pdf3 (printed 3): R2 button: Rotate camera clockwise (disabled when target lock is engaged) / Cycle through available targets while locked on",
+    "Default/L2+R2": "pdf3 (printed 3): L2 button: Press simultaneously with the R2 button to revert the camera to default frontal view",
+    "Default/R1": "pdf3 (printed 3): R1 button: Engage or disengage target lock; pdf5 (printed 6): Press the R1 button to lock on to a target",
+    "Default/R3": "pdf3 (printed 3): R3 button: Confirm (disabled in menu screen)",
+    "Default/Cross": "pdf3 (printed 3): Cross button: Confirm; pdf5 (printed 7): While attacking, press the Cross button at the right time to trigger a combo attack",
+    "Default/Circle": "pdf3 (printed 3): Circle button: Cancel / Jump / Let go / Swim fast / Ascend when flying or swimming",
+    "Default/Triangle": "pdf3 (printed 3): Triangle button: Command party members to attack a locked target",
+    "Default/Square": "pdf3 (printed 3): Square button: Use special abilities / Descend when flying or swimming",
+    "Default/Start": "pdf3 (printed 3): START button: Display main menu / Pause (during battle and cut scenes) / Display special menu during mini games",
+    "Default/Select": "pdf3 (printed 3): SELECT button: Toggle first-person view on and off",
+    "Gummi Ship Flight/R1": "pdf10 (printed 16), Flight Screen, Weapon Sights: Hold down the R1 button to lock the target point"
+  }
+}

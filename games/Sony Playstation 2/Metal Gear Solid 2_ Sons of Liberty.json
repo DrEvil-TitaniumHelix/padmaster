@@ -1,0 +1,123 @@
+{
+  "game": "Metal Gear Solid 2: Sons of Liberty",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/Metal Gear Solid 2_ Sons of Liberty.pdf" },
+  "states": [
+    {
+      "name": "Normal View",
+      "controls": {
+        "Up/Down/Left/Right": "Movement",
+        "Left stick": "Movement",
+        "L1": "Lock on / run and shoot",
+        "L2": "Equip item / quick change / reload",
+        "R1": "First Person View",
+        "R2": "Equip weapon / quick change",
+        "L2+R2": "Pull-ups while hanging",
+        "Square": "Use weapon / choke, throw, drag",
+        "Cross": "Crouch / crawl / dive / let go",
+        "Triangle": "Action (doors, climb, hang, ladders)",
+        "Circle": "Punch",
+        "Start": "Button controls / pause and map",
+        "Select": "Codec"
+      }
+    },
+    {
+      "name": "Corner View",
+      "controls": {
+        "L2": "Peek left",
+        "R2": "Peek right",
+        "Right stick": "Change the camera angle",
+        "Square": "Jump out firing",
+        "Circle": "Knock",
+        "Start": "Button controls / pause and map",
+        "Select": "Codec"
+      }
+    },
+    {
+      "name": "First Person View",
+      "controls": {
+        "Up/Down/Left/Right": "Camera movement",
+        "Left stick": "Camera movement",
+        "R1": "Hold for First Person View",
+        "L2": "Peek left / step left",
+        "R2": "Peek right / step right",
+        "L2+R2": "Stretch up",
+        "Square": "Use weapon",
+        "Circle": "Punch",
+        "Start": "Button controls / pause and map",
+        "Select": "Codec"
+      }
+    },
+    {
+      "name": "In the Water",
+      "controls": {
+        "Left stick": "Move around (surface)",
+        "Circle": "Dive / Swim",
+        "Cross": "Quick stop",
+        "Right stick": "Quick turn",
+        "Triangle": "Hold breath"
+      }
+    },
+    {
+      "name": "Blade Equipped",
+      "controls": {
+        "Right stick": "Slash, swing, rotating cut, thrust",
+        "L1": "Guard",
+        "Square": "Reverse blade (Blunt Strike)"
+      }
+    },
+    {
+      "name": "Digital Camera",
+      "controls": {
+        "Circle": "Zoom in",
+        "Cross": "Zoom out",
+        "Square": "Snap a picture",
+        "L1/R1": "Select picture save location"
+      }
+    }
+  ],
+  "evidence": {
+    "Normal View/Up/Down/Left/Right": "pdf3 (printed 03): box with leader to directional buttons: Directional buttons/left analog stick, Normal View Mode: Movement",
+    "Normal View/Left stick": "pdf3 (printed 03): Directional buttons/left analog stick, Normal View Mode: Movement; pdf12 (printed 20): Move around by pressing the left analog stick in the desired direction",
+    "Normal View/L1": "pdf3 (printed 03): L1 button: Lock-on button. Lock onto an enemy soldier with the currently equipped weapon. Aim and walk or run; pdf22 (printed 42): hold the L1 button down to run and shoot at the same time",
+    "Normal View/L2": "pdf3 (printed 03): L2 button: Equip Item button, Normal View: Select and equip/remove items; pdf18 (printed 34): Press the L2 or R2 button once quickly to execute a Quick Change; pdf22 (printed 42): pressing the L2 button twice quickly to replace the magazine",
+    "Normal View/R1": "pdf3 (printed 03): R1 button: First Person View button. Enter First Person View mode",
+    "Normal View/R2": "pdf3 (printed 03): R2 button: Equip Weapon button, Normal View: Select and equip/remove weapons; pdf18 (printed 34): Press the L2 or R2 button once quickly to execute a Quick Change",
+    "Normal View/L2+R2": "pdf12 (printed 21), While Hanging: Press the L2 and R2 buttons simultaneously to do pull-ups",
+    "Normal View/Square": "pdf3 (printed 03): Square legend: Weapon button. Use weapon, Throw/Choke (when no weapon is equipped); pdf13 (printed 25): press the Weapon (Square) button to use that weapon; pdf14 (printed 26): press the Weapon (Square) button to throw an enemy; pick up the soldier's body ... the body can be dragged",
+    "Normal View/Cross": "pdf3 (printed 03): Cross legend: Crawl button/Cancel button. Switch between crouching/crawling and standing; pdf12 (printed 20): Press the Crawl (Cross) button while running to execute a diving somersault; pdf12 (printed 21): Press the Crawl (Cross) button to let go and drop",
+    "Normal View/Triangle": "pdf3 (printed 03): Triangle legend: Action button. Turn handles, climb onto platforms, hang down from railings, etc.; pdf13 (printed 24): Press the Action (Triangle) button to perform various actions such as opening doors and pulling switches; press the Action button to grip the ladder",
+    "Normal View/Circle": "pdf3 (printed 03): Circle legend: Punch button/Confirmation button/Enter button. Punch; pdf13 (printed 25): Press the Punch (Circle) button to throw a punch",
+    "Normal View/Start": "pdf3 (printed 03): START button: Tanker Chapter: Button controls. Plant Chapter: Pause and display the map",
+    "Normal View/Select": "pdf3 (printed 03): SELECT button: Enter Codec mode; pdf22 (printed 42): Press the SELECT button while the CALL sign is being displayed to answer the CALL",
+    "Corner View/L2": "pdf3 (printed 03): L2 button, Corner/First Person View: Peek left; pdf16 (printed 30): In certain places, the L2/R2 buttons can be used to peek left/right",
+    "Corner View/R2": "pdf3 (printed 03): R2 button, Corner/First Person View: Peek right; pdf16 (printed 30): In certain places, the L2/R2 buttons can be used to peek left/right",
+    "Corner View/Right stick": "pdf3 (printed 03): box with leader to right stick: Corner View Mode: Change the camera angle; pdf16 (printed 30): The camera angle can be changed using the right analog stick",
+    "Corner View/Square": "pdf22 (printed 42), Jump-Out Shots: While in Corner View, equip a gun and press the Weapon (Square) button to jump out firing",
+    "Corner View/Circle": "pdf3 (printed 03): Circle legend: Punch, knock when flattened against a wall",
+    "Corner View/Start": "pdf3 (printed 03): START button: Tanker Chapter: Button controls. Plant Chapter: Pause and display the map",
+    "Corner View/Select": "pdf3 (printed 03): SELECT button: Enter Codec mode",
+    "First Person View/Up/Down/Left/Right": "pdf3 (printed 03): Directional buttons/left analog stick, First Person View Mode: Camera movement",
+    "First Person View/Left stick": "pdf3 (printed 03): First Person View Mode: Camera movement; pdf16 (printed 30): Press the left analog stick while in First Person View to change the camera angle",
+    "First Person View/R1": "pdf16 (printed 30): Pressing and holding the R1 button will shift the camera to the player's perspective; pdf13 (printed 25): while holding down the R1 button",
+    "First Person View/L2": "pdf3 (printed 03): L2 button, Corner/First Person View: Peek left; pdf16 (printed 30): Press the L2/R2 buttons to take one step left/right",
+    "First Person View/R2": "pdf3 (printed 03): R2 button, Corner/First Person View: Peek right; pdf16 (printed 30): Press the L2/R2 buttons to take one step left/right",
+    "First Person View/L2+R2": "pdf16 (printed 30): Press both the L2 and R2 buttons at the same time to stretch up",
+    "First Person View/Square": "pdf13 (printed 25), Attacking in First Person View: It is also possible to attack using weapons or fists in First Person View; pdf3 (printed 03): Square legend: Use weapon",
+    "First Person View/Circle": "pdf13 (printed 25), Attacking in First Person View: attack using weapons or fists; Press the Punch (Circle) button to throw a punch",
+    "First Person View/Start": "pdf3 (printed 03): START button: Tanker Chapter: Button controls. Plant Chapter: Pause and display the map",
+    "First Person View/Select": "pdf3 (printed 03): SELECT button: Enter Codec mode",
+    "In the Water/Left stick": "pdf14 (printed 26), Surface Controls: Left analog stick: Move around",
+    "In the Water/Circle": "pdf14 (printed 26), Surface Controls: Circle button: Dive; Underwater Controls: Circle button: Swim. Press repeatedly to swim faster. Hold down to swim slowly",
+    "In the Water/Cross": "pdf14 (printed 26), Underwater Controls: Cross button: Quick stop (press near the bottom to stand)",
+    "In the Water/Right stick": "pdf14 (printed 26), Underwater Controls: Right analog stick: Quick turn",
+    "In the Water/Triangle": "pdf14 (printed 26), Underwater Controls: Triangle button: Hold breath (decreases speed at which O2 Gauge diminishes)",
+    "Blade Equipped/Right stick": "pdf14 (printed 27): Press the right analog stick up/down to slash up/down, and press left/right to swing the blade horizontally; Rotate the right analog stick in a full circle motion to execute a rotating cut; Press and hold the right analog stick to execute a thrust",
+    "Blade Equipped/L1": "pdf14 (printed 27), Guard: Press the L1 button to defend using the blade",
+    "Blade Equipped/Square": "pdf14 (printed 27), Blunt Strike: Press the Weapon (Square) button once before swinging the blade to reverse the blade and execute a Blunt Strike",
+    "Digital Camera/Circle": "pdf15 (printed 28): Press the Circle button to zoom in; pdf21 (printed 41): Press the Circle button to zoom in",
+    "Digital Camera/Cross": "pdf15 (printed 28): the Cross button to zoom out; pdf21 (printed 41): the Cross button to zoom out",
+    "Digital Camera/Square": "pdf15 (printed 28): Press the Weapon (Square) button to snap a picture; pdf21 (printed 41): Press the Square button to snap a picture",
+    "Digital Camera/L1/R1": "pdf15 (printed 28): Select where you want to save pictures with the R1/L1 buttons"
+  }
+}

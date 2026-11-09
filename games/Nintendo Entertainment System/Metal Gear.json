@@ -1,0 +1,35 @@
+{
+  "game": "Metal Gear",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Metal Gear.pdf" },
+  "states": [
+    {
+      "name": "Combat",
+      "controls": {
+        "Left/Right": "Maneuver yourself",
+        "Up/Down": "Maneuver yourself",
+        "A": "Fire weapons",
+        "B": "Punch with your fists",
+        "Start": "Begin mission/pause",
+        "Select": "\"Mode Selection\" sub-screen"
+      }
+    },
+    {
+      "name": "Transceiver Mode",
+      "controls": {
+        "Left/Right": "Adjust Frequency Counter",
+        "Up": "Send message"
+      }
+    }
+  ],
+  "evidence": {
+    "Combat/Left/Right": "pdf6 (printed 6): Control Pad (leader to the cross pad) - Use to maneuver yourself in four different directions, from East to West, to Advancement or Retreat.",
+    "Combat/Up/Down": "pdf6 (printed 6): Control Pad (leader to the cross pad) - Use to maneuver yourself in four different directions, from East to West, to Advancement or Retreat.",
+    "Combat/A": "pdf6 (printed 6): A Button (leader to the right round button) - Press to fire weapons.",
+    "Combat/B": "pdf6 (printed 6): B Button (leader to the left round button) - Press to punch with your fists.",
+    "Combat/Start": "pdf6 (printed 6): Start Button (leader to the right oval) - Press to begin your mission, or to pause during the action for a breather.",
+    "Combat/Select": "pdf6 (printed 6): Select Button (leader to the left oval) - Press during play, and the \"Mode Selection\" sub-screen will appear.; pdf7 (printed 7): press the Select Button on your control during play, and the \"Mode Selection\" sub-screen will appear.",
+    "Transceiver Mode/Left/Right": "pdf8 (printed 8): 2. Frequency Counter - Adjust the Frequency Counter by pressing to the left and right on the Control Pad.",
+    "Transceiver Mode/Up": "pdf8 (printed 8): Sending a message (SEND) - To send for help, adjust the frequency, then press the Control Pad UP."
+  }
+}

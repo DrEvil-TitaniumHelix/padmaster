@@ -1,0 +1,84 @@
+{
+  "game": "Final Fantasy XII",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/Final Fantasy XII.pdf" },
+  "states": [
+    {
+      "name": "Field",
+      "controls": {
+        "Left stick": "Walk / Run",
+        "Right stick": "Move camera",
+        "Cross": "Talk / Inspect / Confirm",
+        "Circle": "Cancel",
+        "Triangle": "Display Party Menu / conversation log",
+        "Square": "Talk with nearby NPC",
+        "Up/Down": "Move the menu cursor",
+        "Left/Right": "Target a foe or NPC",
+        "L1/R1": "Change pages",
+        "L2": "Toggle zoom / lock camera",
+        "R2": "Zoom map and license board",
+        "R3": "Return camera to default",
+        "Start": "Pause the game",
+        "Select": "Display map"
+      }
+    },
+    {
+      "name": "Battle",
+      "controls": {
+        "Left stick": "Walk / Run",
+        "Right stick": "Move camera",
+        "Cross": "Display Battle Menu / Inspect",
+        "Circle": "Cancel",
+        "Triangle": "Display the Party Menu",
+        "Square": "Display/close the Battle Menu",
+        "Up/Down": "Move cursor / change party leader",
+        "Left/Right": "Move cursor / target foe, ally, NPC",
+        "L1/R1": "Change target group",
+        "L2": "Lock on to a target",
+        "R2": "Flee from battle",
+        "R3": "Return camera to default",
+        "Start": "Pause the game",
+        "Select": "Display map"
+      }
+    },
+    {
+      "name": "Riding a Chocobo",
+      "controls": {
+        "Cross": "Sprint",
+        "Circle": "Dismount"
+      }
+    }
+  ],
+  "evidence": {
+    "Field/Left stick": "pdf3 (printed 4), General Controls: left analog stick: Walk (when slightly tilted), Run (when fully tilted)",
+    "Field/Right stick": "pdf3 (printed 4), General Controls: right analog stick: Move camera",
+    "Field/Cross": "pdf3 (printed 4), General Controls: Cross button: Confirm a selection; Talk with a nearby NPC; Inspect an object",
+    "Field/Circle": "pdf3 (printed 4), General Controls: Circle button: Cancel; Return to the previous menu screen",
+    "Field/Triangle": "pdf3 (printed 4), General Controls: Triangle button: Display the Party Menu; Display the conversation log",
+    "Field/Square": "pdf3 (printed 4), General Controls: Square button: Talk with a nearby NPC",
+    "Field/Up/Down": "pdf3 (printed 4), General Controls: up/down buttons: Move the menu cursor",
+    "Field/Left/Right": "pdf3 (printed 4), General Controls: left/right buttons: Target a foe or NPC",
+    "Field/L1/R1": "pdf3 (printed 4), General Controls: L1/R1 buttons: Change pages",
+    "Field/L2": "pdf3 (printed 4), General Controls: L2 button: Toggle zoom; pdf7 (printed 12): lock and center the camera on the party leader's current target by holding down the L2 button",
+    "Field/R2": "pdf3 (printed 4), General Controls: R2 button: Zoom in and out of the map and license board",
+    "Field/R3": "pdf3 (printed 4), General Controls: R3 button: Return camera to default position behind character; pdf7 (printed 12): Pressing the R3 button will reset the camera directly behind the party leader",
+    "Field/Start": "pdf3 (printed 4), General Controls: START button: Pause the game",
+    "Field/Select": "pdf3 (printed 4), General Controls: SELECT button: Display a map of your current location",
+    "Battle/Left stick": "pdf3 (printed 5), Battle Controls: left analog stick: Walk (when slightly tilted), Run (when fully tilted)",
+    "Battle/Right stick": "pdf3 (printed 5), Battle Controls: right analog stick: Move camera",
+    "Battle/Cross": "pdf3 (printed 5), Battle Controls: Cross button: Display the Battle Menu; Inspect an object",
+    "Battle/Circle": "pdf3 (printed 5), Battle Controls: Circle button: Cancel; Return to the previous menu screen",
+    "Battle/Triangle": "pdf3 (printed 5), Battle Controls: Triangle button: Display the Party Menu",
+    "Battle/Square": "pdf3 (printed 5), Battle Controls: Square button: Display/close the Battle Menu",
+    "Battle/Up/Down": "pdf3 (printed 5), Battle Controls: up/down/left/right buttons: Move the menu cursor; up/down buttons: Change party leader (can only be used when the Battle Menu is not open)",
+    "Battle/Left/Right": "pdf3 (printed 5), Battle Controls: up/down/left/right buttons: Move the menu cursor; left/right buttons: Target a foe, ally, or NPC",
+    "Battle/L1/R1": "pdf3 (printed 5), Battle Controls: L1/R1 buttons: Change target group (use to toggle between allies and foes when issuing battle commands)",
+    "Battle/L2": "pdf3 (printed 5), Battle Controls: L2 button: Lock on to a target (while pressed down, the camera will center on the target the party leader is currently engaging)",
+    "Battle/R2": "pdf3 (printed 5), Battle Controls: R2 button: Flee from battle (press this and run to attempt to escape from battle)",
+    "Battle/R3": "pdf3 (printed 5), Battle Controls: R3 button: Return camera to default position behind party leader",
+    "Battle/Start": "pdf3 (printed 5), Battle Controls: START button: Pause the game",
+    "Battle/Select": "pdf3 (printed 5), Battle Controls: SELECT button: Display a map of your current location",
+    "Riding a Chocobo/Cross": "pdf8 (printed 14), Sprinting: Pressing Cross while riding a chocobo will give you an added boost of speed for a limited time",
+    "Riding a Chocobo/Circle": "pdf8 (printed 14): you can dismount at any time by pressing the Circle button"
+  }
+}

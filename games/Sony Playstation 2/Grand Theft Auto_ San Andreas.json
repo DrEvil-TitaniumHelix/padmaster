@@ -1,0 +1,162 @@
+{
+  "game": "Grand Theft Auto: San Andreas",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Grand Theft Auto_ San Andreas.pdf"
+  },
+  "states": [
+    {
+      "name": "On foot",
+      "controls": {
+        "Triangle": "Enter vehicle / secondary attack / pick up",
+        "Circle": "Attack/fire weapon",
+        "Cross": "Run (hold) / sprint (tap)",
+        "Square": "Jump/climb/block",
+        "L2": "Cycle weapon left",
+        "L1": "Center camera / view stats / fire weapon",
+        "R2": "Cycle weapon right",
+        "R1": "Target",
+        "L3": "Crouch",
+        "Select": "Camera modes",
+        "Start": "Pause menu",
+        "R3": "Look behind",
+        "Up": "Gang active mode",
+        "Down": "Gang passive mode",
+        "Right": "Talk positive response",
+        "Left": "Talk negative response",
+        "Right stick": "Camera movement",
+        "Left stick": "Character movement"
+      }
+    },
+    {
+      "name": "Bicycle",
+      "controls": {
+        "Cross": "Pedal (hold) / pedal faster (tap)",
+        "L1": "Bunnyhop / bunnyhop higher (hold)"
+      }
+    },
+    {
+      "name": "In vehicle",
+      "controls": {
+        "Triangle": "Exit vehicle",
+        "Circle": "Car weapon/nitrous",
+        "Cross": "Accelerate",
+        "Square": "Brake/reverse",
+        "L2": "Look left",
+        "R2": "Look right",
+        "L2+R2": "Look behind",
+        "L1": "Car weapon/nitrous",
+        "R1": "Hand brake",
+        "Left stick": "Car steering/camera",
+        "Up/Down": "Cycle radio stations",
+        "Right": "Trip skip",
+        "L3": "Horn",
+        "Select": "Camera modes",
+        "Start": "Pause menu",
+        "R3": "Sub-mission",
+        "Right stick": "Turret control / manual / cinematic camera"
+      }
+    },
+    {
+      "name": "First person shooting",
+      "controls": {
+        "Circle": "Shoot",
+        "L1": "Shoot",
+        "L2": "Zoom in",
+        "R2": "Zoom out",
+        "R1": "Release for normal control",
+        "L3": "Duck",
+        "Left stick": "Move scope/aim",
+        "Right stick": "Move scope/aim"
+      }
+    },
+    {
+      "name": "Swimming",
+      "controls": {
+        "Circle": "Dive underwater",
+        "Cross": "Sprint / super sprint / swim forward",
+        "Square": "Jump",
+        "Triangle": "Enter vehicle",
+        "Left stick": "Swim direction"
+      }
+    },
+    {
+      "name": "Aircraft",
+      "controls": {
+        "R2": "Rudder right",
+        "L2": "Rudder left",
+        "Cross": "Ascend (helicopter) / thrust (plane)",
+        "Square": "Descend (helicopter) / reverse thrust (plane)",
+        "L3": "Hover (helicopter)",
+        "L1": "Primary weapon",
+        "Circle": "Alternate weapon (plane)",
+        "R3": "Raise/lower landing gear (plane)",
+        "Left stick": "Pitch/roll",
+        "Right stick": "Turret/camera"
+      }
+    }
+  ],
+  "evidence": {
+    "On foot/Triangle": "pdf3 (printed 03) Controls: On Foot: Triangle button - ENTER VEHICLE, ACTIVATE MINI GAME, SECONDARY ATTACK, PICK UP OBJECT",
+    "On foot/Circle": "pdf3 (printed 03): Circle button - ATTACK/FIRE WEAPON",
+    "On foot/Cross": "pdf3 (printed 03): X button HOLD - RUN; X button TAP - SPRINT",
+    "On foot/Square": "pdf3 (printed 03): Square button - JUMP/CLIMB/BLOCK",
+    "On foot/L2": "pdf3 (printed 03): L2 button - CYCLE/WEAPON LEFT",
+    "On foot/L1": "pdf3 (printed 03): L1 button - CENTER THE CAMERA/VIEW STATS/FIRE WEAPON",
+    "On foot/R2": "pdf3 (printed 03): R2 button - CYCLE/WEAPON RIGHT",
+    "On foot/R1": "pdf3 (printed 03): R1 button - TARGET",
+    "On foot/L3": "pdf3 (printed 03): L3 button - CROUCH",
+    "On foot/Select": "pdf3 (printed 03): SELECT button - CAMERA MODES",
+    "On foot/Start": "pdf3 (printed 03): START button - PAUSE MENU",
+    "On foot/R3": "pdf3 (printed 03): R3 button - LOOK BEHIND",
+    "On foot/Up": "pdf3 (printed 03): Up arrow button - GANG ACTIVE MODE",
+    "On foot/Down": "pdf3 (printed 03): Down arrow button - GANG PASSIVE MODE",
+    "On foot/Right": "pdf3 (printed 03): Right arrow button - TALK POSITIVE RESPONSE",
+    "On foot/Left": "pdf3 (printed 03): Left arrow button - TALK NEGATIVE RESPONSE",
+    "On foot/Right stick": "pdf3 (printed 03): RIGHT ANALOG - CAMERA MOVEMENT",
+    "On foot/Left stick": "pdf3 (printed 03): LEFT ANALOG - CHARACTER MOVEMENT",
+    "Bicycle/Cross": "pdf3 (printed 03) Controls: Bicycle: X button HOLD - PEDAL; X button TAP - PEDAL FASTER (SPRINT)",
+    "Bicycle/L1": "pdf3 (printed 03): L1 button - BUNNYHOP; L1 button HOLD - BUNNYHOP HIGHER",
+    "In vehicle/Triangle": "pdf4 (printed 04) Controls: In Vehicle: Triangle button - EXIT VEHICLE",
+    "In vehicle/Circle": "pdf4 (printed 04): Circle button - CAR WEAPON/NITROUS",
+    "In vehicle/Cross": "pdf4 (printed 04): X button - ACCELERATE",
+    "In vehicle/Square": "pdf4 (printed 04): Square button - BRAKE/REVERSE",
+    "In vehicle/L2": "pdf4 (printed 04): L2 button + R2 - LOOK LEFT/LOOK BEHIND (the + R2 and LOOK BEHIND printed in orange)",
+    "In vehicle/R2": "pdf4 (printed 04): R2 button + L2 - LOOK RIGHT/LOOK BEHIND (the + L2 and LOOK BEHIND printed in orange)",
+    "In vehicle/L2+R2": "pdf4 (printed 04): L2 button + R2 - LOOK BEHIND; R2 button + L2 - LOOK BEHIND",
+    "In vehicle/L1": "pdf4 (printed 04): L1 button - CAR WEAPON/NITROUS",
+    "In vehicle/R1": "pdf4 (printed 04): R1 button - HAND BRAKE",
+    "In vehicle/Left stick": "pdf4 (printed 04): LEFT ANALOG - CAR STEERING/CAMERA",
+    "In vehicle/Up/Down": "pdf4 (printed 04): Up arrow button - CYCLE RADIO STATIONS; Down arrow button - CYCLE RADIO STATIONS",
+    "In vehicle/Right": "pdf4 (printed 04): Right arrow button - TRIP SKIP",
+    "In vehicle/L3": "pdf4 (printed 04): L3 button - HORN",
+    "In vehicle/Select": "pdf4 (printed 04): SELECT button - CAMERA MODES",
+    "In vehicle/Start": "pdf4 (printed 04): START button - PAUSE MENU",
+    "In vehicle/R3": "pdf4 (printed 04): R3 button - SUB-MISSION",
+    "In vehicle/Right stick": "pdf4 (printed 04): RIGHT ANALOG - TURRET CONTROL, MANUAL CAMERA, CHANGE CINEMATIC CAMERA",
+    "First person shooting/Circle": "pdf4 (printed 04) Controls: First Person Shooting: Circle button - SHOOT; when equipped with a sniper rifle or rocket launcher press and hold the target button to go first person",
+    "First person shooting/L1": "pdf4 (printed 04): L1 button - SHOOT",
+    "First person shooting/L2": "pdf4 (printed 04): L2/R2 buttons - ZOOM IN/ZOOM OUT",
+    "First person shooting/R2": "pdf4 (printed 04): L2/R2 buttons - ZOOM IN/ZOOM OUT",
+    "First person shooting/R1": "pdf4 (printed 04): R1 button - (LET GO TO RETURN TO NORMAL CONTROL)",
+    "First person shooting/L3": "pdf4 (printed 04): L3 button - DUCK",
+    "First person shooting/Left stick": "pdf4 (printed 04): LEFT ANALOG - MOVE SCOPE/AIM",
+    "First person shooting/Right stick": "pdf4 (printed 04): RIGHT ANALOG - MOVE SCOPE/AIM",
+    "Swimming/Circle": "pdf4 (printed 04) Controls: Swimming: Circle button - DIVE UNDERWATER",
+    "Swimming/Cross": "pdf4 (printed 04): X button HOLD - SPRINT; X button TAP - SUPER SPRINT; Under Water: X button HOLD - SWIM FORWARD; X button TAP - SPRINT (SWIM FASTER)",
+    "Swimming/Square": "pdf4 (printed 04): Square button - JUMP",
+    "Swimming/Triangle": "pdf4 (printed 04): Triangle button - ENTER VEHICLE",
+    "Swimming/Left stick": "pdf4 (printed 04) Under Water: LEFT ANALOG - SWIM DIRECTION (ROTATION ONLY)",
+    "Aircraft/R2": "pdf4 (printed 04) Controls: Helicopter and Controls: Plane: R2 button - RUDDER RIGHT",
+    "Aircraft/L2": "pdf4 (printed 04) Helicopter and Plane: L2 button - RUDDER LEFT",
+    "Aircraft/Cross": "pdf4 (printed 04) Helicopter: X button - ASCEND; Plane: X button - THRUST",
+    "Aircraft/Square": "pdf4 (printed 04) Helicopter: Square button - DESCEND; Plane: Square button - REVERSE THRUST",
+    "Aircraft/L3": "pdf4 (printed 04) Helicopter: L3 button - HOVER",
+    "Aircraft/L1": "pdf4 (printed 04) Helicopter and Plane: L1 button - PRIMARY WEAPON",
+    "Aircraft/Circle": "pdf4 (printed 04) Plane: Circle button - ALTERNATE WEAPON",
+    "Aircraft/R3": "pdf4 (printed 04) Plane: R3 button - RAISE/LOWER LANDING GEAR",
+    "Aircraft/Left stick": "pdf4 (printed 04) Helicopter and Plane: LEFT ANALOG - PITCH/ROLL",
+    "Aircraft/Right stick": "pdf4 (printed 04) Helicopter and Plane: RIGHT ANALOG - TURRET/CAMERA"
+  }
+}

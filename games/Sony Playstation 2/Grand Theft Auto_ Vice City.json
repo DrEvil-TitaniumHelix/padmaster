@@ -1,0 +1,76 @@
+{
+  "game": "Grand Theft Auto: Vice City",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Grand Theft Auto_ Vice City.pdf"
+  },
+  "states": [
+    {
+      "name": "On foot",
+      "controls": {
+        "Triangle": "Enter vehicles",
+        "Circle": "Shoot",
+        "Cross": "Sprint",
+        "Square": "Jump",
+        "L2": "Weapon select / switch targets",
+        "L1": "Centres camera / replace weapon / buy business",
+        "R2": "Weapon select / switch targets",
+        "R1": "Target lock-on",
+        "Up/Down/Left/Right": "Move around",
+        "L3": "Crouch",
+        "Select": "Toggle camera view",
+        "Start": "Pause menu",
+        "R3": "Look behind"
+      }
+    },
+    {
+      "name": "In vehicle",
+      "controls": {
+        "Triangle": "Exit vehicles",
+        "Circle": "Shoot",
+        "Cross": "Accelerate / ascend (helicopter)",
+        "Square": "Brake / descend (helicopter)",
+        "L2": "Left look / rotate left (helicopter)",
+        "L1": "Change radio stations",
+        "R2": "Right look / rotate right (helicopter)",
+        "R1": "Handbrake",
+        "L2+R2": "Look behind",
+        "Up/Down/Left/Right": "Steer",
+        "L3": "Horn",
+        "Select": "Toggle camera view",
+        "Start": "Pause menu",
+        "R3": "Toggle vehicle missions"
+      }
+    }
+  ],
+  "evidence": {
+    "On foot/Triangle": "pdf3 (printed 3) On Foot: Triangle button - ENTER VEHICLES",
+    "On foot/Circle": "pdf3 (printed 3): Circle button - SHOOT; pdf6 (printed 9): Circle button to fire",
+    "On foot/Cross": "pdf3 (printed 3): X button - SPRINT; pdf5 (printed 7): press and hold X button to run faster",
+    "On foot/Square": "pdf3 (printed 3): Square button - JUMP",
+    "On foot/L2": "pdf3 (printed 3): L2 button - WEAPON SELECT; R1 row: (L2 / R2 to switch targets)",
+    "On foot/L1": "pdf3 (printed 3): L1 button - CENTRES CAMERA, REPLACE CURRENT WEAPON, BUY BUSINESS (or house icon); pdf6 (printed 9): press L1 button to replace your current selection",
+    "On foot/R2": "pdf3 (printed 3): R2 button - WEAPON SELECT; R1 row: (L2 / R2 to switch targets)",
+    "On foot/R1": "pdf3 (printed 3): R1 button - TARGET LOCK-ON; pdf6 (printed 9): R1 button to target",
+    "On foot/Up/Down/Left/Right": "pdf3 (printed 3): Up, Down, Right, Left buttons - MOVE AROUND",
+    "On foot/L3": "pdf3 (printed 3): L3 button - CROUCH",
+    "On foot/Select": "pdf3 (printed 3): SELECT button - TOGGLE CAMERA VIEW",
+    "On foot/Start": "pdf3 (printed 3): START button - PAUSE MENU",
+    "On foot/R3": "pdf3 (printed 3): R3 button - LOOK BEHIND",
+    "In vehicle/Triangle": "pdf3 (printed 3) In Vehicle: Triangle button - EXIT VEHICLES",
+    "In vehicle/Circle": "pdf3 (printed 3): Circle button - SHOOT",
+    "In vehicle/Cross": "pdf3 (printed 3): X button - ACCELERATE (ASCEND in helicopter); pdf5 (printed 7) Helicopter: X button: Ascend",
+    "In vehicle/Square": "pdf3 (printed 3): Square button - BRAKE (DESCEND in helicopter); pdf5 (printed 7) Helicopter: Square button: Descend",
+    "In vehicle/L2": "pdf3 (printed 3): L2 button - LEFT LOOK (ROTATE LEFT in helicopter); pdf5 (printed 7) Helicopter: R2 & L2 buttons: Rotation",
+    "In vehicle/L1": "pdf3 (printed 3): L1 button - CHANGE RADIO STATIONS",
+    "In vehicle/R2": "pdf3 (printed 3): R2 button - RIGHT LOOK (ROTATE RIGHT in helicopter); pdf5 (printed 7) Helicopter: R2 & L2 buttons: Rotation",
+    "In vehicle/R1": "pdf3 (printed 3): R1 button - HANDBRAKE",
+    "In vehicle/L2+R2": "pdf3 (printed 3): R2 & L2 buttons - (pressed together) LOOK BEHIND",
+    "In vehicle/Up/Down/Left/Right": "pdf3 (printed 3): Up, Down, Right, Left buttons - STEER",
+    "In vehicle/L3": "pdf3 (printed 3): L3 button - HORN",
+    "In vehicle/Select": "pdf3 (printed 3): SELECT button - TOGGLE CAMERA VIEW",
+    "In vehicle/Start": "pdf3 (printed 3): START button - PAUSE MENU",
+    "In vehicle/R3": "pdf3 (printed 3): R3 button - TOGGLE VEHICLE MISSIONS ON or OFF"
+  }
+}

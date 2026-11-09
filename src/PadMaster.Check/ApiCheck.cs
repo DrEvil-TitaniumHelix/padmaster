@@ -16,7 +16,34 @@ static class ApiCheck
     [MethodImpl(MethodImplOptions.NoInlining)]
     public static void Run()
     {
-        LazyStartup(); Bulk(); NoDelete(); Catalog(); Example(); Reload(); Children(); Calls(); Serialization(); Services(); Limits(); DispatcherCheck();
+        LazyStartup(); McpTools(); Bulk(); NoDelete(); Catalog(); Example(); Reload(); Children(); Calls(); Serialization(); Services(); Limits(); DispatcherCheck();
+    }
+    static Mcp McpTools()
+    {
+        var library = new Library(); var server = new Mcp(47801, "/mcp", library.Api.Tools());
+        var listed = Rpc(server, "tools/list")["tools"]!.AsArray();
+        Require(listed.Select(t => t!["name"]!.GetValue<string>()).Order().SequenceEqual(new[] { "controller", "lb_call", "lb_catalog", "lb_create", "lb_get", "lb_list", "lb_set" }), "MCP tools/list includes controller alongside all six lb_* tools");
+        var tool = listed.Single(t => t!["name"]!.GetValue<string>() == "controller")!;
+        Require(tool["inputSchema"]!["type"]!.GetValue<string>() == "object" && tool["inputSchema"]!["properties"]!.AsObject().Count == 0 && tool["inputSchema"]!["required"]!.AsArray().Count == 0, "controller takes no arguments");
+        Require(!library.Api.DocumentationLoaded, "MCP tools/list leaves API documentation lazy");
+        return server;
+    }
+    static JsonNode Rpc(Mcp server, string method, JsonNode? args = null) => (JsonNode)typeof(Mcp).GetMethod("Rpc", BindingFlags.Instance | BindingFlags.NonPublic)!.Invoke(server, [method, args])!;
+    public static void Controller(bool requirePad = true)
+    {
+        var result = Rpc(McpTools(), "tools/call", new JsonObject { ["name"] = "controller", ["arguments"] = new JsonObject() });
+        Require(result["isError"]?.GetValue<bool>() == false, "controller call: " + result["content"]?[0]?["text"]);
+        var identity = JsonNode.Parse(result["content"]![0]!["text"]!.GetValue<string>())!;
+        var slots = identity["xinput"]!.AsArray(); var devices = identity["hid"]!.AsArray();
+        Require(slots.Count == 4 && slots.Select(s => s!["slot"]!.GetValue<int>()).SequenceEqual(Enumerable.Range(0, 4)) && slots.All(s => s!["connected"] is JsonValue value && value.TryGetValue<bool>(out _)), "controller returns slots 0-3 and connection booleans");
+        foreach (var device in devices)
+            Require(device!.AsObject().ContainsKey("name") && (device["name"] == null || device["name"] is JsonValue name && name.TryGetValue<string>(out _)) && new[] { "vid", "pid" }.All(key => device[key] is JsonValue value && value.TryGetValue<string>(out var id) && id.Length == 4 && id.All(c => c is >= '0' and <= '9' or >= 'A' and <= 'F')) && !string.IsNullOrWhiteSpace(device["path"]?.GetValue<string>()), "controller HID identity shape");
+        if (!requirePad && !slots[0]!["connected"]!.GetValue<bool>()) { Console.WriteLine("SKIP controller: no pad"); return; }
+        Require(slots[0]!["connected"]!.GetValue<bool>(), "controller: xinput slot 0 is not connected");
+        var pad = devices.FirstOrDefault(d => d!["vid"]!.GetValue<string>() == "045E" && d["pid"]!.GetValue<string>() == "028E");
+        Require(pad != null, "controller: HID 045E:028E is missing");
+        Require(pad!["name"] != null, "controller: HID 045E:028E name is null");
+        Console.WriteLine($"OK  controller: xinput slot 0 connected; hid 045E:028E {pad["name"]?.GetValue<string>() ?? "null"}");
     }
     static void LazyStartup()
     {

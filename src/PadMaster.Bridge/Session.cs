@@ -460,22 +460,7 @@ public sealed class Session(string cli, string cwd, string mcpConfig, Action<str
     static string? S(JsonNode? node, string name) => node is JsonObject obj && obj[name] is JsonValue value && value.TryGetValue<string>(out var text) ? text : null;
     static bool? B(JsonNode? node, string name) => node is JsonObject obj && obj[name] is JsonValue value && value.TryGetValue<bool>(out var flag) ? flag : null;
 
-    public static ProcessStartInfo Command(string cli, string cwd, IEnumerable<string> args)
-    {
-        var start = new ProcessStartInfo(cli) { WorkingDirectory = cwd, UseShellExecute = false, CreateNoWindow = true,
-            RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true,
-            StandardInputEncoding = new UTF8Encoding(false), StandardOutputEncoding = new UTF8Encoding(false), StandardErrorEncoding = new UTF8Encoding(false) };
-        if (Path.GetExtension(cli).Equals(".cmd", StringComparison.OrdinalIgnoreCase))
-        {
-            var parts = new[] { cli }.Concat(args).ToArray();
-            if (parts.Any(x => x.IndexOfAny(['"', '\r', '\n', '%', '!']) >= 0)) throw new ArgumentException("Unsupported character in command path.");
-            start.FileName = Environment.GetEnvironmentVariable("COMSPEC") ?? "cmd.exe";
-            start.Arguments = "/d /s /c \"" + string.Join(" ", parts.Select(x => "\"" + x + "\"")) + "\"";
-        }
-        else foreach (var arg in args) start.ArgumentList.Add(arg);
-        foreach (var name in start.Environment.Keys.Where(name => name.StartsWith("ANTHROPIC_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("CLAUDE_CODE_USE_", StringComparison.OrdinalIgnoreCase) || name.StartsWith("OPENAI_", StringComparison.OrdinalIgnoreCase) || name.Equals("CODEX_API_KEY", StringComparison.OrdinalIgnoreCase)).ToArray()) start.Environment.Remove(name);
-        return start;
-    }
+    public static ProcessStartInfo Command(string cli, string cwd, IEnumerable<string> args) => Cli.Command(cli, cwd, args);
 
     public static async Task<AuthState> SignedIn(string cli, string cwd, Action<string> log, CancellationToken token = default, string kind = "claude-code")
     {

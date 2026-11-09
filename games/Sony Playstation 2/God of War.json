@@ -1,0 +1,91 @@
+{
+  "game": "God of War",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/God of War.pdf"
+  },
+  "states": [
+    {
+      "name": "On ground",
+      "controls": {
+        "Left stick": "Walk/Run/Climb",
+        "Right stick": "Evade",
+        "Cross": "Jump / double jump / super jump",
+        "Square": "Normal attack",
+        "Triangle": "Heavy attack / launch enemy (hold)",
+        "Circle": "Grab enemies / chain grab",
+        "L1": "Block / parry",
+        "Up/Down/Left/Right": "Select magic",
+        "L2": "Use item/magic",
+        "R2": "Action/interact with world",
+        "R2+Cross": "Kick objects",
+        "L3+R3": "Rage of the Gods",
+        "L2+Circle": "Wrath of Poseidon / Gorgon Rage",
+        "L2+Square": "Gorgon Torrent / Zeus' Fury",
+        "L2+Triangle": "Gorgon Flash / Might of Zeus",
+        "L1+R1": "Summon and sheath sword",
+        "L1+Cross": "Wrath of Artemis",
+        "L1+Square": "Revenge of Artemis",
+        "L1+Triangle": "Ascension of Artemis",
+        "L1+Circle": "Retribution of Artemis",
+        "Start": "Access menu screens",
+        "Select": "Pause game/options menu"
+      }
+    },
+    {
+      "name": "In air",
+      "controls": {
+        "Square": "Horizontal attack",
+        "Triangle": "Vertical attack",
+        "Circle": "Air grab / rope swing (hold)",
+        "L1": "Block",
+        "Up/Down/Left/Right": "Select magic",
+        "L2": "Use item/magic",
+        "R1": "Hercules Stomp"
+      }
+    },
+    {
+      "name": "Swimming",
+      "controls": {
+        "Triangle": "Swim up (hold)",
+        "Square": "Swim down (hold)",
+        "R1": "Speed burst dash (charge, release)"
+      }
+    }
+  ],
+  "evidence": {
+    "On ground/Left stick": "pdf6 (printed 8) On Ground Controls: Left analog stick - Walk/Run/Climb",
+    "On ground/Right stick": "pdf6 (printed 8): Right analog stick - Evade",
+    "On ground/Cross": "pdf6 (printed 8): Cross - Jump; Cross then Cross - Double Jump; (printed 9) Cross (when launching enemy in air) - Super Jump",
+    "On ground/Square": "pdf6 (printed 8): Square - Normal Attack",
+    "On ground/Triangle": "pdf6 (printed 8): Triangle - Heavy Attack; (printed 9) Triangle (hold) - Launch and follow enemy into the Air",
+    "On ground/Circle": "pdf6 (printed 8): Circle - Grab enemies; (printed 9) Circle (when an enemy is in air) - Chain Grab",
+    "On ground/L1": "pdf6 (printed 8): L1 - Block (and Parry enemy if attack is blocked at right time)",
+    "On ground/Up/Down/Left/Right": "pdf6 (printed 8): Up, Down, Left, Right arrows - Select Magic (when acquired); pdf8 (printed 12): use arrows to choose a Magic",
+    "On ground/L2": "pdf6 (printed 8): L2 - Use Item/Magic; pdf8 (printed 13): L2 - Poseidon's Rage; pdf9 (printed 14): L2 - Summon the Army of Hades",
+    "On ground/R2": "pdf6 (printed 8): R2 - Action/Interact with world; pdf16 (printed 28): open a chest, stand in front of it and press and hold R2; (printed 29) step into the light and press R2 to save your game",
+    "On ground/R2+Cross": "pdf6 (printed 9): Hold R2 and press Cross to charge and release - To Kick Objects",
+    "On ground/L3+R3": "pdf6 (printed 9): L3 + R3 (pressed simultaneously) - Rage of the Gods (when Rage Meter is full)",
+    "On ground/L2+Circle": "pdf8 (printed 13): L2 + Circle (tap rapidly) - Wrath of Poseidon; L2 + Circle (hold) - Gorgon Rage",
+    "On ground/L2+Square": "pdf8 (printed 13): L2 (hold) + Square (hold) - Gorgon Torrent; pdf9 (printed 14): L2 (hold) + Square - Zeus' Fury",
+    "On ground/L2+Triangle": "pdf8 (printed 13): L2 (hold) + Triangle - Gorgon Flash; pdf9 (printed 14): L2 (hold) + Triangle (charge then release) - Might of Zeus",
+    "On ground/L1+R1": "pdf9 (printed 15) Blade of Artemis: L1 (hold) + R1 (hold) - Summon and Sheath Sword",
+    "On ground/L1+Cross": "pdf9 (printed 15): L1 (hold) + Cross - Wrath of Artemis",
+    "On ground/L1+Square": "pdf9 (printed 15): L1 (hold) + Square - Revenge of Artemis",
+    "On ground/L1+Triangle": "pdf9 (printed 15): L1 (hold) + Triangle (hold) - Ascension of Artemis",
+    "On ground/L1+Circle": "pdf9 (printed 15): L1 (hold) + Circle - Retribution of Artemis",
+    "On ground/Start": "pdf6 (printed 8 and 9): START - Access Menu Screens",
+    "On ground/Select": "pdf6 (printed 8): SELECT - Pause Game/Options Menu",
+    "In air/Square": "pdf6 (printed 9) In Air Basics: Square - Horizontal Attack",
+    "In air/Triangle": "pdf6 (printed 9): Triangle - Vertical Attack",
+    "In air/Circle": "pdf6 (printed 9): Circle (when Kratos and enemy are in air) - Air Grab; Circle (hold) - Rope Swing (when hanging on a rope)",
+    "In air/L1": "pdf6 (printed 9): L1 - Block",
+    "In air/Up/Down/Left/Right": "pdf6 (printed 9): Directional buttons Up, Down, Left, Right - Select Magic (when acquired)",
+    "In air/L2": "pdf6 (printed 9): L2 - Use Item/Magic",
+    "In air/R1": "pdf6 (printed 9): R1 - Hercules Stomp",
+    "Swimming/Triangle": "pdf16 (printed 29) Poseidon's Trident: To swim up, hold Triangle",
+    "Swimming/Square": "pdf16 (printed 29): to swim down, hold Square",
+    "Swimming/R1": "pdf16 (printed 29): to dash with a speed burst, hold R1 to charge and then release"
+  }
+}

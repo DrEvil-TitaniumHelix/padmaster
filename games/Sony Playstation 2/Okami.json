@@ -1,0 +1,73 @@
+{
+  "game": "Okami",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Okami.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left stick": "Movement",
+        "Right stick": "Camera controls",
+        "R3": "Reset camera",
+        "Up/Down/Left/Right": "Move cursor",
+        "L1": "Change perspective",
+        "L2": "Map display",
+        "R1": "Celestial Brush",
+        "R2": "Fleetfoot (learn at Dojo)",
+        "R2+Left stick": "Side-step direction",
+        "Square": "Tackle / faster run start",
+        "Triangle": "Dig / bite",
+        "Circle": "Talk / investigate / bark",
+        "Cross": "Jump / spring off walls",
+        "Select": "Options Menu",
+        "Start": "Fan Menu"
+      }
+    },
+    {
+      "name": "Battle",
+      "controls": {
+        "Square": "Main weapon attack",
+        "Triangle": "Sub weapon special attack",
+        "R2": "Fleetfoot (learn at Dojo)",
+        "R1": "Celestial Brush"
+      }
+    },
+    {
+      "name": "Celestial Brush",
+      "controls": {
+        "R1": "Hold: brush / release: apply",
+        "Square": "Press brush down / draw",
+        "Left stick": "Move the brush",
+        "Triangle": "Draw lines (pressure sensitive)"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left stick": "pdf6 (printed 8) diagram, leader to left stick: LEFT ANALOG STICK - Movement",
+    "Default/Right stick": "pdf6 (printed 9) diagram, leader to right stick: RIGHT ANALOG STICK - Camera Controls. Move the camera view up, down, left and right.",
+    "Default/R3": "pdf6 (printed 9): Press the right analog stick in (R3 button) to reset the camera facing forward.",
+    "Default/Up/Down/Left/Right": "pdf6 (printed 8) diagram, leader to D-pad: DIRECTIONAL BUTTONS - Move Cursor; Change Map Layer",
+    "Default/L1": "pdf6 (printed 8) diagram: L1 BUTTON - Change Perspective. Press once to pull the camera back; hold to change to a first-person perspective.",
+    "Default/L2": "pdf6 (printed 8) diagram: L2 BUTTON - Map Display",
+    "Default/R1": "pdf6 (printed 9) diagram: R1 BUTTON - Mystic Celestial Brush",
+    "Default/R2": "pdf6 (printed 8) diagram: R2 BUTTON - Fleetfoot (Amaterasu must learn this move at the Dojo.) Amaterasu side-steps to avoid attacks.",
+    "Default/R2+Left stick": "pdf6 (printed 8): Press the R2 button + the left analog stick to change the direction of the side-step.",
+    "Default/Square": "pdf6 (printed 9): SQUARE BUTTON - Tackle (can be performed in midair).; pdf6 (printed 8): Press the Square button once before using the left analog stick to start running at a faster pace; pdf9 (printed 15): SQUARE BUTTON TACKLE",
+    "Default/Triangle": "pdf6 (printed 9): TRIANGLE BUTTON - Dig. Bite nearby target.; pdf9 (printed 15): TRIANGLE BUTTON DIG / BITE",
+    "Default/Circle": "pdf6 (printed 9): CIRCLE BUTTON - Talk. Investigate. Bark (when not talking or investigating).; pdf9 (printed 15): CIRCLE BUTTON TALK / INVESTIGATE / BARK",
+    "Default/Cross": "pdf6 (printed 9): CROSS BUTTON - Jump. Press again to spring off nearby walls.; pdf9 (printed 15): CROSS BUTTON JUMP",
+    "Default/Select": "pdf6 (printed 8) diagram: SELECT BUTTON - Options Menu. Open the Options Menu and select a game option to change its setting.",
+    "Default/Start": "pdf6 (printed 9) diagram: START BUTTON - Fan Menu. Open the Fan Menu; pdf12 (printed 21): Press the START button to open the Fan Menu.",
+    "Battle/Square": "pdf11 (printed 19) Actions available during battle: SQUARE BUTTON - ATTACK WITH YOUR MAIN WEAPON; pdf6 (printed 9): Main Attack (during battle).",
+    "Battle/Triangle": "pdf11 (printed 19): TRIANGLE BUTTON - PERFORM A SPECIAL ATTACK WITH YOUR SUB WEAPON. This attack can only be performed later in the game.; pdf6 (printed 9): Sub Attack (during battle).",
+    "Battle/R2": "pdf11 (printed 19): R2 BUTTON - FLEETFOOT. You must learn this move in the Dojo before you can use it.",
+    "Battle/R1": "pdf11 (printed 19): R1 BUTTON - CELESTIAL BRUSH. All techniques learned can be used.",
+    "Celestial Brush/R1": "pdf8 (printed 12): While holding down the R1 button ...; Release the R1 button and, depending on the drawing, a change to the world may occur.; pdf6 (printed 9): After drawing with the Celestial Brush, release the R1 button to set the effects of the drawing in motion",
+    "Celestial Brush/Square": "pdf8 (printed 12): Press the Square button to push the brush down on the screen.; Hold the Square button while moving the left analog stick in a direction to move the brush and draw on the screen.",
+    "Celestial Brush/Left stick": "pdf8 (printed 12): Hold the Square button while moving the left analog stick in a direction to move the brush and draw on the screen.",
+    "Celestial Brush/Triangle": "pdf8 (printed 12): You can also use the Triangle button to draw lines. With the Triangle button, the drawing becomes pressure sensitive and the lines thicken according to how hard you press the button down."
+  }
+}

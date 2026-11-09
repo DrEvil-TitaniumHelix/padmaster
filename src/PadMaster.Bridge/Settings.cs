@@ -13,9 +13,12 @@ public sealed record Settings
     public int Port { get; init; } = 47800;
     public bool ConfirmBulk { get; init; } = true;
     public int BulkThreshold { get; init; } = 20;
-    public bool AutoOpen { get; init; } = true;
+    public bool AutoOpen { get; init; } = false;   // the owner 11/09: the chat panel never shows itself unless asked; Pad Master runs with the assistant in the background
     public string Placement { get; init; } = "right";
     public bool Expanded { get; init; } = true;
+    public string MenuCaption { get; init; } = DefaultMenuCaption;   // the right-click item's text; Pad Master's own look, separate from the assistant's placement
+    public string Controller { get; init; } = "";                      // controllers\<id> to draw; "" = controllers\active.txt or the only folder
+    public const string DefaultMenuCaption = "Show controller mapping";
     public long Revision { get; init; }
     static readonly JsonSerializerOptions Json = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, PropertyNameCaseInsensitive = true, WriteIndented = true };
 
@@ -43,7 +46,7 @@ public sealed record Settings
     {
         if (bytes == null) return new();
         var value = JsonSerializer.Deserialize<Settings>(bytes, Json) ?? throw new JsonException("Settings must be an object.");
-        if (value.BulkThreshold < 1 || value.Port is < 1024 or > 65535 || value.Cli == null || value.Assistant is not ("" or "claude-code" or "codex") || value.Placement is not ("right" or "left" or "floating")) throw new JsonException("Invalid settings values.");
+        if (value.BulkThreshold < 1 || value.Port is < 1024 or > 65535 || value.Cli == null || value.Assistant is not ("" or "claude-code" or "codex") || value.Placement is not ("right" or "left" or "floating") || value.MenuCaption == null || value.Controller == null) throw new JsonException("Invalid settings values.");
         return value;
     }
 
@@ -79,30 +82,16 @@ public sealed record Settings
         if (!bool.TryParse(Get("autoOpen", current.AutoOpen.ToString()), out var autoOpen) || !bool.TryParse(Get("enabled", current.Enabled.ToString()), out var enabled)) { error = "Invalid on/off value."; return false; }
         var cli = Get("cli", current.Cli).Trim();
         if (assistant != (current.Assistant.Length == 0 ? "claude-code" : current.Assistant) && cli == current.Cli) cli = "";
-        value = current with { Enabled = allowEnable ? enabled : current.Enabled, Assistant = assistant, Cli = cli, Port = port, Placement = placement, AutoOpen = autoOpen, ConfirmBulk = confirmBulk, BulkThreshold = bulkThreshold, Revision = current.Revision + 1 };
+        var caption = Get("menuCaption", current.MenuCaption).Trim(); if (caption.Length == 0) caption = DefaultMenuCaption;
+        var controller = Get("controller", current.Controller).Trim();
+        if (controller.Any(c => c is '/' or '\\' or '.' or ':')) { error = "Choose a controller from the list."; return false; }
+        value = current with { Enabled = allowEnable ? enabled : current.Enabled, Assistant = assistant, Cli = cli, Port = port, Placement = placement, AutoOpen = autoOpen, ConfirmBulk = confirmBulk, BulkThreshold = bulkThreshold, MenuCaption = caption, Controller = controller, Revision = current.Revision + 1 };
         return true;
     }
 
     public static string AssistantName(string kind) => kind == "codex" ? "Codex" : "Claude Code";
-    public static string? DetectCli(string configured = "", string kind = "claude-code")
-    {
-        if (!string.IsNullOrWhiteSpace(configured)) return Existing(Environment.ExpandEnvironmentVariables(configured.Trim().Trim('"')));
-        var command = kind == "codex" ? "codex" : "claude";
-        foreach (var directory in (Environment.GetEnvironmentVariable("PATH") ?? "").Split(Path.PathSeparator))
-            foreach (var name in new[] { command + ".exe", command + ".cmd" })
-            {
-                if (string.IsNullOrWhiteSpace(directory)) continue;
-                var found = Existing(Path.Combine(directory.Trim().Trim('"'), name));
-                if (found != null) return found;
-            }
-        return kind == "codex" ? Existing(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "npm", "codex.cmd")) : Existing(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".local", "bin", "claude.exe"));
-    }
+    public static string? DetectCli(string configured = "", string kind = "claude-code") => PadMaster.Cli.Detect(configured, kind);
 
-    static string? Existing(string path)
-    {
-        try { return File.Exists(path) && Path.GetExtension(path).ToLowerInvariant() is ".exe" or ".cmd" ? Path.GetFullPath(path) : null; }
-        catch { return null; }
-    }
 }
 
 public static class PackageIdentity

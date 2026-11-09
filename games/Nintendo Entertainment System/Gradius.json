@@ -1,0 +1,26 @@
+{
+  "game": "Gradius",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Gradius.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Maneuver the Warp Rattler",
+        "Up/Down": "Maneuver the Warp Rattler",
+        "A": "Fire",
+        "B": "Power boost",
+        "Start": "Start game/pause",
+        "Select": "Select one or two players"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf3 (printed 5): Control Button (leader to the cross pad) - Use this Control Button to maneuver the Warp Rattler.",
+    "Default/Up/Down": "pdf3 (printed 5): Control Button (leader to the cross pad) - Use this Control Button to maneuver the Warp Rattler.",
+    "Default/A": "pdf3 (printed 5): Button A (trigger) (leader to the right round button) - Use this to fire the Warp Rattler's sophisticated on-board armament.",
+    "Default/B": "pdf3 (printed 5): Button B (power booster) (leader to the left round button) - Use for power boosts. (Hit this button when you are in position to make a power boost.); pdf4 (printed 6): When a desired indicator lights up, hit the power boost button (Button B) to activate that power boost.",
+    "Default/Start": "pdf3 (printed 5): Start Button - Use this button to start the game after you have selected the number of players. (Pause function: During play, this button also acts as a toggle switch to stop and resume the game.)",
+    "Default/Select": "pdf3 (printed 5): Selector Button - When the Konami Title comes on your screen, use this button to move the Warp Rattler image and make your selection of one player or two players. (only documented use)"
+  }
+}

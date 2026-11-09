@@ -1,0 +1,83 @@
+{
+  "game": "007: Everything or Nothing",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/007_ Everything or Nothing.pdf" },
+  "states": [
+    {
+      "name": "On foot",
+      "controls": {
+        "Left stick": "Move",
+        "Cross": "Action",
+        "R1": "Fire weapon",
+        "L1": "Lock on / sniper scope",
+        "Right stick": "Look / aim",
+        "Left/Right": "Inventory / Bond Sense",
+        "Square": "Punch left",
+        "Triangle": "Punch right",
+        "Circle": "Dive",
+        "Up": "Next gadget",
+        "Down": "Next weapon",
+        "R2": "Wall hug / turn around",
+        "L2": "Crouch",
+        "Up/Down": "Sniper zoom",
+        "R3": "Reset camera",
+        "Start": "Pause",
+        "Select": "Thermovision"
+      }
+    },
+    {
+      "name": "Driving",
+      "controls": {
+        "Cross": "Forward",
+        "Square": "Brake / reverse",
+        "Right stick": "Forward / brake, cannon",
+        "Circle": "Handbrake / 180 spin",
+        "Left stick": "Steer, altitude",
+        "R1": "Fire weapon",
+        "R2": "Next weapon",
+        "L1": "Gadget / slide / destruct",
+        "Triangle": "Enter / exit vehicle",
+        "L2": "Look back",
+        "Circle+Cross": "Burnout (motorcycle)",
+        "R3": "Center turret (tank)",
+        "Up": "Change camera",
+        "Select": "Toggle HUD map",
+        "Start": "Pause"
+      }
+    }
+  ],
+  "evidence": {
+    "On foot/Left stick": "p4 Default Controls: Move - left analog stick",
+    "On foot/Cross": "p4: Action - Cross button",
+    "On foot/R1": "p4: Fire Weapon - R1 button",
+    "On foot/L1": "p4: Lock On Target/Next Target/Sniper Scope - L1 button",
+    "On foot/Right stick": "p4: Look/Manual Aim Adjust - right analog stick",
+    "On foot/Left/Right": "p4: Inventory/Bond Sense - D-button left/right",
+    "On foot/Square": "p4: Punch Left/Right - Square button/Triangle button",
+    "On foot/Triangle": "p4: Punch Left/Right - Square button/Triangle button",
+    "On foot/Circle": "p4: Dive - Circle button",
+    "On foot/Up": "p4: Next Gadget - D-button up",
+    "On foot/Down": "p4: Next Weapon - D-button down",
+    "On foot/R2": "p4: Wall Hug - R2 button; Turn Around (While Rappelling) - R2 button",
+    "On foot/L2": "p4: Crouch - L2 button",
+    "On foot/Up/Down": "p4: Sniper Zoom (When Looking Through Sniper Scope) - D-button up/down",
+    "On foot/R3": "p4: Reset Camera - R3 button",
+    "On foot/Start": "p4: Pause Game - START button",
+    "On foot/Select": "p4: Activate Thermovision - SELECT button",
+    "Driving/Cross": "p5 Driving Controls: Forward - Cross button/right analog stick up",
+    "Driving/Square": "p5: Brake/Reverse - Square button/right analog stick down",
+    "Driving/Right stick": "p5: Forward - right analog stick up; Brake/Reverse - right analog stick down; Raise/Lower Cannon (Tank Only) - right analog stick up/down; Rotate Cannon (Tank Only) - right analog stick left/right",
+    "Driving/Circle": "p5: Handbrake - Circle button; 180-Degree Spin (Rail Mission only) - Circle button",
+    "Driving/Left stick": "p5: Steer Left/Right - left analog stick left/right; Bond Movement (When Outside Vehicle) - left analog stick; Altitude (Helicopter Only) - left analog stick up/down",
+    "Driving/R1": "p5: Fire Weapon - R1 button",
+    "Driving/R2": "p5: Next Weapon - R2 button",
+    "Driving/L1": "p5: Activate Gadget - L1 button; Action Slide (Motorcycles Only) - L1 button; Self Destruct (RC Car Only) - L1 button",
+    "Driving/Triangle": "p5: Enter/Exit Vehicle (Only in Designated Areas) - Triangle button; Context-Sensitive Action Button (When Outside Vehicle) - Triangle button",
+    "Driving/L2": "p5: Look Back - L2 button",
+    "Driving/Circle+Cross": "p5: Burnout (Motorcycle Only) - Circle button + Cross button",
+    "Driving/R3": "p5: Center Turret (Non-Rail Tank Only) - R3 button",
+    "Driving/Up": "p5: Change Camera - D-button up",
+    "Driving/Select": "p5: Toggle HUD Map - SELECT button",
+    "Driving/Start": "p5: Pause Game - START button"
+  }
+}

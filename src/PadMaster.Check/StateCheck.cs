@@ -30,8 +30,12 @@ static class StateCheck
         int Docked() => PanelPlacement.Walk(root).Count(x => ReferenceEquals(x, panel));
         gate.Update(State(current with { Enabled = false }));
         Require(!driver.Opened && shown == 0, "disabled start stays hidden");
-        gate.Update(State(current));
-        Require(driver.Opened && placer.Floating && shown == 1 && configures == 1 && log.Contains("mcp up"), "enable on opens at floating");
+        gate.Update(State(current));   // AutoOpen default = false: the first Enable starts the assistant in the background and opens no panel
+        Require(!driver.Opened && shown == 0 && configures == 0 && log.Contains("mcp up"), "default: first Enable starts the assistant, no panel");
+        gate.Update(State(current with { Revision = 2 }));
+        Require(!driver.Opened && shown == 0 && log[^1] == "settings saved; panel stays hidden (open it from Tools)", "default: Save keeps the panel hidden");
+        gate.Update(State(current with { AutoOpen = true, Revision = 3 }));
+        Require(driver.Opened && placer.Floating && shown == 1 && configures == 1, "'open on its own' ticked: Save opens at floating");
         driver.CloseFloating();
         Require(!driver.Opened, "closing the floating window hides");
         var lines = log.Count; var places = driver.PlaceCalls;
@@ -67,6 +71,11 @@ static class StateCheck
         lines = log.Count; places = driver.PlaceCalls;
         gate.Update(State(current with { Revision = 10 }));
         Require(shown == 6 && driver.PlaceCalls == places && log.Count == lines, "repeat Save while fallback shown stays silent with no extra Place");
+        driver.CloseFloating(); window.Hide(); lines = log.Count;
+        gate.Update(State(current with { Revision = 11, AutoOpen = false }));
+        Require(!driver.Shown && shown == 6 && log.Count == lines + 1 && log[^1] == "settings saved; panel stays hidden (open it from Tools)", "Save with 'open on its own' off keeps the panel hidden: Pad Master runs with the assistant in the background");
+        gate.Update(State(current with { Revision = 12, AutoOpen = true }));
+        Require(driver.Shown && shown == 7, "Save with it on shows the panel again");
         host = host with { Details = details, DetailsVisible = true }; driver.Refresh();
         Require(driver.Opened && !placer.Floating && Docked() == 1, "re-shown fallback still redocks when game details return");
         placer.Detach(); window.Shutdown();

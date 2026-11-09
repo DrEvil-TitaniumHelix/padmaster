@@ -1,0 +1,65 @@
+{
+  "game": "River City Ransom",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/River City Ransom.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Move; press twice: sprint",
+        "Up/Down": "Move; press twice: sprint",
+        "A": "Punch; pick up",
+        "B": "Kick; pick up",
+        "A+B": "Jump",
+        "Start": "Start or pause the game",
+        "Select": "See power or money"
+      }
+    },
+    {
+      "name": "Holding a weapon",
+      "controls": {
+        "Left/Right": "Move",
+        "Up/Down": "Move",
+        "A": "Swing weapon",
+        "B": "Throw weapon",
+        "Start": "Start or pause the game",
+        "Select": "See power or money"
+      }
+    },
+    {
+      "name": "Holding an enemy",
+      "controls": {
+        "Left/Right": "Move",
+        "Up/Down": "Move",
+        "A": "Use enemy as a weapon",
+        "B": "Throw enemy",
+        "Start": "Start or pause the game",
+        "Select": "See power or money"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf3 (printed 3): To move: Use the Control button.; To sprint: Press the Control button twice in the direction you want to go.",
+    "Default/Up/Down": "pdf3 (printed 3): To move: Use the Control button.; To sprint: Press the Control button twice in the direction you want to go.",
+    "Default/A": "pdf3 (printed 3): To punch: Press the A button. | pdf3 (printed 3): To pick up a weapon: Press the A or B button when you are near the weapon. pdf4 (printed 4): To pick up an enemy: Press the A or B button.",
+    "Default/B": "pdf3 (printed 3): To kick: Press the B button. | pdf3 (printed 3): To pick up a weapon: Press the A or B button when you are near the weapon. pdf4 (printed 4): To pick up an enemy: Press the A or B button.",
+    "Default/A+B": "pdf3 (printed 3): To jump: Press the A and B buttons together.",
+    "Default/Start": "pdf3 (printed 2): Start button: Press to start or pause the game.",
+    "Default/Select": "pdf3 (printed 2): Select button: Press to see how much power or money you have.",
+    "Holding a weapon/Left/Right": "pdf3 (printed 3): To move: Use the Control button.",
+    "Holding a weapon/Up/Down": "pdf3 (printed 3): To move: Use the Control button.",
+    "Holding a weapon/A": "pdf3 (printed 3): To use a weapon: When holding a weapon, press the A button.; pdf9 (printed 15): Press the A button to swing it",
+    "Holding a weapon/B": "pdf4 (printed 4): To throw a weapon: When holding a weapon, press the B button.; pdf9 (printed 15): or the B button to throw it at the enemy.",
+    "Holding a weapon/Start": "pdf3 (printed 2): Start button: Press to start or pause the game.",
+    "Holding a weapon/Select": "pdf3 (printed 2): Select button: Press to see how much power or money you have.",
+    "Holding an enemy/Left/Right": "pdf3 (printed 3): To move: Use the Control button.",
+    "Holding an enemy/Up/Down": "pdf3 (printed 3): To move: Use the Control button.",
+    "Holding an enemy/A": "pdf4 (printed 4): To use an enemy as a weapon: After picking him up, press the A button.",
+    "Holding an enemy/B": "pdf4 (printed 4): To throw an enemy: After picking him up, press the B button.",
+    "Holding an enemy/Start": "pdf3 (printed 2): Start button: Press to start or pause the game.",
+    "Holding an enemy/Select": "pdf3 (printed 2): Select button: Press to see how much power or money you have."
+  }
+}

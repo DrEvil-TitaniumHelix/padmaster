@@ -11,28 +11,6 @@ public static class SafeDiagnostics
     public static string Error(Exception error) => $"{error.GetType().Name} code=0x{error.HResult:X8}" + (error is Win32Exception native ? $" native={native.NativeErrorCode}" : "");
 }
 
-public static class RotatingLog
-{
-    public const int Limit = 1024 * 1024;
-    static readonly object Gate = new();
-    public static void Write(string path, string text)
-    {
-        try
-        {
-            lock (Gate)
-            {
-                var line = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} {text}{Environment.NewLine}";
-                if (new FileInfo(path) is { Exists: true } info && info.Length + System.Text.Encoding.UTF8.GetByteCount(line) > Limit)
-                {
-                    try { File.Move(path, path + ".1", true); } catch { return; }
-                }
-                File.AppendAllText(path, line);
-            }
-        }
-        catch { }
-    }
-}
-
 public sealed class HostGate
 {
     int _bigBox, _reported;

@@ -1,0 +1,85 @@
+{
+  "game": "Gran Turismo 4",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Gran Turismo 4.pdf"
+  },
+  "states": [
+    {
+      "name": "Race",
+      "controls": {
+        "L1": "Rear view",
+        "L2": "Downshift (manual only)",
+        "R1": "Boost",
+        "R2": "Upshift (manual only)",
+        "Up/Down/Left/Right": "Steer",
+        "Select": "Change view",
+        "Start": "Pause",
+        "Circle": "Emergency brakes",
+        "Cross": "Accelerator",
+        "Triangle": "Reverse",
+        "Square": "Brake",
+        "Left stick": "Steer",
+        "Right stick": "Accelerator / brakes"
+      }
+    },
+    {
+      "name": "B-spec live",
+      "controls": {
+        "Up/Down": "Change target car",
+        "Left/Right": "Toggle through commands",
+        "R1": "Switch to Race Monitor",
+        "R2": "Toggle Heads Up Display",
+        "Circle": "Command / cancel pitstop",
+        "Cross": "Toggle camera view",
+        "Triangle": "Overtake on/off",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "B-spec monitor",
+      "controls": {
+        "Up/Down": "Change target car",
+        "Left/Right": "Toggle through commands",
+        "L1+Up/L1+Down/L1+Left/L1+Right": "Adjust speed of progression",
+        "R1": "Switch to Broadcast View",
+        "Circle": "Command / cancel pitstop",
+        "Cross": "Toggle Map / Lap Times",
+        "Triangle": "Overtake on/off",
+        "Start": "Pause"
+      }
+    }
+  ],
+  "evidence": {
+    "Race/L1": "pdf4 (printed 4) DUALSHOCK 2 table, Race column: L1 button - Rear View",
+    "Race/L2": "pdf4 (printed 4) Race column: L2 button - Downshift (manual transmission only)",
+    "Race/R1": "pdf4 (printed 4) Race column: R1 button - Boost",
+    "Race/R2": "pdf4 (printed 4) Race column: R2 button - Upshift (manual transmission only)",
+    "Race/Up/Down/Left/Right": "pdf4 (printed 4) Race column: D-Pad - Steer",
+    "Race/Select": "pdf4 (printed 4) Race column: SELECT - Change View",
+    "Race/Start": "pdf4 (printed 4) Race column: START - Pause",
+    "Race/Circle": "pdf4 (printed 4) Race column: Circle - Emergency Brakes",
+    "Race/Cross": "pdf4 (printed 4) Race column: Cross - Accelerator",
+    "Race/Triangle": "pdf4 (printed 4) Race column: Triangle - Reverse",
+    "Race/Square": "pdf4 (printed 4) Race column: Square - Brake",
+    "Race/Left stick": "pdf4 (printed 4) Race column: Left Stick - Steer",
+    "Race/Right stick": "pdf4 (printed 4) Race column: Right Stick - Accelerator/Brakes",
+    "B-spec live/Up/Down": "pdf8 (printed 12) B-Spec Live Controls: D-pad up/down - Change target car",
+    "B-spec live/Left/Right": "pdf8 (printed 12) B-Spec Live Controls: D-pad left/right - Toggle through commands",
+    "B-spec live/R1": "pdf8 (printed 12) B-Spec Live Controls: R1 Button - Switch to Race Monitor (page 13)",
+    "B-spec live/R2": "pdf8 (printed 12) B-Spec Live Controls: R2 Button - Toggle Heads Up Display",
+    "B-spec live/Circle": "pdf8 (printed 12) B-Spec Live Controls: Circle - Command Pitstop/Cancel Pitstop",
+    "B-spec live/Cross": "pdf8 (printed 12) B-Spec Live Controls: Cross - Toggle camera view",
+    "B-spec live/Triangle": "pdf8 (printed 12) B-Spec Live Controls: Triangle - Overtake On/Off",
+    "B-spec live/Start": "pdf8 (printed 12) B-Spec Live Controls: START - Pause",
+    "B-spec monitor/Up/Down": "pdf8 (printed 13) B-Spec Race Monitor Controls: D-pad up/down - Change target car",
+    "B-spec monitor/Left/Right": "pdf8 (printed 13) B-Spec Race Monitor Controls: D-pad left/right - Toggle through commands",
+    "B-spec monitor/L1+Up/L1+Down/L1+Left/L1+Right": "pdf8 (printed 13) B-Spec Race Monitor Controls: L1 + D-pad - Adjust speed of progression",
+    "B-spec monitor/R1": "pdf8 (printed 13) B-Spec Race Monitor Controls: R1 - Switch to Broadcast View (page 12)",
+    "B-spec monitor/Circle": "pdf8 (printed 13) B-Spec Race Monitor Controls: Circle - Command Pitstop/Cancel Pitstop",
+    "B-spec monitor/Cross": "pdf8 (printed 13) B-Spec Race Monitor Controls: Cross - Toggle through displaying Map/Lap Times",
+    "B-spec monitor/Triangle": "pdf8 (printed 13) B-Spec Race Monitor Controls: Triangle - Overtake On/Off",
+    "B-spec monitor/Start": "pdf8 (printed 13) B-Spec Race Monitor Controls: START - Pause"
+  }
+}

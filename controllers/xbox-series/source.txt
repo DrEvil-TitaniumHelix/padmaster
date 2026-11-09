@@ -1,0 +1,3 @@
+pad_front.jpg: https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Gold_Shadow_Special_Edition.jpg
+pad_back.jpg:  https://commons.wikimedia.org/wiki/File:Xbox_Series_Controller_Gold_Shadow_Special_Edition_(back).jpg
+Photos by Serhio Magpie, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Scaled to 960 px wide, no other change.

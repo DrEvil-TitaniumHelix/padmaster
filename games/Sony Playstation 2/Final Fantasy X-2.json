@@ -1,0 +1,55 @@
+{
+  "game": "Final Fantasy X-2",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/Final Fantasy X-2.pdf" },
+  "states": [
+    {
+      "name": "Field",
+      "controls": {
+        "Up/Down/Left/Right": "Move character",
+        "Left stick": "Move character",
+        "Circle": "Hold to climb or jump",
+        "Cross": "Talk / Examine / Confirm",
+        "Triangle": "Display menu",
+        "Start": "Pause"
+      }
+    },
+    {
+      "name": "Battle",
+      "controls": {
+        "Up/Down": "Move cursor",
+        "Left": "Move cursor / target all enemies",
+        "Right": "Move cursor / subcommands / all party",
+        "Left stick": "Move cursor",
+        "Circle": "Cancel",
+        "Cross": "Confirm",
+        "Triangle": "Switch to next active character",
+        "L1": "Spherechange",
+        "L2": "Scroll lists back",
+        "R1": "Rapid fire (Trigger Happy, Gunner)",
+        "R2": "Scroll lists forward",
+        "Start": "Pause"
+      }
+    }
+  ],
+  "evidence": {
+    "Field/Up/Down/Left/Right": "pdf3 (printed 3): table, Directional buttons, Field Screen: Move character",
+    "Field/Left stick": "pdf3 (printed 3): table, Left analog stick, Field Screen: Move character",
+    "Field/Circle": "pdf3 (printed 3): table, Circle button, Field Screen: In certain locations, holding this down allows Yuna to climb or jump; pdf10 (printed 17): holding down the Circle button as you move will make it easier to progress",
+    "Field/Cross": "pdf3 (printed 3): table, Cross button, Field Screen: Talk / Examine / Confirm",
+    "Field/Triangle": "pdf3 (printed 3): table, Triangle button, Field Screen: Display menu",
+    "Field/Start": "pdf3 (printed 3): table, START button, Field Screen: Pause*",
+    "Battle/Up/Down": "pdf3 (printed 3): table, Directional buttons, Battle Screen: Move cursor /",
+    "Battle/Left": "pdf3 (printed 3): Directional buttons, Battle Screen: Move cursor /; pdf10 (printed 17): To target all enemies at once, press the left directional button when the cursor is positioned on the enemy list",
+    "Battle/Right": "pdf3 (printed 3): Directional buttons, Battle Screen: Move cursor /; pdf7 (printed 10): Pressing the right directional button brings up the Subcommands window and the Escape command; pdf10 (printed 17): To target all party members at once, press the right directional button when the cursor is in your party's HP window",
+    "Battle/Left stick": "pdf3 (printed 3): table, Left analog stick, Battle Screen: Move cursor /",
+    "Battle/Circle": "pdf3 (printed 3): table, Circle button, Battle Screen: Cancel",
+    "Battle/Cross": "pdf3 (printed 3): table, Cross button, Battle Screen: Confirm",
+    "Battle/Triangle": "pdf3 (printed 3): table, Triangle button, Battle Screen: Switch to next active character",
+    "Battle/L1": "pdf3 (printed 3): table, L1 button, Battle Screen: Spherechange; pdf7 (printed 10): Pressing the L1 button accesses the Garment Grid to make a spherechange",
+    "Battle/L2": "pdf3 (printed 3): table, L2 button, Battle Screen: Scroll lists back",
+    "Battle/R1": "pdf3 (printed 3): table, R1 button, Battle Screen: Rapid fire with \"Trigger Happy\" (Gunner only)",
+    "Battle/R2": "pdf3 (printed 3): table, R2 button, Battle Screen: Scroll lists forward",
+    "Battle/Start": "pdf3 (printed 3): table, START button, Battle Screen: Pause*"
+  }
+}

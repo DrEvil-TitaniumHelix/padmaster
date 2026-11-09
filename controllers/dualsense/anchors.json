@@ -1,0 +1,21 @@
+{"controller": "dualsense", "displayName": "PlayStation DualSense", "photos": {"front": "pad_front.jpg", "back": "pad_back.jpg"},
+ "mapping_note": "keys are XInput names, by position: A = cross (south), B = circle (east), X = square (west), Y = triangle (north)",
+ "anchors":{
+  "Y":{"view":"front","x":766,"y":110,"printed":"triangle","label":{"x":970,"y":70,"align":"left"}},
+  "B":{"view":"front","x":833,"y":170,"printed":"circle","label":{"x":970,"y":170,"align":"left"}},
+  "A":{"view":"front","x":772,"y":230,"printed":"cross","label":{"x":970,"y":250,"align":"left"}},
+  "X":{"view":"front","x":706,"y":167,"printed":"square","label":{"x":720,"y":730,"align":"left"}},
+  "rs":{"view":"front","x":644,"y":278,"printed":"","label":{"x":970,"y":330,"align":"left"}},
+  "start":{"view":"front","x":696,"y":80,"printed":"options","label":{"x":680,"y":15,"align":"left"}},
+  "back":{"view":"front","x":283,"y":80,"printed":"create","label":{"x":300,"y":15,"align":"right"}},
+  "home":{"view":"front","x":498,"y":283,"printed":"PS logo","label":{"x":420,"y":730,"align":"left"}},
+  "ls":{"view":"front","x":358,"y":278,"printed":"","label":{"x":-10,"y":300,"align":"right"}},
+  "dpad_up":{"view":"front","x":216,"y":125,"printed":"","label":{"x":-10,"y":60,"align":"right"}},
+  "dpad_left":{"view":"front","x":175,"y":168,"printed":"","label":{"x":-10,"y":140,"align":"right"}},
+  "dpad_down":{"view":"front","x":222,"y":207,"printed":"","label":{"x":-10,"y":220,"align":"right"}},
+  "dpad_right":{"view":"front","x":263,"y":168,"printed":"","label":{"x":200,"y":730,"align":"right"}},
+  "rb":{"view":"back","x":235,"y":55,"printed":"R1","label":{"x":-10,"y":40,"align":"right"}},
+  "rt":{"view":"back","x":195,"y":130,"printed":"R2","label":{"x":-10,"y":130,"align":"right"}},
+  "lb":{"view":"back","x":715,"y":55,"printed":"L1","label":{"x":970,"y":40,"align":"left"}},
+  "lt":{"view":"back","x":750,"y":130,"printed":"L2","label":{"x":970,"y":130,"align":"left"}}
+ }}

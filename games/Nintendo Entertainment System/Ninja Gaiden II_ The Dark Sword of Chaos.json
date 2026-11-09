@@ -1,0 +1,50 @@
+{
+  "game": "Ninja Gaiden II: The Dark Sword of Chaos",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Ninja Gaiden II_ The Dark Sword of Chaos.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Run",
+        "Down": "Crouch",
+        "A": "Jump",
+        "B": "Sword thrust",
+        "Up+B": "Use power boosting item",
+        "Start": "Start/pause/skip Cinema Display"
+      }
+    },
+    {
+      "name": "On wall or ladder",
+      "controls": {
+        "Up": "Climb up",
+        "Down": "Climb down",
+        "Left+A": "Kick-off jump, when facing right",
+        "Right+A": "Kick-off jump, when facing left",
+        "B": "Item attack, direction facing",
+        "Left+B": "Item attack, left",
+        "Right+B": "Item attack, right",
+        "Start": "Start/pause/skip Cinema Display"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf6 (printed 11): Operations for Ryu picture: pad with left/right arrows - \"RUN\". pdf6 (printed 10): CONTROL CROSS - \"Controls the Ninja's direction.\"",
+    "Default/Down": "pdf6 (printed 11): Operations for Ryu picture: pad with down arrow - \"CROUCH\".",
+    "Default/A": "pdf6 (printed 10): BUTTON A, leader line to the right round button - \"Jump button for Ninja.\"",
+    "Default/B": "pdf6 (printed 10): BUTTON B, leader line to the left round button - \"Controls sword thrust.\"",
+    "Default/Up+B": "pdf9 (printed 16): \"All of the power boosting items are used by moving the Control Cross upwards and pressing the B button.\"",
+    "Default/Start": "pdf6 (printed 10): START BUTTON - \"Press to start. Becomes (pause) button when game is in play. Press to skip Cinema Display.\"",
+    "On wall or ladder/Up": "pdf6 (printed 11): picture: pad with up arrow - \"CLIMB UP\". \"by moving the Control Cross up and down, you can climb up and down walls and ladders.\"",
+    "On wall or ladder/Down": "pdf6 (printed 11): picture: pad with down arrow - \"CLIMB DOWN\". \"by moving the Control Cross up and down, you can climb up and down walls and ladders.\"",
+    "On wall or ladder/Left+A": "pdf6 (printed 11): A jump by kicking-off of the wall - \"When you are holding onto a wall or a ladder, you can press the Control Cross in the opposite direction that your player is facing and press the A button to make a jump by kicking-off of the wall.\"",
+    "On wall or ladder/Right+A": "pdf6 (printed 11): A jump by kicking-off of the wall - \"When you are holding onto a wall or a ladder, you can press the Control Cross in the opposite direction that your player is facing and press the A button to make a jump by kicking-off of the wall.\"",
+    "On wall or ladder/B": "pdf6 (printed 11): Attacking from the wall - \"When you are holding onto a wall or a ladder, you can only attack with the power boosting items...\" \"If you press the B button without setting the direction with the Control Cross, the item will fly in the direction that your player is facing.\"",
+    "On wall or ladder/Left+B": "pdf6 (printed 11): Attacking from the wall - \"To make an attack with one of your power boosts, press the Control Cross to the left or right and then press the B button, and the item will go in the direction you have chosen with the Control Cross.\"",
+    "On wall or ladder/Right+B": "pdf6 (printed 11): Attacking from the wall - \"To make an attack with one of your power boosts, press the Control Cross to the left or right and then press the B button, and the item will go in the direction you have chosen with the Control Cross.\"",
+    "On wall or ladder/Start": "pdf6 (printed 10): START BUTTON - \"Press to start. Becomes (pause) button when game is in play. Press to skip Cinema Display.\""
+  }
+}

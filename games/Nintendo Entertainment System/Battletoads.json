@@ -1,0 +1,22 @@
+{
+  "game": "Battletoads",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Battletoads.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Double-click: run, smash hits (with B)",
+        "A": "Jump",
+        "B": "Action",
+        "Start": "Start game/pause game"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf3 (printed 3): bracket to the control pad: Up, Down, Left, Right; Double-click left or right to run and to access smash hits (along with Button B)",
+    "Default/A": "pdf3 (printed 3): Button A = Jump",
+    "Default/B": "pdf3 (printed 3): Button B = Action",
+    "Default/Start": "pdf3 (printed 3): Start = Start Game/Pause Game"
+  }
+}

@@ -1,0 +1,21 @@
+{"controller": "xbox-series", "displayName": "Xbox Series Controller", "photos": {"front": "pad_front.jpg", "back": "pad_back.jpg"},
+ "mapping_note": "keys are XInput names, by position: A south, B east, X west, Y north",
+ "anchors":{
+  "Y":{"view":"front","x":624,"y":165,"printed":"Y","label":{"x":800,"y":60,"align":"left"}},
+  "X":{"view":"front","x":586,"y":195,"printed":"X","label":{"x":800,"y":135,"align":"left"}},
+  "B":{"view":"front","x":664,"y":200,"printed":"B","label":{"x":800,"y":210,"align":"left"}},
+  "A":{"view":"front","x":627,"y":230,"printed":"A","label":{"x":800,"y":285,"align":"left"}},
+  "rs":{"view":"front","x":555,"y":262,"printed":"","label":{"x":800,"y":360,"align":"left"}},
+  "back":{"view":"front","x":436,"y":193,"printed":"view icon","label":{"x":330,"y":40,"align":"right"}},
+  "home":{"view":"front","x":479,"y":146,"printed":"Xbox logo","label":{"x":345,"y":40,"align":"left"}},
+  "start":{"view":"front","x":518,"y":192,"printed":"menu icon","label":{"x":540,"y":40,"align":"left"}},
+  "ls":{"view":"front","x":328,"y":185,"printed":"","label":{"x":170,"y":130,"align":"right"}},
+  "dpad_up":{"view":"front","x":400,"y":255,"printed":"","label":{"x":170,"y":205,"align":"right"}},
+  "dpad_left":{"view":"front","x":375,"y":277,"printed":"","label":{"x":170,"y":280,"align":"right"}},
+  "dpad_down":{"view":"front","x":400,"y":300,"printed":"","label":{"x":170,"y":355,"align":"right"}},
+  "dpad_right":{"view":"front","x":425,"y":277,"printed":"","label":{"x":470,"y":590,"align":"left"}},
+  "rt":{"view":"back","x":298,"y":150,"printed":"RT","label":{"x":170,"y":150,"align":"right"}},
+  "rb":{"view":"back","x":355,"y":132,"printed":"RB","label":{"x":420,"y":40,"align":"right"}},
+  "lt":{"view":"back","x":642,"y":150,"printed":"LT","label":{"x":800,"y":150,"align":"left"}},
+  "lb":{"view":"back","x":585,"y":132,"printed":"LB","label":{"x":520,"y":40,"align":"left"}}
+ }}

@@ -1,0 +1,34 @@
+{
+  "game": "ICO",
+  "platform": "Sony Playstation 2",
+  "source": { "type": "manual", "path": "Sony Playstation 2/ICO.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left stick": "Run / Swim / Climb / Slide / Hang",
+        "Up/Down/Left/Right": "Run / Swim",
+        "Right stick": "View surroundings",
+        "Triangle": "Jump up / Let go of chain",
+        "Left stick+Triangle": "Pull up and stand / Leap",
+        "Square": "Lunge / Strike with weapon",
+        "Cross": "Release",
+        "Circle": "Walk (hold) / Activate / Pick up / Throw",
+        "R1": "Yorda's hand / Call / Pull up",
+        "R2": "Zoom camera"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left stick": "pdf6 (printed 4), Controlling Ico: Run/Swim - left analog stick (analog sensitive); Climb chains/pipes - left analog stick UP; Slide down chains/pipes - left analog stick DOWN; Move while hanging - left analog stick",
+    "Default/Up/Down/Left/Right": "pdf6 (printed 4): Run/Swim - left analog stick. Can also be done with the directional pad",
+    "Default/Right stick": "pdf6 (printed 4): View surroundings - right analog stick; pdf13 (printed 11): To scan your surroundings, use the right analog stick",
+    "Default/Triangle": "pdf6 (printed 4): Jump up - Triangle button; pdf16 (printed 14): To jump up and grab a ledge, chain or pipe, press the Triangle button; pdf17 (printed 15): To let go of a swinging chain, press the Triangle button",
+    "Default/Left stick+Triangle": "pdf6 (printed 4): Pull up and stand - left analog stick + Triangle button; Leap - left analog stick + Triangle button",
+    "Default/Square": "pdf6 (printed 4): Lunge/Strike with weapon - Square button; pdf13 (printed 22): To attack with a weapon, press the Square button; lunging at them (Square button + left analog stick)",
+    "Default/Cross": "pdf6 (printed 4): Release - Cross button",
+    "Default/Circle": "pdf6 (printed 4): Walk - hold the Circle button down and move with the directional pad or analog stick; Activate switch/Throw lever - Circle button; Pick up objects or weapons - Circle button; Throw objects - Circle button",
+    "Default/R1": "pdf6 (printed 4): Hold Yorda's hand/Call her/Pull her up - R1 button; pdf16 (printed 14): press the R1 button to tell her to climb",
+    "Default/R2": "pdf6 (printed 4): Zoom camera - R2 button; pdf13 (printed 11): Press the R2 button to zoom in on points of interest"
+  }
+}

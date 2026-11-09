@@ -1,0 +1,28 @@
+{
+  "game": "Metroid",
+  "platform": "Nintendo Entertainment System",
+  "source": { "type": "manual", "path": "Nintendo Entertainment System/Metroid.pdf" },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Up": "Aims beam weapon up",
+        "Left/Right": "Moves Samus",
+        "Select": "Selects beam missile",
+        "B": "Shoots beam/sets bomb",
+        "A": "Jump",
+        "Down": "Curl up",
+        "Start": "Pause"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Up": "p7: [1] Aims beam weapon up.",
+    "Default/Left/Right": "p7: [2] Moves Samus right or left.",
+    "Default/Select": "p7: [3] Selects beam missile.",
+    "Default/B": "p7: [4] Shoots beam or sets bomb.",
+    "Default/A": "p7: [5] Jump",
+    "Default/Down": "p7: [6] Curl up",
+    "Default/Start": "p7: [7] Pause"
+  }
+}

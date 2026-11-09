@@ -1,0 +1,27 @@
+{
+  "game": "Bubble Bobble",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Bubble Bobble.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left/Right": "Move left or right",
+        "A": "Jump Up (hold: ride bubbles)",
+        "B": "Blow Bubbles",
+        "Select": "After START, Bob joins game",
+        "Start": "Begin play/pause"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left/Right": "pdf3 (printed 3): Bub/Bob pad picture, leader lines to left and right arrows labelled \"LEFT\", \"RIGHT\". pdf5 (printed 6): \"Move Bub and Bob around each level.\"",
+    "Default/A": "pdf3 (printed 3): \"A Button: Jump Up\". pdf5 (printed 7): \"Press the A button to jump. By keeping this button down, you can ride up on bubbles that come from below.\"",
+    "Default/B": "pdf3 (printed 3): \"B Button: Blow Bubbles\". pdf5 (printed 6): \"Capture the beasties by pressing the B button and blowing bubbles at them.\"",
+    "Default/Select": "pdf4 (printed 4): Start Button - \"Press START and then SELECT to have Bob join the game during play.\"",
+    "Default/Start": "pdf4 (printed 4): Start Button - \"Push START to begin play after player selection.\" Pause Function - \"Push the START button once during game play to pause. Push the START button again to resume play.\""
+  }
+}

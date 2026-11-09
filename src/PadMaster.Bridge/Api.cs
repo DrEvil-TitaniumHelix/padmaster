@@ -55,6 +55,7 @@ public sealed class Api
 
     public IReadOnlyList<Tool> Tools() =>
     [
+        Make("controller", "Read connected controller identity: XInput slots 0-3 with optional battery information and HID gamepad names, VID/PID and device paths. Names are null when the HID product string is unavailable.", Schema(), _ => Controller.Read()),
         Make("lb_catalog", "Discover LaunchBox API types, exact member signatures, summaries and service availability. Use type and search to narrow results.", Schema(("type", "string", false), ("search", "string", false)), Catalog),
         Make("lb_list", "Read library rows. Case-insensitive where fields support contains/eq/gt/lt. Follow nextOffset until null; limit 1-2000 and total result size are capped.", Schema(("root", "string", true), ("where", "object", false), ("fields", "strings", false), ("limit", "integer", false), ("offset", "integer", false)), List),
         Make("lb_get", "Read properties of a library object or root. Children use parent {type,id} and their natural key. Returned @ handles address other API results for this session.", Schema(("type", "string", true), ("id", "string", false), ("parent", "object", false), ("fields", "strings", false)), Get),

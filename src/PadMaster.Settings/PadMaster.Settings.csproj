@@ -11,6 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\PadMaster.Bridge\Settings.cs" Link="Settings.cs" />
+    <Compile Include="..\PadMaster.Bridge\Cli.cs" Link="Cli.cs" />
     <None Update="manifest.json;icon.png" CopyToOutputDirectory="PreserveNewest" />
     <Reference Include="Unbroken.LaunchBox.Plugins">
       <HintPath>$(LaunchBoxDir)\Core\Unbroken.LaunchBox.Plugins.dll</HintPath>

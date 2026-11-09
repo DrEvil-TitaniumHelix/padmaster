@@ -1,0 +1,72 @@
+{
+  "game": "God of War II",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/God of War II.pdf"
+  },
+  "states": [
+    {
+      "name": "On ground",
+      "controls": {
+        "Left stick": "Walk/Run/Climb/Swim",
+        "Right stick": "Evade",
+        "Cross": "Jump / double jump",
+        "Triangle": "Light attack / launch enemy (charge)",
+        "Circle": "Grab / chain grab",
+        "L1": "Block",
+        "Up/Down/Left/Right": "Select magic",
+        "L2": "Use magic",
+        "R1": "Action/interact/grapple",
+        "R2": "Toggle blades / sub-weapon",
+        "L1+Square": "Cyclone of Chaos",
+        "L1+Triangle": "Oceanus",
+        "L1+Circle": "Rampage of the Furies",
+        "Start": "Access menu screens",
+        "Select": "Pause game/options menu"
+      }
+    },
+    {
+      "name": "In air",
+      "controls": {
+        "Cross": "Double jump",
+        "Square": "Horizontal attack",
+        "Triangle": "Vertical attack",
+        "Circle": "Air grab",
+        "L1": "Block",
+        "Up/Down/Left/Right": "Select magic",
+        "L2": "Use item/magic",
+        "L1+Square": "Cyclone of Chaos (air)",
+        "L1+Triangle": "Oceanus Torrent (air)",
+        "L1+Circle": "Rampage of the Furies (air)"
+      }
+    }
+  ],
+  "evidence": {
+    "On ground/Left stick": "pdf5 (printed 6) On Ground Basics: Walk/Run/Climb/Swim - Left analog stick",
+    "On ground/Right stick": "pdf5 (printed 6): Evade - Right analog stick",
+    "On ground/Cross": "pdf5 (printed 6): Jump - Cross; Double Jump - Cross then Cross. The same list also prints Normal Attack - Cross, left out as a conflict with Jump",
+    "On ground/Triangle": "pdf5 (printed 6): Light Attack - Triangle; (printed 7) On Ground Advanced: Launch Enemy in Air - Triangle (charge)",
+    "On ground/Circle": "pdf5 (printed 6): Grab - Circle; (printed 7): Chain Grab - Circle (when an enemy is in air)",
+    "On ground/L1": "pdf5 (printed 6): Block - L1",
+    "On ground/Up/Down/Left/Right": "pdf5 (printed 6): Select Magic (when acquired) - Directional buttons Up, Down, Left, Right",
+    "On ground/L2": "pdf5 (printed 6): Use Magic - L2",
+    "On ground/R1": "pdf5 (printed 6): Action/Interact/Grapple - R1; pdf6 (printed 9): open a chest, stand in front of it and press R1; step into the light and press R1 to save",
+    "On ground/R2": "pdf4 (printed 5) Sub-Weapon Icon: Kratos can quickly toggle between his Blades and the current Sub-Weapon by pressing R2",
+    "On ground/L1+Square": "pdf5 (printed 7) On Ground Advanced: Cyclone of Chaos - L1 + Square",
+    "On ground/L1+Triangle": "pdf5 (printed 7): Oceanus - L1 + Triangle",
+    "On ground/L1+Circle": "pdf5 (printed 7): Rampage of the Furies - L1 + Circle",
+    "On ground/Start": "pdf5 (printed 6): Access Menu Screens - START",
+    "On ground/Select": "pdf5 (printed 6): Pause Game/Options Menu - SELECT",
+    "In air/Cross": "pdf5 (printed 7) In Air Basics: Double Jump - Cross then Cross",
+    "In air/Square": "pdf5 (printed 7): Horizontal Attack - Square",
+    "In air/Triangle": "pdf5 (printed 7): Vertical Attack - Triangle",
+    "In air/Circle": "pdf5 (printed 7): Air Grab - Circle (when Kratos and enemy are in air)",
+    "In air/L1": "pdf5 (printed 7): Block - L1",
+    "In air/Up/Down/Left/Right": "pdf5 (printed 7): Select Magic (when acquired) - Directional buttons Up, Down, Left, Right",
+    "In air/L2": "pdf5 (printed 7): Use Item/Magic - L2",
+    "In air/L1+Square": "pdf5 (printed 7) In Air Advanced: Cyclone of Chaos (Air) - L1 + Square",
+    "In air/L1+Triangle": "pdf5 (printed 7): Oceanus Torrent (Air) - L1 + Triangle",
+    "In air/L1+Circle": "pdf5 (printed 7): Rampage of the Furies (Air) - L1 + Circle"
+  }
+}

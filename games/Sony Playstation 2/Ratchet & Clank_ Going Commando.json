@@ -1,0 +1,130 @@
+{
+  "game": "Ratchet & Clank: Going Commando",
+  "platform": "Sony Playstation 2",
+  "source": {
+    "type": "manual",
+    "path": "Sony Playstation 2/Ratchet & Clank_ Going Commando.pdf"
+  },
+  "states": [
+    {
+      "name": "On foot",
+      "controls": {
+        "Left stick": "Walk / run",
+        "Right stick": "Camera rotate / pan",
+        "Cross": "Jump / pull up from ledge",
+        "R1": "Crouch (hold) / drop from ledge",
+        "Left/Right": "Move while hanging from ledge",
+        "Triangle": "Weapon quick select / quick switch",
+        "Circle": "Fire weapon / use gadget",
+        "Square": "Swing wrench / Multi-Strike",
+        "L1": "First person targeting / reset camera",
+        "L1+Right stick": "Look around mode",
+        "L2/R2": "Strafe (hold with stick)",
+        "L3": "Nanotech and bolt display",
+        "Cross+Square": "Hyper-Strike",
+        "L1+Square/R1+Square": "Comet-Strike",
+        "R1+Cross": "Flip (with stick) / boost jump",
+        "L2+Cross/R2+Cross": "Strafe flip (with stick)",
+        "Start": "Pause / main menu",
+        "Select/R3": "Open map screen"
+      }
+    },
+    {
+      "name": "Swimming",
+      "controls": {
+        "Left stick": "Swim",
+        "Up/Down/Left/Right": "Swim",
+        "Square": "Dive underwater",
+        "Cross": "Resurface",
+        "R1": "Turbo swim (Hydro-Pack)"
+      }
+    },
+    {
+      "name": "Fighter ship",
+      "controls": {
+        "Cross": "Fire guns",
+        "Circle": "Fire secondary weapon",
+        "Triangle": "Secondary weapon quick select",
+        "Square": "Turbo boost",
+        "L1/R1": "Barrel roll left or right",
+        "L2/R2": "Straighten ship"
+      }
+    },
+    {
+      "name": "Hover bike",
+      "controls": {
+        "Left stick": "Steer",
+        "Up/Down/Left/Right": "Steer",
+        "Cross": "Accelerate",
+        "R1/R2": "Turbo boost",
+        "L1/L2": "Fire weapon"
+      }
+    },
+    {
+      "name": "Clank",
+      "controls": {
+        "Left stick": "Walk / run",
+        "Right stick": "Camera rotate / pan",
+        "Square": "Punch",
+        "Cross": "Jump / glide (hold)",
+        "Triangle": "Microbot command menu (hold)"
+      }
+    },
+    {
+      "name": "Giant Clank",
+      "controls": {
+        "Square": "Punch",
+        "Circle": "Fire missiles",
+        "Triangle": "Bomb Strike special attack",
+        "Cross": "Jump",
+        "L2/R2": "Strafe (hold with stick)"
+      }
+    }
+  ],
+  "evidence": {
+    "On foot/Left stick": "pdf11 (printed 6) Basic Commando Moves: Walk/Run - Left Analog Stick",
+    "On foot/Right stick": "pdf11 (printed 6): Camera Rotate/Pan - Right Analog Stick",
+    "On foot/Cross": "pdf11 (printed 6): Jump - Cross Button; Pull Up From Ledge - Cross Button; pdf12 (printed 7): Double Jump - Cross Button Cross Button; Wall Jump - Cross Button While Jumping Toward Wall, Cross Button Again When Contacting Wall",
+    "On foot/R1": "pdf12 (printed 7): Crouch - R1 Button (Hold); pdf11 (printed 6): Drop From Ledge - R1 Button",
+    "On foot/Left/Right": "pdf11 (printed 6): Move While Hanging From Ledge - Left Analog Stick or Directional Button Right or Left",
+    "On foot/Triangle": "pdf11 (printed 6): Weapon Quick Select - Triangle Button (Hold) + Left Analog Stick or Directional Button; pdf12 (printed 7): Quick Switch Between Last Two Hand Items - Double Tap Triangle Button",
+    "On foot/Circle": "pdf11 (printed 6): Fire Weapon Or Use Gadget - Circle Button; pdf12 (printed 7): Use Weapon/Equip Weapon - Circle Button",
+    "On foot/Square": "pdf12 (printed 7): Swing Wrench - Square Button; Multi-Strike - Square Button Square Button Square Button",
+    "On foot/L1": "pdf11 (printed 6): First Person Targeting - L1 Button (Hold); pdf12 (printed 7): Reset Camera Behind Ratchet or Clank - Tap L1 Button",
+    "On foot/L1+Right stick": "pdf12 (printed 7): Look Around Mode - L1 Button (Hold) + Right Analog Stick or Directional Button",
+    "On foot/L2/R2": "pdf12 (printed 7): Strafe - L2 Button or R2 Button (Hold) + Left Analog Stick or Directional Button",
+    "On foot/L3": "pdf12 (printed 7): Nanotech And Bolt Display - L3 Button",
+    "On foot/Cross+Square": "pdf12 (printed 7): Hyper-Strike - Cross Button + Square Button",
+    "On foot/L1+Square/R1+Square": "pdf12 (printed 7): Comet-Strike - L1 Button or R1 Button (Hold) + Square Button",
+    "On foot/R1+Cross": "pdf12 (printed 7): Flip Left Or Right - R1 Button (Hold) + Cross Button + Left Analog Stick or Directional Button Left or Right; Back Flip - R1 (Hold) + Cross + Left Analog Stick or Directional Button Backward; pdf13 (printed 8): Boost Jump (While Stationary) - Hold The R1 Button To Crouch, and Press The Cross Button",
+    "On foot/L2+Cross/R2+Cross": "pdf12 (printed 7): Strafe Flip - L2 Button or R2 Button (Hold) + Cross Button + Left Analog Stick or Directional Button",
+    "On foot/Start": "pdf11 (printed 6) Menu Controls: Start/Pause Game/Access Main Menu - START Button",
+    "On foot/Select/R3": "pdf11 (printed 6) Menu Controls: Open Map Screen - SELECT or R3 Button",
+    "Swimming/Left stick": "pdf13 (printed 8): Swim - Left Analog Stick or Directional Button",
+    "Swimming/Up/Down/Left/Right": "pdf13 (printed 8): Swim - Left Analog Stick or Directional Button",
+    "Swimming/Square": "pdf13 (printed 8): Dive Underwater - Square Button (Hold Down To Dive Faster)",
+    "Swimming/Cross": "pdf13 (printed 8): Resurface - Cross Button (Hold Down To Rise Faster)",
+    "Swimming/R1": "pdf13 (printed 8) Hydro-Pack: Turbo Swim - Press and Hold The R1 Button While Under Water",
+    "Fighter ship/Cross": "pdf14 (printed 9) Fighter Ship: Fire Guns - Cross Button",
+    "Fighter ship/Circle": "pdf14 (printed 9) Fighter Ship: Fire Secondary Weapon - Circle Button",
+    "Fighter ship/Triangle": "pdf14 (printed 9) Fighter Ship: Secondary Weapon Quick Select - Triangle Button (Hold) + Left Analog Stick or Directional Button",
+    "Fighter ship/Square": "pdf14 (printed 9) Fighter Ship: Turbo Boost - Square Button",
+    "Fighter ship/L1/R1": "pdf14 (printed 9) Fighter Ship: Barrel Roll Left Or Right - L1 Button or R1 Button",
+    "Fighter ship/L2/R2": "pdf14 (printed 9) Fighter Ship: Straighten Ship - L2 Button or R2 Button",
+    "Hover bike/Left stick": "pdf14 (printed 9) Hover Bike: Steer - Left Analog Stick or Directional Button",
+    "Hover bike/Up/Down/Left/Right": "pdf14 (printed 9) Hover Bike: Steer - Left Analog Stick or Directional Button",
+    "Hover bike/Cross": "pdf14 (printed 9) Hover Bike: Accelerate - Cross Button",
+    "Hover bike/R1/R2": "pdf14 (printed 9) Hover Bike: Turbo Boost - R1 Button or R2 Button",
+    "Hover bike/L1/L2": "pdf14 (printed 9) Hover Bike: Fire Weapon - L1 Button or L2 Button",
+    "Clank/Left stick": "pdf15 (printed 10) Commanding Clank: Walk/Run - Left Analog Stick",
+    "Clank/Right stick": "pdf15 (printed 10) Commanding Clank: Camera Rotate/Pan - Right Analog Stick",
+    "Clank/Square": "pdf15 (printed 10) Commanding Clank: Punch - Square Button",
+    "Clank/Cross": "pdf15 (printed 10) Commanding Clank: Jump - Cross Button; Glide - Press and Hold Cross Button After Jumping",
+    "Clank/Triangle": "pdf15 (printed 10) Commanding Clank: Microbot Command Menu - Triangle Button (Hold) + Left Analog Stick or Directional Button; pdf25 (printed 20): hold down the Triangle Button and then choose a command",
+    "Giant Clank/Square": "pdf15 (printed 10) Giant Clank: Punch - Square Button",
+    "Giant Clank/Circle": "pdf15 (printed 10) Giant Clank: Fire Missiles - Circle Button",
+    "Giant Clank/Triangle": "pdf15 (printed 10) Giant Clank: Bomb Strike Special Attack - Triangle Button",
+    "Giant Clank/Cross": "pdf15 (printed 10) Giant Clank: Jump - Cross Button",
+    "Giant Clank/L2/R2": "pdf15 (printed 10) Giant Clank: Strafe - L2 Button or R2 Button (Hold) + Left Analog Stick or Directional Button"
+  }
+}

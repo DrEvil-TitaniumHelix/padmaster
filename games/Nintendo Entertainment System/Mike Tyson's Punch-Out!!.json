@@ -1,0 +1,35 @@
+{
+  "game": "Mike Tyson's Punch-Out!!",
+  "platform": "Nintendo Entertainment System",
+  "source": {
+    "type": "manual",
+    "path": "Nintendo Entertainment System/Mike Tyson_s Punch-Out!!.pdf"
+  },
+  "states": [
+    {
+      "name": "Default",
+      "controls": {
+        "Left": "Dodge to left",
+        "Right": "Dodge to right",
+        "Down": "Once block, twice rapidly ducking",
+        "B": "Left body blow / rapid: get up",
+        "A": "Right body blow / rapid: get up",
+        "Up+B": "Punch to left face",
+        "Up+A": "Punch to right face",
+        "Start": "Uppercut (1 or more stars)",
+        "Select": "Doc's advice between rounds"
+      }
+    }
+  ],
+  "evidence": {
+    "Default/Left": "pdf6 (printed 5): 'During the Game' diagram, leader from the left tip of the pad to \"Dodge to left\"",
+    "Default/Right": "pdf6 (printed 5): 'During the Game' diagram, leader from the right tip of the pad to \"Dodge to right\"",
+    "Default/Down": "pdf6 (printed 5): leader from the bottom tip of the pad to \"Once: block / Twice rapidly: ducking\"",
+    "Default/B": "pdf6 (printed 5): lower leader from the B button to \"Left body blow\" | pdf6 (printed 5): under the body-blow labels: (When Mac is knocked down, press rapidly and he'll get up.)",
+    "Default/A": "pdf6 (printed 5): lower leader from the A button to \"Right body blow\" | pdf6 (printed 5): under the body-blow labels: (When Mac is knocked down, press rapidly and he'll get up.)",
+    "Default/Up+B": "pdf6 (printed 5): upper leaders from the top tip of the pad and from the B button both reach the box cell \"Punch to left face\"",
+    "Default/Up+A": "pdf6 (printed 5): upper leaders from the top tip of the pad and from the A button both reach the box cell \"Punch to right face\"",
+    "Default/Start": "pdf6 (printed 5): leader from the right oval (START) to \"Uppercut (If the number of stars is 1 or greater)\"",
+    "Default/Select": "pdf6 (printed 5): leader from the left oval (SELECT) to \"If pressed between rounds, Doc's encouraging advice can increase Mac's stamina.\"; pdf11: \"a stamina boost if the SELECT button is pressed during an interval.\""
+  }
+}
