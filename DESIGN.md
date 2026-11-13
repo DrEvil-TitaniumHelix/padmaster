@@ -1,15 +1,15 @@
-# Pad Master — Design (authoritative; written by the mastermind 2026-11-03, approved by the owner)
+# Pad Master — Design (authoritative; written 2026-11-03)
 
-## Goal (the owner's words, 2026-11-03)
+## Goal
 Inside LaunchBox, right-click a game (or click a badge on it) → **"Generate and show controller mapping"** → a rendered
-image of **the controller the owner actually holds**, with that game's controls drawn on it. Multiple in-game states.
+image of **the controller the player actually holds**, with that game's controls drawn on it. Multiple in-game states.
 Controller selectable; the AI builds the controller template so there is no manual drawing. Pre-rendered cache first,
 live generation when missing. A Claude Code persona (Pad Master) runs beside LaunchBox and talks both ways.
 
 Not the goal: LaunchBox's static "Arcade - Controls Information" PNGs. They are not dynamic, not per-state, not per-controller.
 
 ## Settled decisions (do not re-open)
-- Owner = Pad Master persona. Mastermind keeps design + acceptance + rulings. the owner rules everything else.
+- Owner = Pad Master persona. Mastermind keeps design + acceptance + rulings. The owner rules everything else.
 - First target = **NES on the GuliKit KK3 Max**. Then one platform at a time, the owner picks.
 - Billing = Claude Code subscription through the bridge. No API key, ever.
 - Nothing rather than a guess. Source attribution on every game JSON.
@@ -53,7 +53,7 @@ status lines. Everything else rides on this.
 ### 2. Controller onboarding (AI-templated)
 Plugin reads the connected pad's XInput/HID identity (VID/PID/name). Pad Master produces the template: a clean drawn
 controller (SVG) + one named anchor per physical button (`a`, `b`, `x`, `y`, `lb`, `rb`, `lt`, `rt`, `start`, `back`,
-`dpad_up`..., `ls`, `rs`, extras). the owner sees one preview and approves (sticky ruling). Stored in `controllers\<id>\`.
+`dpad_up`..., `ls`, `rs`, extras). The owner sees one preview and approves. Stored in `controllers\<id>\`.
 Adding a pad = this flow again, nothing else changes.
 
 ### 3. Game layer (model-using)
@@ -77,7 +77,7 @@ Right-click item "Generate and show controller mapping" + badge "has mapping". V
 state tabs, the image. Missing → request through the bridge, progress line, render, show. Batch = whole platform from
 the platform's menu.
 
-## Milestones (acceptance = what the owner sees on screen)
+## Milestones (acceptance = what the user sees on screen)
 - **M0 Bridge.** LaunchBox starts → Pad Master session is up beside it. Pad Master lists NES games through the bridge.
   Plugin shows a test image in the viewer on Pad Master's command. Round-trip < 1 s.
 - **M1 Controller.** KK3 Max plugged in → plugin names it → Pad Master renders the template → the owner approves one preview.
@@ -94,7 +94,7 @@ PadMaster\
   src\           ONE C# solution (.NET, Rider; SDK 10.0.114 installed). Projects: PadMaster.Bridge (ISystemEventsPlugin +
                  MCP-shaped local socket), PadMaster.Controls (menu item + badge + viewer), PadMaster.Core (emulator
                  readers, SVG→PNG renderer via Svg.Skia/SkiaSharp, one self-check each). DLLs → E:\LaunchBox\Plugins\.
-                 Language = C# only (the owner 11/03: one language, one IDE). Target framework = whatever LaunchBox.exe runs; verify first.
+                 Language = C# only (one language, one IDE). Target framework = whatever LaunchBox.exe runs; verify first.
   controllers\   <pad-id>\template.svg + anchors.json (approved)
   games\         <Platform>\<Game>.json (sourced)
   renders\       cache PNGs

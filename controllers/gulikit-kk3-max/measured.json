@@ -1,3 +1,3 @@
-{"controller":"GuliKit KK3 Max (NS39)","mode":"USB adapter, XInput slot 0, reports as Xbox 360 Controller","measured":"2026-11-07 live XInputGetState, the owner pressed each physical button",
+{"controller":"GuliKit KK3 Max (NS39)","mode":"USB adapter, XInput slot 0, reports as Xbox 360 Controller","measured":"2026-11-07 live XInputGetState, each physical button pressed",
  "physical_label_to_xinput":{"A":"B","B":"A","X":"Y","Y":"X","LB":"lb","RB":"rb","LT":"lt","RT":"rt"},
  "note":"positions match Xbox layout (right=xinput B, bottom=xinput A, top=xinput Y, left=xinput X); only the printed labels differ. Paddles G1-G4 not measured; they mirror whatever the pad assigns."}

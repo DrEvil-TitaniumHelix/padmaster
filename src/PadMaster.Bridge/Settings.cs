@@ -13,7 +13,7 @@ public sealed record Settings
     public int Port { get; init; } = 47800;
     public bool ConfirmBulk { get; init; } = true;
     public int BulkThreshold { get; init; } = 20;
-    public bool AutoOpen { get; init; } = false;   // the owner 11/09: the chat panel never shows itself unless asked; Pad Master runs with the assistant in the background
+    public bool AutoOpen { get; init; } = false;   // the chat panel never shows itself unless asked; Pad Master runs with the assistant in the background
     public string Placement { get; init; } = "right";
     public bool Expanded { get; init; } = true;
     public string MenuCaption { get; init; } = DefaultMenuCaption;   // the right-click item's text; Pad Master's own look, separate from the assistant's placement

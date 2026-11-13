@@ -86,7 +86,7 @@ public sealed class ActivationGate(Action<Settings, bool> start, Action<Settings
     ActivationState _state = new(new(), false, false);
     bool _observed;
     public bool Active => _state.Active;
-    public static bool OpenAtActivation(Settings settings, bool becomingActive) => settings.AutoOpen;   // not even the first Enable opens it (the owner 11/09)
+    public static bool OpenAtActivation(Settings settings, bool becomingActive) => settings.AutoOpen;   // not even the first Enable opens it
     public void Update(ActivationState next)
     {
         if (!next.Readable) { if (!_observed) _state = next; return; }
